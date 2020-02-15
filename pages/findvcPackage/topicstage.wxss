@@ -1,0 +1,132 @@
+@import 'topicscell.wxss';
+
+.view1{
+  margin-left: 20px;
+  margin-right: 20px;
+  /* background-color: red; */
+  height: 280px;
+}
+.fb_title{
+  color: #006AFE;
+  /* background-color: red; */
+  display:inline-block;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 0px;
+  text-align: left;
+}
+
+.fb_tag{
+float:right;
+/* display:fixed; */
+background-color: #627AEA;
+margin-right: 20rpx;
+margin-top: 10px;
+/* border-radius: 8px; */
+font-size: 12px;
+line-height: 25px;
+text-align: center;
+border-radius: 5px;
+  color: white;
+  width: 42px;
+  height: 25px;
+  
+}
+.fb_desc{
+  /* background-color: yellow; */
+flex-direction: row;
+display: flex; 
+height: 40px;
+
+
+}
+
+.fb_word{
+  /* background-color: red; */
+    /* width:100px; */
+    height: 26px;
+    margin-left: 0px;
+    padding-left:0px; 
+    padding-right:5px; 
+    color: darkgray;
+    /* border-radius: 13px; */
+    background-color: white;
+    text-align: left;
+    font-size: 12px;
+
+}
+.big-img{
+  height: 280rpx;
+  width: 100%;
+  border-radius: 5px;
+
+}
+.layout_horizontal{
+  height: 40px;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  margin-top: 0px;
+  /* background-color: yellow; */
+
+}
+
+
+/* 有三个头像的样式 */
+.div-relative
+{
+  position:relative;  
+  /* background-color: red;  */
+    flex: 1;
+} 
+.div-a{
+   position:absolute; left:5px; top: 5px;  width:30px; height:30px;border-radius: 15px;
+   } 
+/* css注释说明： 背景为红色 */ 
+.div-b{
+   position:absolute; left:20px; top: 5px;  width:30px; height:30px;border-radius: 15px;
+   } 
+/* 背景为黄色 */ 
+.div-c{ 
+  position:absolute; left:30px;top: 5px; width:30px; height:30px;border-radius: 15px;
+  } 
+.num{
+   margin-top: 5px;
+  font-size: 13px;
+  color: gray;
+  padding-top: 10px;
+  /* align-items: center;
+   justify-content: center;
+  display: flex;
+  flex-direction: column; */
+  overflow:hidden;
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+
+.tab-title{
+left: 0px;
+width: 171px;
+height: 25px;
+color: rgba(96, 118, 237, 1);
+font-size: 18px;
+text-align: left;
+font-family: PingFangSC-regular;
+margin-top: 10px;
+}
+.tab-line{
+  left: 0px;
+width: 69px;
+height: 2px;
+background-color: rgba(96, 118, 237, 1);
+}
+
+.post {
+    float: right;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;  
+    width: 44px;
+    height: 44px;
+
+}

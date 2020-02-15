@@ -1,0 +1,10 @@
+@import "/pages/index/component/homeitem.wxss";
+@import "/pages/personalPackage/template/bdscell.wxss";
+
+.no-data{
+  text-align: center;
+  width:100%;
+  height:100%;
+  position:  absolute;
+  line-height: 200px;
+}

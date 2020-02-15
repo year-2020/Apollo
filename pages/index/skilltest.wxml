@@ -1,0 +1,78 @@
+<image class="ad-img" src="https://pro.modao.cc/uploads4/images/3015/30156834/v2_pljh9r.jpg" ></image>
+<van-cell
+  title="开发者入驻"
+  is-link
+/>
+<van-cell
+  title="车辆认证平台"
+  value=""
+  is-link
+/>
+<van-cell
+  title="开源软件服务平台测试"
+  value=""
+  is-link
+  arrow-direction="{{arrowDirection}}"
+  bind:click='showCollpose'
+/>
+
+<view class="parent" wx:if='{{arrowDirection=="up"}}'>
+    <block class="parent" wx:for="{{testData1}}" wx:key=''> <!--block 是循环打印image-->
+        <view class="child" bindtap='showhope'>
+        <view class='titx'>{{item}}</view>
+        <view class='cu-num'>0/20</view>
+        </view>
+    </block>
+</view>
+<!-- <van-cell
+  title="硬件开发平台测评"
+  is-link
+/> -->
+<van-cell
+  title="硬件开发平台测评"
+  value=""
+  is-link
+  arrow-direction="{{arrowDirection}}"
+  bind:click='showCollpose'
+/>
+
+<view class="parent" wx:if='{{arrowDirection=="up"}}'>
+    <block class="parent" wx:for="{{testData2}}" wx:key=''> <!--block 是循环打印image-->
+        <view class="child"  bindtap='showhope'>
+        <view class='titx'>{{item}}</view>
+        <view class='cu-num'>0/20</view>
+        </view>
+    </block>
+</view>
+<van-cell
+  title="云端解决方案测评"
+  value=""
+  is-link
+  arrow-direction="{{arrowDirection}}"
+  bind:click='showCollpose'
+/>
+
+<view class="parent" wx:if='{{arrowDirection=="up"}}'>
+    <block class="parent" wx:for="{{testData3}}" wx:key=''> <!--block 是循环打印image-->
+        <view class="child"  bindtap='showhope'>
+        <view class='titx'>{{item}}</view>
+        <view class='cu-num'>0/20</view>
+        </view>
+    </block>
+</view>
+<van-cell
+  title="量产解决方案"
+  value=""
+  is-link
+  arrow-direction="{{arrowDirection}}"
+  bind:click='showCollpose'
+/>
+
+<view class="parent" wx:if='{{arrowDirection=="up"}}'>
+    <block class="parent" wx:for="{{datas}}" wx:key=''> <!--block 是循环打印image-->
+        <view class="child"  bindtap='showhope'>
+        <view class='titx'>感知</view>
+        <view class='cu-num'>0/20</view>
+        </view>
+    </block>
+</view>

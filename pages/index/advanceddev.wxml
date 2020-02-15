@@ -1,0 +1,28 @@
+<view class="pro-container">
+<image class="ad-img"  mode='scaleToFill' src="/static/images/jjkf.jpg" ></image>
+
+
+  <scroll-view class="left-menu" scroll-y scroll-with-animation="true" scroll-top="{{leftMenuTop}}">
+    <view class="menu-item {{index===currentActiveIndex?'menu-active':''}}" wx:for="{{advList}}" wx:key="{{item.index}}" id="{{index}}" catchtap='changeMenu' >{{item.categoryName}}</view>
+  </scroll-view>
+  <scroll-view class="right-pro" bindscroll = "scroll" scroll-y scroll-with-animation="true">
+
+    <view class="pro-item" wx:for="{{advList[currentActiveIndex].section}}" wx:key="{{index}}" wx:for-index="idx">
+       <view class="item-header">{{item.levelName}}</view>
+        <view class="pro-item-container">
+           <view wx:for="{{item.articles}}"  wx:key=""   wx:for-item="subdata" wx:for-index="cindex" class="pro-item-item"  > 
+            <text bindtap='jumpTodetail'  data-id='{{subdata.articleId}}' data-jump='{{subdata.isJump}}' data-source='{{subdata.source}}' >{{subdata.title}}</text>
+            <view class='content-v' wx:if='{{subdata.status ==1}}'>{{subdata.summary}} </view>
+            <view class='action-bar' wx:if='{{subdata !=null}}'>
+              <!-- <view class='pull' bindtap='showContent' data-id='{{cindex}}' data-levelid='{{item.level}}' data-categoryid='{{advList[currentActiveIndex].category}}'>{{(subdata.status ==1)?'收起':'展开'}}</view> -->
+              <!-- <image class='love' src='/static/images/xihuan.png'></image> -->
+              <view class="card__num nucl" bindtap='likeAction'data-subdata="{{subdata}}">{{subdata.likeCount}}
+<image class='xihuan' src='{{subdata.like ==false?"/static/images/xh_ico.png":"/static/images/liked.png"}}'></image>
+</view>
+          </view>
+
+            </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

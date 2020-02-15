@@ -1,0 +1,253 @@
+/* pages/creditvc/exchangevc.wxss */
+@import "/pages/pml/commentitem.wxss";
+
+.header-c{
+  /* height: 284px;
+  margin: 10px; */
+margin-top: 10px;
+}
+.zj-pic{
+  height: 284px;
+  width: 100%;
+}
+.title-v{
+  height: 20px;
+  /* width: 100%; */
+  /* background-color: red; */
+margin: 10px;
+display: flex;
+/* margin-left: 20px; */
+}
+.tag-v{
+  width: 44px;
+  height: 20px;
+  background-color: #3E7DFB;
+  color: white;
+  margin-top: 10px;
+  line-height: 20px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 10px;
+
+}
+.yx-v{
+  height: 28px;
+  margin-top: 30px;
+flex-direction: row;
+padding-left: 20px;
+padding-right: 20px;
+
+font-family: PingFangSC-bold;
+font-size: 20px;
+font-weight: bold;
+
+ display:block ;
+ /*这里设置inline-block或者block；根据使用情况来定（行内元素需要加这个，块级元素和行内块级可以不用）*/
+ white-space:nowrap;
+
+ overflow:hidden;
+
+ text-overflow:ellipsis;
+
+}
+
+.content-v{
+height: 250px;
+  background-color: pink;
+  width: 100%;
+  margin-top: 40rpx;
+
+}
+.evo-title{
+  /* width: 70%; */
+  /* background-color: pink; */
+  height: 20px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 54px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+/* 文字不换行*/
+overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+}
+.evo-title-no{
+   height: 20px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+/* 文字不换行*/
+overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+}
+.jf-v{
+  width: 25%;
+  /* background-color: blue; */
+  height: 20px;
+  position: absolute;
+  margin-top: 10px;
+  right: -30px;
+display: flex;
+flex-direction: row;
+
+}
+.jf-ico{
+  width: 20px;
+  height: 20px;
+
+}
+.jf-no{
+  width: 80px;
+  height:20px;
+  font-size: 12px;
+  margin-left: 5px;
+
+}
+.exchange-now{
+  margin-top: 120rpx;
+  color: white;
+  border: 1PX solid #2593FB;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 30rpx;
+  background: #2593FB;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  /* 横轴 */
+  justify-content: center;
+  /* 纵轴 */
+  align-items: center;
+}
+
+.buy-now{
+  margin-top: 40rpx;
+  color: white;
+  border: 1PX solid #2593FB;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 30rpx;
+  background: #2593FB;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  /* 横轴 */
+  justify-content: center;
+  /* 纵轴 */
+  align-items: center;
+}
+
+.date-img{
+  width: 18px;
+  height: 18px;
+  background-color: yellow;
+  margin-top: 10px;
+  margin-left:20px;
+
+}
+
+.true-date{
+margin-left: 10px;
+margin-right: 10px;
+height: 20px;
+background-color: red;
+margin-top: 10px;
+}
+
+.backgroundViewStyle{
+  margin-top:30rpx;background:white;height:500rpx;flex-direction:column;border-top:1rpx solid #e5e5e5;
+}
+.demoButtonStyle{
+  background-color:#3CB371;width:60%;height:100rpx;color:#fff;
+}
+
+.dialog_mask {
+  position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 10;background: rgba(0, 0, 0, 0.5);display: none;
+}
+.dialog_container {
+  position: fixed;bottom: 0;width: 750rpx;background: white;transform: translateY(150%);transition: all 0.4s ease;z-index: 11;
+}
+.dialog_show .dialog_container {
+  transform: translateY(0);
+}
+.dialog_show .dialog_mask {
+  display: block;
+}
+
+.dialog__mask {
+  position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 10;background: rgba(0, 0, 0, 0.5);display: none;
+}
+.dialog__container {
+  position: fixed;bottom: 0;width: 750rpx;transform: translateY(150%);transition: all 0.4s ease;z-index: 11;height:100%;
+}
+.dialog--show .dialog__container {
+  transform: translateY(0);
+}
+.dialog--show .dialog__mask {
+  display: block;
+}
+
+.goods-img{
+left: 10px;
+width: 80px;
+height: 80px;
+border-radius: 4px;
+background-color: red;
+margin-top: -20px;
+margin-left: 10px;
+
+}
+.goods-name{
+margin-left: 100px;
+margin-top: -60px;
+width: 255px;
+height: 20px;
+color: rgba(51, 51, 51, 1);
+font-size: 14px;
+text-align: left;
+font-family: PingFangSC-regular;
+}
+
+.djf-v{
+  width: 25%;
+  height: 20px;
+  position: relative;
+  margin-left: 100px;
+  margin-top: 10px;
+  right: 0px;
+display: flex;
+flex-direction: row;
+
+}
+
+.agree-v{
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40rpx;
+}
+.more-info{
+float:left;
+margin-left: 20px;
+margin-top: 20px;
+width: 84px;
+color: rgba(48, 42, 42, 1);
+font-size: 14px;
+text-align: left;
+font-family: PingFangSC-bold;
+height: 17px;
+}
+.contenx{
+  margin-left: 20px;
+color: rgba(51, 51, 51, 1);
+font-size: 12px;
+text-align: left;
+font-family: SourceHanSansSC-regular;
+margin-top: 20px;
+margin-right:20px;
+
+}

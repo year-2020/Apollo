@@ -1,0 +1,66 @@
+{
+  "_args": [
+    [
+      "iview-weapp@2.0.0",
+      "/Users/natsu/Music/webProj/Apollo/Apollo"
+    ]
+  ],
+  "_from": "iview-weapp@2.0.0",
+  "_id": "iview-weapp@2.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-T5qDvkKLqyU/sEgvZ5KgpGHd/Yw=",
+  "_location": "/iview-weapp",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "iview-weapp@2.0.0",
+    "name": "iview-weapp",
+    "escapedName": "iview-weapp",
+    "rawSpec": "2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "2.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/iview-weapp/download/iview-weapp-2.0.0.tgz",
+  "_spec": "2.0.0",
+  "_where": "/Users/natsu/Music/webProj/Apollo/Apollo",
+  "author": {
+    "name": "Aresn"
+  },
+  "bugs": {
+    "url": "https://github.com/iview/iview-weapp/issues"
+  },
+  "description": "高质量微信小程序 UI 组件库",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-less": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.8",
+    "less": "^2.7.3"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/iview/iview-weapp",
+  "license": "MIT",
+  "main": "app.js",
+  "name": "iview-weapp",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iview/iview-weapp.git"
+  },
+  "scripts": {
+    "build": "gulp --gulpfile build/build-prod.js",
+    "dev": "gulp --gulpfile build/build-dev.js",
+    "prepare": "npm run build"
+  },
+  "version": "2.0.0"
+}

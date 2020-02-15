@@ -1,0 +1,209 @@
+/* pages/personalPackage/personhome.wxss */
+@import "/pages/index/component/homeitem.wxss";
+
+page{
+  background: #F5F5F5;
+
+}
+
+.header{
+top: 0px;
+margin-bottom: 20px;
+}
+.h_img{
+  width: 100vw;
+  height: 100px;
+  
+}
+.p_tags{
+position: absolute;
+top: 40px;
+height: 400rpx;
+text-align: center;
+border: 1px;
+/* line-height: 20px; */
+border-radius: 6px;
+background-color:white;
+left: 20px;
+right: 20px;
+
+
+}
+.ap-ico{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+left: 50%;
+top: -30px;
+border-radius: 30px;
+margin-left: -30px;
+}
+.ap-add{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 19px;
+  border-radius:15px;
+  margin-left: -13px; 
+
+}
+.ap-vv{
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 41px;
+  border-radius:15px;
+  margin-left: 27px; 
+position: absolute;
+}
+
+.qd-container{
+  position: relative;
+  width: 44px;
+  height: 80px;
+  /* background-color: red; */
+  float: right;
+  margin-right: 5px;
+}
+.mine-sign{
+  position: relative;
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 14px;
+  /* background-color: red; */
+}
+.dk{
+  font-size: 12px;
+  color: #333333;
+  /* background-color: yellow; */
+  
+}
+.ls-js{
+ /* background-color: red; */
+    height: 82px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 44px;
+    left: 52px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 21px;
+
+}
+
+.hx1{
+  height: 20px;
+  margin-top: 40px;
+   text-align:center; /*水平居中*/ 
+   line-height: 20px; /*行距设为与div高度一致*/
+color: rgba(16, 16, 16, 1);
+font-size: 18px;
+font-weight: 700;
+font-family: PingFangSC-bold;
+position: absolute;
+left: 50%;
+margin-left: -94px;
+width: 180px;
+}
+
+.kf-level{
+position: absolute;
+height: 20px;
+text-align: center;
+line-height: 20px;
+width: 80px; 
+border-radius: 5px;
+left: 50%;
+margin-left: -47px;
+margin-top:70px;
+color: rgba(63, 81, 181, 1);
+font-size: 12px;
+font-family: PingFangSC-regular;
+}
+
+.kf-school{
+height: 20px;
+text-align: center;
+line-height: 20px;
+width: 80px; 
+border-radius: 5px;
+margin-top:60rpx;
+left:50%;
+margin-left:-47px;
+font-size: 12px;
+position: absolute;
+top: 60px;
+}
+
+.spertor{
+  /* background-color: red; */
+  width: 100%;
+  height: 30px;
+  position: relative;
+  margin-top:120px; 
+ display: flex;
+  flex-direction: row;
+}
+
+.spertor2{
+  /* background-color: red; */
+  width: 100%;
+  height: 44px;
+  position: relative;
+  margin-top:0px; 
+ display: flex;
+  flex-direction: row;
+}
+
+.phb{
+flex: 1;
+height: 44px;
+/* background-color: blue; */
+text-align: left;
+line-height: 44px;
+color: gray;
+font-size: 12px;
+padding-left: 20px;
+}
+
+.dhjl{
+flex: 1;
+height: 44px;
+/* background-color: yellow; */
+text-align: left;
+line-height: 44px;
+color: gray;
+font-size: 12px;
+overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+
+}
+.con-tags{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 300rpx;
+  position: relative;
+}
+
+.demo-block__title {
+  
+  background-color: #FF3F81!important;
+  padding: 10px 10px 10px;
+    margin-right: 20px!important;
+    margin-left: 0px!important;
+height: 20px!important;
+line-height: 20px!important;
+border-radius: 3px!important;
+}
+.vant-block__title {
+  
+  padding: 10px 10px 10px;
+  margin-right: 20px!important;
+  margin-left: 0px!important;
+  color: white!important;
+  background-color: #647AEC!important;
+
+}

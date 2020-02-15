@@ -1,0 +1,15 @@
+<template name="article">
+    <view class="noteContent">
+        <view class="title top">{{note.title}}</view>
+        <view bindtap="userInfo" class="noteinfoView" data-id="{{note.id}}">
+            <image class="noteinfoViewImg" src="{{note.headimg}}"></image>
+            <text class="noteinfoViewName">{{note.nickname}}</text>
+            <text class="noteinfoViewtime">{{note.create_time}}</text>
+            <view>
+                <text class="browsing browsingImg"></text>
+                <text class="browsingNum">{{note.see_num}}</text>
+            </view>
+        </view>
+        <view class="centent"></view>
+    </view>
+</template>

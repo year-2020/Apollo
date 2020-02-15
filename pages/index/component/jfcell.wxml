@@ -1,0 +1,20 @@
+<template name="jfcell">
+
+ <view class="videoList">
+        <navigator class="videoListBox" hoverClass="none" url="/pages/videoBao/special/special?id={{item.id}}">
+            <view class="videoListImg">
+                <image src="/static/images/v2_pldps9.png"></image>
+            </view>
+<view class="layout_horizontal">
+      <view style="flex:4" class='name-v'>林俊杰
+      <view class='desc-v'>今天我们来唱江南</view>
+      </view>
+      <view style="flex:1;display:flex; justify-content:center; align-items:center;">
+            <!-- <image class='like-ico' src="/static/images/xihuan.png"></image> -->
+      </view>
+
+
+  </view>
+        </navigator>
+    </view>
+</template>

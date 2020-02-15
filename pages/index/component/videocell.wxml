@@ -1,0 +1,18 @@
+ <template name='videocell'>
+ <view class="videoList01">
+        <navigator class="videoListBox" hoverClass="none" url="/pages/videoPackage/videoplayer?categoryId={{item.categoryId}}">
+            <view class="videoListImg">
+                <image src="{{item.imgUrl}}">
+            <image class='test-playico' src='/static/images/icon-test.png'></image>    
+                </image>
+            </view>
+            <text class="videoListContent">{{item.title !=null?item.title:item.categoryName}}</text>
+            <!-- <view class="videoListico">
+                <text class="ion videoicon"></text>
+                <text class="ion videotext num">12</text>
+                <text class="ion po comment"></text>
+                <text class="ion commentNum num">111</text>
+            </view> -->
+        </navigator>
+    </view>
+</template>

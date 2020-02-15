@@ -1,0 +1,10 @@
+/* pages/creditvc/orderListVc.wxss */
+@import "ordercell.wxss";
+
+.no-data{
+  text-align: center;
+  width:100%;
+  height:100%;
+  position:  absolute;
+  line-height: 200px;
+}

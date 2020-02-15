@@ -1,0 +1,41 @@
+<!-- <import src="/pages/index/component/homeitem.wxml"></import> -->
+<import src="/pages/personalPackage/template/collectioncell.wxml"></import>
+
+      <!-- <view class="nav">
+    <view class="nav-son {{shownavindex == 3? 'active' : ''}}" bindtap="listpx" data-nav="3">
+      <view class="content">全部</view>
+      <view class="icon"></view>
+    </view>
+    <view class="nav-son {{shownavindex == 3? 'active' : ''}}" bindtap="listdesc" data-nav="3">
+      <view class="content">排序</view>
+      <view class="icon"></view>
+    </view>
+  </view> -->
+
+<!-- 
+<block wx:for="{{ publishList }}" wx:for-item="item" wx:key="item">
+ <template is="h-item" data="{{item}}"></template>
+ 
+</block> -->
+
+
+ <view class="temp temp2 contentCenter {{pxopen ? 'slidown' : 'slidup'}} {{pxshow ? 'disappear':''}}" catchtouchmove="ture">
+    <view wx:for="{{content}}" bindtap='selectPX' data-index="{{index}}" class="pxTable {{pxIndex == index?'current4':''}}">
+      {{item}}
+    </view>
+  </view>
+  <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"  catchtouchmove="ture"></view>
+
+<!-- 价格筛选 -->
+  <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}" catchtouchmove="ture">
+    <view wx:for="{{content}}" bindtap='selectdesc' data-index="{{index}}" class="pxTable {{descIndex == index?'current4':''}}">
+      {{item}}
+    </view>
+  </view>
+    <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"  catchtouchmove="ture"></view>
+
+<block wx:for="{{ publishList }}" wx:for-item="item" wx:key="item">
+  <template is="h-item" data="{{item,fromCollectvc}}"></template>
+</block>
+
+  <view class='no-data' wx:if='{{nodata ==0&&publishList.length==0}}'>{{nodatamsg}}</view>

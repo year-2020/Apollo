@@ -1,0 +1,37 @@
+@import "/pages/personalPackage/template/card.wxss";
+page{
+  background-color: #F6F6F6;
+}
+em{
+color: red;
+
+}
+
+.exchange-now{
+  margin-top: 40px;
+  color: white;
+  border: 1PX solid #2593FB;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 30rpx;
+  background: #2593FB;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  /* 横轴 */
+  justify-content: center;
+  /* 纵轴 */
+  align-items: center;
+}
+.phone-num{
+  margin-left: 5px;
+  font-size: 12px;
+  color: #4051B5;
+  margin-top: -5px;
+
+}
+ 
+ .cell-text{
+   color: red !important;
+   width: 120rpx;
+ }

@@ -1,0 +1,24 @@
+
+.rs-container{
+  /* display: flex;
+  justify-content: center; */
+  /* background-color: yellow; */
+  margin-top: 44px;
+}
+.vip-radio-group {
+  padding: 44px 17px!important;
+  background-color: red!important;
+}
+
+.vip-radio {
+  margin-bottom: 10px!important;
+  height: 44px!important;
+  /* background-color: blue!important; */
+  display:flex!important;
+  justify-content:center!important;
+   align-items:center!important;
+}
+.space-view{
+  height: 10px;
+  /* background-color: blue; */
+}

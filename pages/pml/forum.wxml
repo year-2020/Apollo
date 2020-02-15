@@ -1,0 +1,117 @@
+<template name="tab03">
+    <view class="listClass" wx:for="{{arrList}}" wx:key="arrList3">
+        <view bindtap="userDetails" class="listtitle" data-uid="{{item.uid}}">
+            <image src="{{item.headimg}}"></image>{{item.nickname}}
+    </view>
+        <view bindtap="details" data-id="{{item.id}}" data-nc="3" data-url="cases">
+            <view class="technologyCont">
+                <view class="technologyContView">
+                    <view class="technologyContbox">
+                        <view class="technologyContboxtitle">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <view class="content">
+                            <text wx:if="{{item.author!=''&&item.caser!=author}}">作者：{{item.author}}</text>
+                            <text class="an" wx:if="{{item.caser!=''&&item.caser!=null}}">案例方：{{item.caser}}</text>
+                        </view>
+                    </view>
+                    <view class="technologyContImg">
+                        <image mode="aspectFill" src="{{item.imgs}}"></image>
+                    </view>
+                </view>
+                <view class="labelView" wx:if="{{item.tags.length>0}}">
+                    <scroll-view>
+                        <view class="labelViewitem" wx:for="{{item.tags}}" wx:key="tabarr">{{item.tag_name}}</view>
+                    </scroll-view>
+                </view>
+            </view>
+            <view class="timeView">
+                <view class="time">{{item.create_time}}</view>
+                <view class="incon">
+                    <text class="browsing po browsingImg"></text>
+                    <text class="browsingNum po">{{item.see_num}}</text>
+                    <text class="comment po"></text>
+                    <text class="commentNum po">{{item.say_num?item.say_num:0}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="tab02">
+    <view class="listClass" wx:for="{{arrList}}" wx:key="arrList2">
+        <view bindtap="userDetails" class="listtitle" data-uid="{{item.uid}}">
+            <image src="{{item.headimg}}"></image>{{item.nickname}}
+    </view>
+        <view bindtap="details" data-id="{{item.id}}" data-nc="2" data-url="article">
+            <view class="technologyCont">
+                <view class="technologyContView">
+                    <view class="technologyContbox">
+                        <view class="technologyContboxtitle" wx:if="{{item.title!=''&&item.title!=null}}">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <view class="content" wx:if="{{item.desc!=''&&item.desc!=null}}">
+                            <text>{{item.desc}}</text>
+                        </view>
+                    </view>
+                    <view class="technologyContImg">
+                        <image mode="aspectFill" src="{{item.imgs}}"></image>
+                    </view>
+                </view>
+                <view class="labelView" wx:if="{{item.tags.length>0}}">
+                    <scroll-view>
+                        <view class="labelViewitem" wx:for="{{item.tags}}" wx:key="tabarr">{{item.tag_name}}</view>
+                    </scroll-view>
+                </view>
+            </view>
+            <view class="timeView">
+                <view class="time">{{item.create_time}}</view>
+                <view class="incon">
+                    <text class="browsing po browsingImg"></text>
+                    <text class="browsingNum po">{{item.see_num}}</text>
+                    <text class="comment po"></text>
+                    <text class="commentNum po">{{item.say_num?item.say_num:0}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="tab01">
+    <view class="listClass" wx:for="{{arrList}}" wx:key="arrList1">
+        <view bindtap="userDetails" class="listtitle" data-uid="{{item.uid}}">
+            <image src="{{item.headimg}}"></image>{{item.nickname}}
+    </view>
+        <view bindtap="details" data-id="{{item.id}}" data-nc="1" data-url="question">
+            <view class="title" wx:if="{{item.title!=''&&item.title!=null}}">
+                <text class="titleText titleTextImgj" wx:if="{{item.is_fine==1}}"></text>
+                <text class="titleText titleTextImgd" wx:if="{{item.is_top==1}}"></text>
+                <text wx:if="{{item.title!=''&&item.title!=null}}">{{item.title}}</text>
+            </view>
+            <view class="content" wx:if="{{item.contents!=''&&item.contents!=null}}">
+                <block wx:if="{{item.title==''}}">
+                    <text class="titleText titleTextImgj" wx:if="{{item.is_fine==1}}"></text>
+                    <text class="titleText titleTextImgd" wx:if="{{item.is_top==1}}"></text>
+                </block>
+                <text decode="true">{{item.contents}}</text>
+            </view>
+            <view class="imgs">
+                <image binderror="imageError" data-img="{{item}}" mode="aspectFill" src="{{item}}" wx:if="{{index<3}}" wx:for="{{item.imgs}}" wx:key="imgs"></image>
+                <text class="ellipsis" wx:if="{{item.imgs.length>3}}">{{item.imgs.length}}</text>
+            </view>
+        </view>
+        <view class="labelView" wx:if="{{item.tags.length>0}}">
+            <scroll-view>
+                <view class="labelViewitem" wx:for="{{item.tags}}" wx:key="tabarr">{{item.tag_name}}</view>
+            </scroll-view>
+        </view>
+        <view class="timeView">
+            <view class="time">{{item.create_time}}</view>
+            <view class="incon">
+                <text class="browsing po browsingImg"></text>
+                <text class="browsingNum po">{{item.see_num}}</text>
+                <text class="comment po"></text>
+                <text class="commentNum po">{{item.answer_num?item.answer_num:0}}</text>
+            </view>
+        </view>
+        <image class="adopt" src="/static/images/adopt.png" wx:if="{{item.status==2}}"></image>
+    </view>
+</template>

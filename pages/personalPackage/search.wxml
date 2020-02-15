@@ -1,0 +1,49 @@
+ <import src="/pages/index/component/homeitem.wxml"></import>
+
+ <!-- <view class="searchView" bindtap="searchcik">
+        <view  class="searchViewC">
+          <image class='searchIcon'></image>
+          <text class='plast'>请输入搜索关键字</text>
+
+
+        </view>
+    </view> -->
+    <!-- <van-search
+  value="{{ value }}"
+  placeholder="    请输入搜索关键词"
+  use-action-slot
+  bind:search="onSearch"
+  bind:change="onChange"
+
+>
+  <view slot="action" bind:tap="onSearch">搜索</view>
+</van-search> -->
+<view class='page_row' bindtap="suo">  
+      <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='15' type='search'></icon>  
+          <input class="" bindinput="bindKeyInput" bindfocus ='onChange' placeholder="请输入搜索的关键字"  value='{{inputValue}}'/>  
+        </view>
+      </view>  
+      <view class='sousuo'bind:tap="onSearch">搜索</view>  
+    </view>
+
+
+<view class="table" wx:if='{{articleList.length<=0&&index !=1}}'>
+
+  <!-- <block wx:for='{{tableData}}' wx:key='*this'>
+    <view class='table-th' wx:if='{{index<3}}'>{{item.name}}</view>
+    <view class='table-td' wx:else>{{item.name}}</view>
+  </block> -->
+  <block wx:for="{{tags}}"  wx:key='*this'>
+      <view class='table-th'  bindtap='selectTags' data-id='{{item.tagId}}'data-name='{{item.name}}'>{{item.name}}</view>
+    <!-- <view class='table-td' wx:else>{{item.name}}</view> -->
+
+ </block>
+
+</view>
+
+<block wx:for="{{ articleList }}" wx:for-item="item" wx:key="item">
+ <template is="h-item" data="{{item,showTags}}"></template>
+ 
+</block>

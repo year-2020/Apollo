@@ -1,0 +1,40 @@
+<template name='zlcell'>
+<block>
+  <view class='inf-h'>
+        <image class='p-ico' src='/static/images/apollo_ico.png' bindtap='jumpInfovc'></image>
+        <view class='m-view'>
+            <view class='z-name'>CICC</view>
+                        <view class='tag-name'>资额牛逼</view>
+
+          </view>
+    <view class='inf-right'>
+      <view class='gz-v'>关注</view>
+      <image class='more' src='/static/images/more.png'></image>
+      </view>
+  </view>
+      <view class='title-v'>
+        <text class='ar-title' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于Apollo的换道决策如何规划，看这一篇就够了Apollo的换道决策如何规划，看这一篇就够了Apollo的换道决策如何规划，看这一篇就够了</text>
+      <view class='tag'>专栏</view>
+
+      </view>
+       <view class='content-v'>
+        <view class='content-t'>
+          选自CSDN，作者黄英君，本文详细地叙述了Apollo更新后的一系列迁移问题……
+       </view>
+     <image class='content-ico' bindtap='jumpInfovc'></image>
+
+      </view>
+      <view class='line'></view>
+       <view class='action-v'>
+      <view class='like-btn'>
+        <image class='like-img' src='/static/images/dianzan_nor.png'></image>
+        <view class='like-num'>3</view>
+
+      </view>
+      <view class='comment-btn'></view>
+        <image class='comment-img' src='/static/images/pinglu.png'></image>
+        <view class='comment-num'>3</view>
+      </view>
+      <view class='bottom-line'></view>
+  </block>
+ </template>

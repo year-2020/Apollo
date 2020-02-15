@@ -1,0 +1,49 @@
+<import src="/pages/index/component/homeitem.wxml"></import>
+
+<view class='header'>
+ <image class='h_img' src='/static/images/mine_header.jpg'></image>
+  <view class='p_tags'>
+  <image class='ap-ico' src='{{personData.wxAvatar}}' bindtap='jumpInfovc'>
+    </image>
+  <view class='ls-js'>
+      <image class='ap-add' wx:if='{{personData.follow==false}}' bindtap='addfocus' src='/static/images/add_focus.png'></image>
+      <image class='ap-add' wx:if='{{personData.follow==true}}' bindtap='addfocus' src='/static/images/focused.jpg'></image>
+
+    <view class='hx1'>{{personData.wxNickname}}
+    </view>
+
+    <view class='kf-level' wx:if='{{personData.atitle !=""}}'>{{personData.atitle}}</view>
+        <view class='kf-school' wx:if='{{personData.asummary !=""}}'>{{personData.asummary}}</view>
+   </view>
+  
+<view class='spertor'>
+          <view class='phb' bindtap='jumpTocreditphVc'>
+          <image style='width:20px;height:20px;position:relative;top:4px' src='/static/images/info-local.png'></image>
+        {{personData.address==null?"暂无":personData.address}}</view>
+          <view class='dhjl' bindtap='jumpToOrderList'><image style='width:20px;height:20px;position:relative;top:4px' src='/static/images/wechat-info.jpg'></image>
+          {{personData.wxNickname}}</view>
+        </view>
+        
+ <view class='spertor2'>
+          <view class='phb' bindtap='jumpTocreditphVc'>
+          <image style='width:20px;height:20px;position:relative;top:4px' src='/static/images/youxiang-4.png'></image>
+        {{personData.email==''?"暂无":personData.email}}</view>
+          <view class='dhjl' bindtap='jumpToOrderList'><image style='width:20px;height:20px;position:relative;top:4px' src='/static/images/shouji-2.png'></image>
+          {{personData.phonenumber==''?"暂无":personData.phonenumber}}</view>
+        </view>
+
+   </view>
+   
+   <view class='con-tags' wx:if='{{tags.length>0}}'>
+   <block   wx:if='{{tags.length>0&&tags[0]!=""}}' wx:for="{{tags}}" wx:key="">
+  <van-tag  custom-class="demo-block__title" bindtap='selectTags'  data-id=''>{{item}}</van-tag>
+ </block>
+   </view>
+  
+      </view>
+
+
+<block wx:for="{{ rows }}" wx:for-item="item" wx:key="item">
+ <template is="h-item" data="{{item}}"></template>
+ 
+</block>

@@ -1,0 +1,6 @@
+<template name="tab01">
+    <view class="spinner">
+        <view class="double-bounce1"></view>
+        <view class="double-bounce2"></view>
+    </view>
+</template>

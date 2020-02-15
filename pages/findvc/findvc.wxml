@@ -1,0 +1,42 @@
+<!--pages/findvc.wxml-->
+<import src='template/topicscell.wxml'/>
+<import src="/pages/index/component/homeitem.wxml"></import>
+
+ <view class="searchView" bindtap="searchcik">
+        <view  class="searchViewC">
+          <image class='searchIcon'></image>
+          <text class='plast'>请输入搜索关键字</text>
+        </view>
+    </view>
+
+
+  <view class='view1'wx:if='{{topicList.length>0}}'>
+        <view class='fb_title'>话题广场</view>
+        <!-- <view class='fb_tag'> 查看更多话题 </view> -->
+          <!-- <text class="jumpBs"></text> -->
+
+        <view class='fb_desc'>
+        <view class='fb_word'>参与讨论APOLLO最新技术话题，了解开发动态</view>
+        </view>
+    </view>
+ <view class="clea">
+ 
+ <block wx:for="{{ topicList }}"  wx:if="{{index<4}}" wx:for-item="item" wx:key="item">
+    <template is="topicscell" data="{{item}}"></template>
+
+</block>
+  </view>
+
+<view class='ctab'>
+      <view class='line'></view>
+
+    <view class="{{menuFixed?'fixed':''}}" id="affix">
+    <view bindtap="nav" class="scrollviewitem {{tab==index?'active':''}}" data-tab="{{index}}" wx:for="{{tabArr}}" wx:key="tabarr">{{item}}</view>
+    </view>
+    </view>
+
+<block wx:for="{{ questionList }}" wx:for-item="item" wx:key="item">
+ <template is="h-item" data="{{item}}"></template>
+</block>
+<view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>  

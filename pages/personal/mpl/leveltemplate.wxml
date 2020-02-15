@@ -1,0 +1,9 @@
+<template name='level-t'>
+<view class='half-c' mode='aspectFit'>
+ <view class='vip_level'>VIP1</view>
+
+<view class='in-jf'>今日积分</view>
+<view class='in-num'>+{{todayCredits}}</view>
+  <view class='jf-btn' >您的积分:{{mycredits}}</view>
+</view>
+</template>

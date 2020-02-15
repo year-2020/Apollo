@@ -1,0 +1,5 @@
+<template name="network">
+    <view class="networkView" wx:if="{{network}}">
+     网络已断开
+ </view>
+</template>

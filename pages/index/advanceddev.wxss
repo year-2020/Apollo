@@ -1,0 +1,135 @@
+
+.ad-img{
+  position:relative;
+width:100%;
+height:308rpx;
+margin-top: 10px;
+display:flex;
+}
+/*分割线样式*/
+.line{
+/* margin: 10px auto; */
+height: 0.8px;
+background-color: #EBEBEB;
+margin:5px 5px 0px;
+}
+
+.left-menu{
+  position: absolute;
+    top: 154px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 140px;
+    background-color: #f8f8f8;
+    font-size: 15px;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.left-menu .menu-item{
+  width: calc(100% - 16rpx);
+  height: 80px;
+  padding:0 8rpx;
+  line-height: 80px;
+  text-align: left;
+  padding-left:10px;
+
+  overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+}
+.left-menu .menu-item.menu-active{
+  border-left:8rpx solid red;
+  padding-left:10px;
+  background-color: #fff;
+}
+
+/* 右边商品区域 */
+.right-pro{
+  position: absolute;
+  left: 140px;
+  top:154px;
+  bottom: 0;
+  width:calc(100% - 140px);
+  background-color: #fff;  
+  display: flex;
+  overflow: hidden;
+}
+.right-pro .pro-item{
+  padding:20rpx;
+}
+.right-pro .item-header{
+  display: inline-block;
+  font-size: 30rpx;
+  line-height: 40px;
+  color: #fff;
+  background-color: #627AEA;
+  padding:0rpx 30rpx; 
+  margin: 10rpx auto;
+  width: 100%;
+
+}
+.right-pro .pro-item-container{
+  font-size: 28rpx;
+}
+.pro-item-item{
+  width: 100%;
+  display:inline-block; 
+}
+/* .right-pro .pro-item-container image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto;
+} */
+.right-pro .pro-item-container text{
+  display: block;
+  text-align: left;
+  /* 文字不换行*/
+overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+margin-right:30px;
+
+}
+.pro-item-container{
+  /* background-color: rebeccapurple; */
+  /* height: 90px; */
+}
+.content-v{
+  display: block;
+  text-align: left;
+  /* background-color: yellow; */
+  font-size: 12px;
+  color: #858899;
+}
+.action-bar{
+  display: block;
+  height: 30px;
+  /* background-color: red; */
+  direction: row;
+}
+
+.pull{
+height: 30px;
+line-height: 30px;
+font-size: 12px;
+
+}
+.love{
+width: 19px;
+height: 19px;
+float: right;
+margin-top: -23px;
+}
+.card__num {
+float:right;
+display:flex; justify-content:center; align-items:center;
+margin-top:-23px;
+
+}
+
+.xihuan{
+  height: 15px;
+  width: 15px;
+  padding-left: 5px;
+}

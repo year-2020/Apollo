@@ -1,0 +1,312 @@
+.imgbox{
+  position: relative;
+  width: 100vw;
+  height: 305px;
+  overflow:hidden;
+}
+.ico{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.txt{
+   position: relative;
+}
+.jf-tips{
+  position: relative;
+  height: 45px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 21px;
+}
+.ap-ico{
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 22.5px;
+
+}
+.ls-js{
+ background-color: white;
+    height: 45px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 42px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 21px;
+}
+.sb1{
+  flex: 1;
+  /* background-color: red; */
+  text-align:  center;
+}
+.hx01{
+   height: 20px;
+   line-height: 20px;
+   flex: 1;
+   font-size: 18px;
+  /* 文字不换行*/
+  overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+}
+.hx1{
+  height: 18px;
+  flex: 1;
+  font-size: 12px;
+  margin-top: 5px;
+  /* background-color: red; */
+}
+
+.sb2{
+  flex: 1;
+  /* background-color: yellow; */
+    text-align:  center;
+
+}
+.sb3{
+  flex: 1;
+  /* background-color: green; */
+  text-align:  center;
+  border-radius: 21px;
+  line-height: 45px; /*行距设为与div高度一致*/
+}
+
+.steps {
+  position:absolute;
+  bottom: 64px;
+  counter-reset: step;/*创建步骤数字计数器*/
+  width: 100vw;
+
+}
+/*步骤描述*/
+.steps view {
+  list-style-type: none;
+  font-size: 12px;
+  text-align: center;
+  width: 14.2%;
+  position: relative;
+  color: white;
+  z-index: 2;
+  float: left;
+
+}
+ /*步骤数字*/
+.steps view:before {
+  display: block;
+  content: counter(step);/*设定计数器内容*/
+  counter-increment: step;/*计数器值递增*/
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  line-height: 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  margin: 0 auto 8px auto;
+  
+}
+
+
+
+/*连接线*/
+.steps view:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  z-index: -1;/*放置在数字层后面*/
+}
+/*连接线放置在数字层后面*/
+.steps view:first-child {
+  z-index: 3;
+}
+.steps view:last-child {
+  z-index: 1;
+}
+/*去掉第一步多出的连接线*/
+.steps view:first-child:after {
+  width: 50%;
+  left: 50%;
+}
+/*去掉最后一步多出的连接线*/
+.steps view:last-child:after {
+  width: 50%;
+}
+/*完成步骤变绿*/
+.steps view.active:before {
+  /* background-color: #019875; */
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPEAYAAABrRkkJAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAAASAAAAEgARslrPgAAAw9JREFUOMutlUlMU1EUhv/z2mIldYCWwMMwKAqtA1MhghuFwEZjRGNlMJoQicQ6ETcGEhRZQFQiBBMTDImGTashggtkU2uNERZUMSTYYoWoCEUGEyfE9vVdN7yGUAUUzvLe8/7v3XvO+S/hr8EYwHF8k/dAQl9BAbZghjMVFsIFLTr0egAXWLdGA+AGZU5OYguc2PfiBVxQioUmk7tU8XAg0WwGiABRnK9O8xeismYebPsQFyd0yo77plpbaRP7TEXJyfjXEEmFgd5emc5n5t4ZDMNPlIf6owcHpW1uPtAHzim2d3f/N9CvzL4jISVF0pP055yYMUAm42eENdpeu33ZQCkuoQKOsTFUowa6iAjpBkbH5L8cYlrabA3z81cKyI7QbiS2tPC3FdeCU6OjEUUlqDCZpBvgh727tTn5+Zy/aZYL7CMtK7hzx90g73LcKy6emAR5vCoV4lgzuuLj/YkuKCm9qIijN0hEbVpagFID2rD96VMaIYX4OisLOahhlePjAXmHaD02Nje7NfJB5+WSksivgPZ0SIiwQSBBabHABsCm188Ba9Gh18vZBpQiJjQ0oL2fUC7bb7WOHFHQANls4a88wbrW7GxZFDzs/uPH7BvOYbCtzd0o/+HMMxr5JrD4k2o1GxU0SLVY6D3zwJqUFPCjkTiLL2o1h1HcxLqpqYCEHhZE7VVV/GbvGd3msrJPyUHTjsP9/dy0sNrH6/XuRkW4M89oDM8FS7weFgYIsTKV1UrZbIzq/gCUYpbH+Qc/MCEIDiKaZjegqK/nT3ifaVPLyz/WB1e6NCMjEpA7LMR63RYLXWFv0bljx2K9QOdpFzvY08NJTrPoB51sJ/2sqeGbPNVb19bVyVRChmejzbZUoL8JXewWnpvNJFljZISwSsfZ7VLbL1VoyRFDQVC9fDnaLWeOnvR0TvJSydqQgDqcmphYMeCsnnDMd1EoMxgknt8yJS+VQdRyeZmZktMs94SCQfwiqDMyxo3Kq66jQ0P+0i1QjYVfp9mx8E/FXtqDWrsdj9hdMcpsXux1+g0pfnQy0yeGugAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOS0wNy0xMVQxNjo0MzoyNiswODowMDWnIBQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTktMDctMTFUMTY6NDM6MjYrMDg6MDBE+pioAAAAS3RFWHRzdmc6YmFzZS11cmkAZmlsZTovLy9ob21lL2FkbWluL2ljb24tZm9udC90bXAvaWNvbl9nd2k3dWR1OXkxbS93YW5jaGVuZy5zdmcp0BdDAAAAAElFTkSuQmCC); 
+ 
+}
+.steps view.active {
+  color: white;
+
+
+}
+.steps view.active:before,
+.steps view.active:after {
+  background-color: white;
+
+
+}
+
+.login-account{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  border: 1PX solid #FF9800;
+  /* margin-left: 84rpx;
+  margin-right: 84rpx; */
+  font-size: 30rpx;
+  background: #FF9800;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 44px;
+ 
+ }
+
+.click-view {
+width:100%;
+display:-webkit-flex;
+display:flex;
+padding:10px 15px;
+box-sizing:border-box;
+line-height:24px;
+position:relative;
+background-color:#fff;
+color:#333;
+font-size:14px;
+
+}
+.cell__title {
+-webkit-flex:1;
+flex:1;
+font-size: 14px;
+
+}
+.cell__label{
+  margin-left: 8px;
+  font-size: 12px;
+  color: #8E8E8E;
+}
+.cell__value {
+color:white;
+overflow:hidden;
+vertical-align:middle;
+width: 60px;
+line-height: 22px;
+height: 22px;
+text-align: center;
+background-color: #FF9800;
+border-radius: 4px;
+font-size: 10px;
+margin-top:15px;
+
+}
+
+.cell__value__go {
+color:white;
+overflow:hidden;
+vertical-align:middle;
+width: 60px;
+line-height: 22px;
+height: 22px;
+text-align: center;
+background-color:gray;
+border-radius: 4px;
+font-size: 10px;
+margin-top:15px;
+
+}
+
+
+
+.finishimg{
+
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 7px;
+  bottom: 52rpx;
+  left: 39rpx;
+  display: block;
+}
+
+.isteps{
+  height: 60px;
+  width:100%;
+  display:flex;
+  background: red;
+  counter-reset: istep;
+  flex-direction: row;
+}
+
+.istep{
+  display: flex;
+  flex-direction: column;
+}
+.istep-item{
+font-size:12px;
+position:relative;
+display:inline-block;
+box-sizing:border-box;
+padding-left:10px;
+vertical-align:top;
+/* width:14.285714285714286%; */
+
+
+}
+.istep-item-ico{
+  width:100%;
+height:24px;
+line-height:24px;
+text-align:center;
+display:block;
+
+}
+.iicon{
+  display:inline-block;
+font-family:iconfont;
+speak:none;
+font-style:normal;
+font-weight:400;
+font-variant:normal;
+text-transform:none;
+text-rendering:auto;
+line-height:1;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+vertical-align:middle;
+
+}
+
+.istep-item-main{
+  text-align:center;
+margin-top:10px;
+clear:both;
+display:block;
+}
+
+.istep-item-title{
+  font-size:14px;
+font-weight:700;
+color:#1c2438;
+display:block;
+
+}
+
+.iconnn{
+ 
+  margin-top:10px;
+}

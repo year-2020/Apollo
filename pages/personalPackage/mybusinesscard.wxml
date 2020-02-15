@@ -1,0 +1,111 @@
+<import src="/pages/personalPackage/template/card.wxml"></import>
+
+<view class="content">
+
+<view class='jb-tab'>
+  <view class="tab">
+  <button class="send-tab" open-type="share">
+    <image class="post-ico" src="/static/images/lianxiren.png" ></image>
+    <text class="post-title">推荐好友</text>
+  </button>
+
+  </view>
+<view class="tab">
+<view class="like-tab" bindtap='chooseImage'>
+  <image class="post-ico" src="/static/images/pictures.png" ></image>
+    <text class="post-title">拍照收纳</text>
+</view>
+</view>
+
+<view class="tab">
+  <view class="num-tab" bindtap='jump_createcard'>
+  <image class="post-ico" src="/static/images/mingpian.png" ></image>
+    <text class="post-title">生成名片</text>
+</view>
+</view>
+</view>
+
+<view class='titcard'>  我的名片</view>
+    <view class='myinfo'>
+          <view class='hline'></view>
+          <view class='right-container'>
+             <view class='name-label'>{{mycardData.wxNickname}}·<em>{{mycardData.atitle}}</em></view>
+              <view class='company-label'>{{mycardData.asummary}}</view>
+          </view>
+         
+            <view class='info-row'>
+              <image class='ico-info' src='/static/images/shouji-2.png'></image>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='phone-num' type="idcard" placeholder="未填写联系电话" value='{{mycardData.phonenumber}}'focus="{{focus}}" disabled='true' bindinput="bindKeyInput" data-id='0'/>
+
+            </view>
+             <view class='info-row'>
+              <image class='ico-info' src='/static/images/info-local.png'></image>
+              <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
+                              <input class='phone-num' disabled='true' type="text" placeholder="未填写地址" value='{{mycardData.address}}'/>
+
+            </view>
+             <!-- <view class='info-row'>
+              <image class='ico-info' src='/static/images/info-telephone.png'></image>
+              <view class='phone-num'>0771-12345678</view>
+            </view> -->
+             <view class='info-row'>
+              <image class='ico-info' src='/static/images/youxiang-4.png'></image>
+              <!-- <view class='phone-num'>{{mycardData.email}}</view> -->
+                                            <input class='phone-num' type="text" placeholder="未填写邮箱"disabled='true'  value='{{mycardData.email}}'/>
+
+            </view>
+             <view class='info-row'>
+              <image class='ico-info' src='/static/images/wechat-info.jpg'></image>
+              <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
+                                                          <input class='phone-num' type="text" disabled='true' placeholder="无" value='{{mycardData.wx}}'/>
+
+                            <image class='ico-edit' bindtap='editCard' src='/static/images/bj_ico.jpg'></image>
+
+            </view>
+      </view>
+  
+<!-- 
+<view class="table">
+
+  <block wx:for='{{tableData}}' wx:key='*this'>
+    <view class='table-th' wx:if='{{index<3}}'>{{item.name}}</view>
+    <view class='table-td' wx:else>{{item.name}}</view>
+  </block>
+</view> -->
+ 
+ <!-- <view style="flex:1;width:100%;flex-direction: row;display:flex;">
+  <button class='edit-card' bindtap='jumpToEdit'>修改</button>
+  <button class='sendCard' bindtap='onShareAppMessage' open-type="share">发送本张名片</button>
+  </view> -->
+  <view class='con-tags' wx:if='{{tags.length>0}}'>
+   <block   wx:if='{{tags.length>0&&tags[0]!=""}}' wx:for="{{tags}}" wx:key="">
+  <van-tag  custom-class="demo-block__title" bindtap='selectTags'  data-id=''>{{item}}</van-tag>
+ </block>
+   </view>
+
+
+<view class='cards-view'>
+    <image class='card1'/>
+    <view class='recard'>  收到的名片</view>
+    <view class='recardnoumber'>{{cards.length}} 张</view>
+
+  <!-- <image class='card2' src="/static/images/bg3.jpg"/> -->
+</view>
+<!-- 
+<view class="bottomButton">
+        <button bindtap="jumpToEdit" class="buttonDefault" data-title="修改" formType="submit">修改</button>
+        <button bindtap="shareButtonClick" class="buttonPrimary" formType="submit" openType="share" style="overflow: hidden;">
+            <view class="lineMove addBackColor"></view>
+    {{shareButtonContent?shareButtonContent:'发送本张名片'}}
+    </button>
+    </view> -->
+
+
+</view>
+
+   <!-- <template is="card-item" ></template> -->
+<block wx:if='{{cards.length>0}}' wx:for='{{cards}}'>
+   <template is="card-item" data='{{item}}' ></template>
+
+</block>

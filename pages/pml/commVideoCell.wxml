@@ -1,0 +1,11 @@
+ <template name='commVideoCell'>
+<view class="commVideoCell" bindtap='jumpToPro' data-id='{{tonewvideo ==1?item.videoId:item.categoryId}}'>
+        <!-- <navigator class="commVideoBox" hoverClass="none" url="{{fromMe==1?'':'/pages/videoPackage/videoplayer?videoUrl={{item.videoUrl}}'}}"> -->
+     <view class="commVideoImg">
+        <image src="{{item.imgUrl}}"></image>
+      </view>
+        <view class='video-title'>{{ provideojp ==1?item.title:item.categoryName}}</view>
+        <!-- </navigator> -->
+    </view>
+
+ </template>

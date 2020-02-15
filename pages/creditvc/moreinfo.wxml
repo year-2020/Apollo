@@ -1,0 +1,10 @@
+
+<view class='titleV'>
+{{title}}
+</view>
+<view class='contenx'>
+<!-- {{content}} -->
+  <wxparse data="{{ content}}" type="html" padding="5"></wxparse>
+
+</view>
+

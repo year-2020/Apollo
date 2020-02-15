@@ -1,0 +1,62 @@
+<template name="diaView">
+  <view class="dialog {{ showDialog ? 'dialog_show' : '' }}">
+    <view class="dialog_mask" bindtap="onClickdiaView" />
+    <view class="dialog_container">
+
+      <!--  //此区域自定义视图  -->
+      <view class="flex_Center" style="height:400px;background:white;"> 
+        <!-- <view style="color:#333;font-size:30rpx;">自定义视图</view> -->
+        <image class='goods-img' src='{{imgUrl}}'/>
+        <view class='goods-name'>百度Apollo自动驾驶资料集</view>
+           <view class='djf-v'>
+            <image class='jf-ico' src='/static/images/jf_normal.jpg'></image>
+              <view class='jf-no'>{{orderprice}}</view>
+            </view>
+  <van-cell wx:if='{{categoryId !=1}}'
+  title="配送信息"
+  is-link
+  value='{{address}}'
+  bindtap='getUserAddress'
+/>
+<van-field wx:if='{{categoryId ==1}}'
+    value="{{ password }}"
+    label="邮箱地址"
+    placeholder="请输入邮箱地址"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+
+<!-- <van-cell
+  title="电子邮件"
+  value=""
+  is-link
+/> -->
+<van-cell
+  title="订单总额"
+  value="{{orderprice}}"
+  is-link
+  
+/>
+    <view class='agree-v'>点击支付即表示您同意Apollo的销售条款</view>
+     <button class='buy-now' bindtap='toPayCredit' data-index="0">
+立即支付
+</button>
+     
+      </view>
+
+    </view>
+  </view>
+</template>
+
+
+<template name="diaCenterView">
+  <view class="dialog {{ showCenterDialog ? 'dialog--show' : '' }}">
+    <view class="dialog__mask"/>
+     <view class="dialog__container" style="display:flex;align-items:center;justify-content:center;flex-direction:column;" bindtap='onClickdiaCenterView'> 
+
+        <!--  //此区域自定义视图  -->
+        <view class="flex_Center" style="width:600rpx;height:400rpx;background:white;color:#333;font-size:30rpx;border-radius:20rpx;">自定义视图</view>
+
+    </view> 
+  </view>
+</template>

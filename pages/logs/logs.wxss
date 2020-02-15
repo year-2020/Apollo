@@ -1,0 +1,66 @@
+@import "/pages/pml/raduislaminated.wxss";
+
+@import "/pages/personal/mpl/halfcircle.wxss";
+
+@import "/pages/personal/mpl/coincircle.wxss";
+@import "/pages/personal/mpl/leveltemplate.wxss";
+
+/* 画布绘制过程不能隐藏 但是又不能被用户看见 所以定位在用户看不到地方 */
+canvas{
+  position: fixed;
+  top: 0;
+  left: 9999px;
+}
+image{
+  margin: 10% 10%;
+}
+
+/* 设置背景遮罩层样式 */
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* 设置遮罩内容样式 */
+.maskContent {
+  width: 70%;
+  /* background: #fff; */
+  border-radius: 5px;
+  padding: 30rpx;
+}
+/* 设置关闭按钮图片的位置 */
+.closeImg {
+  position: fixed;
+  top: 40rpx;
+  right: 40rpx;
+}
+/* 设置关闭按钮宽高 */
+.closeImg_image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.btn{
+  width: 80%;
+  margin: 20rpx auto;
+  background: #ff6600;
+  color: #fff;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.share-img{
+  border-radius: 5px;
+  width: 260px;
+  height: 330px;
+  margin-left: 0px;
+}
+

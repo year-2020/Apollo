@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+        "van-progress": "../../miniprogram_npm/vant-weapp/progress/index"
+  },
+
+    "navigationBarTitleText": "我的资料",
+    "navigationBarBackgroundColor": "#3D4157",
+    "navigationBarTextStyle":"white"
+
+}

@@ -1,0 +1,69 @@
+
+<!-- <view class='info-head'>
+              <view class='ico-info'>头像</view>
+            <image class='header-img' src='{{images.length==0?myInfoData.wxAvatar:images[0]}}' bindtap="chooseImage" ></image>
+    </view> -->
+
+<view class='info-row'>
+              <view class='ico-info'>姓名*</view>
+                <input class='name-num' type="text" placeholder="请输入姓名" value='{{myInfoData.wxNickname}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
+
+    </view>
+
+    <!-- <view class='info-row'>
+              <view class='ico-info'>性别</view>
+                <input class='phone-num' type="idcard" placeholder="未设置" value=''focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
+
+    </view> -->
+
+    <view class='info-row'>
+              <view class='ico-info'>公司*</view>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.asummary}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='1'/>
+
+    </view>
+    <view class='info-row'>
+              <view class='ico-info'>职位*</view>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.atitle}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='2'/>
+
+    </view>
+    <view class='info-row'>
+              <view class='ico-info'>地区*</view>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.address}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='3'/>
+
+    </view>
+    <view class='info-row'>
+              <view class='ico-info'>手机</view>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='4'/>
+
+    </view>
+    <view class='info-row'>
+              <view class='ico-info'>微信</view>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.wx}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='5'/>
+
+    </view>
+    <view class='info-row'>
+              <view class='ico-info'>邮箱</view>
+              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+                <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.email}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='6'/>
+    </view>
+
+    <!-- <view class='info-row'>
+              <view class='ico-info'>支付密码</view>
+                <input class='phone-num' type="idcard" placeholder="未设置" value=''focus="{{focus}}" bindinput="bindKeyInput" data-id='6'/>
+
+    </view>
+   
+    <view class='info-row'>
+              <view class='ico-info'>登录密码</view>
+                <input class='phone-num' type="idcard" placeholder="未设置" value=''focus="{{focus}}" bindinput="bindKeyInput" data-id='7'/>
+
+    </view> -->
+
+    <button class='save-info' bindtap='saveinfo'>
+保存
+</button>

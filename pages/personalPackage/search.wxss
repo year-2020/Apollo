@@ -1,0 +1,162 @@
+@import "/pages/index/component/homeitem.wxss";
+
+.searchView {
+  border-radius: 20px;
+  background-color: rgba(241, 241, 241, 1);
+  color: rgba(179, 179, 180, 1);
+  margin: 20rpx 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.searchViewC {
+  width: 150px;
+  height: 30px;
+  /* background-color:red; */
+  color: rgba(179, 179, 180, 1);
+}
+
+.searchIcon {
+  position: absolute;
+  margin-top: 6px;
+  width: 18px;
+  height: 18px;
+}
+
+.plast {
+  height: 100%;
+  /* background: yellow; */
+  margin-left: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar-result {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.searchbar-result:before {
+  display: none;
+}
+
+.weui-cell {
+  padding: 12px 15px 12px 35px;
+}
+
+.vant-block__title {
+  height: 20px !important;
+  line-height: 20px !important;
+  width: 30px !important;
+  text-align: center !important;
+  margin-left: 5px !important;
+  margin-top: 10px !important;
+  margin-right: 5px !important;
+  color: white !important;
+  background-color: #647aec !important;
+  /* padding: 20px 10px 10px; */
+}
+
+.container-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.table {
+  display: grid;
+  margin-top: 12px;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  overflow-x: hidden;
+  /* 设置列、行大小 fr单位是等分分配列空间*/
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 24px 24px;
+  /* 有多余数据时，自动添加新行时默认行高为：200rpx */
+  grid-auto-rows: 24px;
+  /* 设置网格线大小 */
+  grid-gap: 20rpx;
+}
+
+.table-th {
+  font-weight: bold;
+  background-color: #4e79f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 11px;
+  /* 文字不换行*/
+  overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+}
+
+.table-td {
+  background-color: #4e79f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 11px;
+  /* 文字不换行*/
+  overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+}
+
+.search{  
+      width: 90%; 
+      background: #F2F2F2;
+      height: 30px; 
+      margin-top: 20rpx;
+
+    }  
+    .search_arr {  
+      /* border: 1px solid #d0d0d0;   */
+      border-radius: 10rpx;  
+      margin-left: 34rpx;  
+      background: white;
+    }  
+    .search_arr input{  
+      margin-left: 70rpx;  
+      height: 60rpx;  
+      border-radius: 5px;  
+      font-size: 13px;
+    }  
+    .bc_text {  
+      line-height: 68rpx;  
+      height: 68rpx;  
+      margin-top: 34rpx;  
+    }  
+      
+    .sousuo {  
+      /* margin-left: 15rpx;   */
+      width: 14%;  
+      line-height: 30px;  
+      text-align: center;  
+      /* border: 1px solid #d0d0d0;   */
+      /* border-radius: 10rpx;   */
+      height: 30px;
+      font-size: 14px;
+      margin-top: 20rpx;
+    }  
+    .page_row{  
+      display: flex;  
+      flex-direction: row  ;
+      height: 50px;
+      background: #F2F2F2;
+    }  
+    .searchcion {  
+      margin: 18rpx 10rpx 10rpx 10rpx;  
+      position: absolute;  
+      left:45rpx;  
+      z-index: 2;  
+      width: 20px;  
+      height: 20px;  
+      text-align: center;  
+    }

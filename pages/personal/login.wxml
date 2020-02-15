@@ -1,0 +1,24 @@
+<!--pages/personal/login.wxml-->
+<view class='container-view'>
+
+
+<view class="authorization">
+    <!-- <view class="huanying">Apollo开发者社区</view> -->
+    <image class='huanying' src='/static/images/apollo_ico.png'></image>
+    <!-- <view class="tyc">学习 · 交流 · 资源 · 成长</view> -->
+    <!-- <view class="kq">登录开启Apollo自动驾驶之旅</view> -->
+ 
+<button class='auth-login' bindgetuserinfo="bindGetUserInfo" openType="getUserInfo">
+微信授权登录
+</button>
+<!-- <button class='register' bindtap='jumpToRegister'>
+没有账号，立刻注册
+</button>
+<button class='login-account' bindtap='jumpToApLogin'>
+已有账号,马上登录
+</button> -->
+    <!-- </view> -->
+   
+</view>
+
+</view>

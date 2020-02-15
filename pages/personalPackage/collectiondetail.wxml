@@ -1,0 +1,88 @@
+<!--pages/articlevc/articlevc.wxml-->
+<import src="/pages/pml/commentitem.wxml"></import>
+  <view class='no-data' wx:if='{{nodata ==0}}'>{{nodatamsg}}</view>
+
+<view class='xqcontainer'>
+<view class='header-title'>
+<view class='a-title'>{{title}}</view>
+
+<block wx:if='{{headertags.length>0&&headertags[0] !=""}}' wx:for="{{headertags}}" wx:key="">
+  <!-- <van-tag wx:if="{{item.color==1}}" custom-class="vant-block__title" bindtap='selectTags' data-id='{{item.tagId}}'>{{item}}</van-tag> -->
+  <van-tag custom-class="vant-block__title" bindtap='selectTags'>{{item}}</van-tag>
+ </block>
+
+  <image class='sc' catchtap='sc_action' wx:if="{{saveTag==1}}" src="/static/images/saved.jpg"></image>
+     <image class='sc' wx:else catchtap='sc_action' src="/static/images/shoucang.png"></image>
+ </view>
+<view class='zz-info'>
+<image class='avator' src='{{infodic.wxAvatar}}'></image>
+    <view class='n-s'>
+    <view class='author'>{{wxNickname}}</view>
+        <view class='st'>{{createTime}}</view>
+
+
+    </view>
+    <button class='gz' wx:if='{{infodic.follow==false}}' bindtap='addfocus'>关注</button>
+
+    <button class='gz-ed' wx:if='{{infodic.follow==true}}' bindtap='addfocus'>已关注</button>
+</view>
+<view class='line'></view>
+<!-- <block >{{content}}</block> -->
+  <!-- <template is="wxParse" data="{{wxParseData:content.nodes}}" /> -->
+  <wxparse data="{{ content }}" type="html" padding="5"></wxparse>
+<image class='dimg' mode='aspectFit' wx:for='{{infodic.imgs}}' bindtap='previewImage'  data-src="{{item}}" src='{{item}}'></image>
+
+  <!-- <block title="高度自适应"> -->
+  <!-- <van-cell custom-class='cellcomm' border="{{ true }}">
+    <van-field
+      value="{{ message }}"
+      label="留言"
+      type="textarea"
+      placeholder="请输入留言"
+      rows="1"
+      autosize
+      border="{{ false }}"
+    />
+  </van-cell> -->
+<!-- </block> -->
+<view wx:if="{{showComm}}">
+<van-field input-class='cellcomm'
+    value="{{ phone }}"
+    label=""
+    type="textarea"
+
+    placeholder="请输入评论"
+    border="{{ true }}"
+    autosize
+  />
+<view class='line'></view>
+<button class='realpl' bindtap='sendComm'>评论</button>
+</view>
+   <template is="commentitem" data='{{commentList,isShow}}'></template>
+</view>
+ <!-- <view class='action-view'> -->
+    <!-- <view class='dz-view' bindtap='dzAction'> 
+     <image class='dz-img' src='/static/images/dianzan_nor.png'></image>{{likeCount}}
+     </view>
+    <view class='pl-view' bindtap='bplAction'>
+          <image class='pl-img' src='/static/images/pinglu.png'></image>评论
+
+     </view> -->
+    
+  <!-- </view> -->
+<view class="release" wx:if='{{nodata !=0}}'>
+    <textarea class="text"
+          placeholder-class="input_null" 
+          fixed="true" 
+          maxlength="-1" 
+          show-confirm-bar="false" 
+          cursor-spacing="15" 
+          auto-height="true" 
+          focus="{{releaseFocus}}"
+          placeholder="{{releaseName ==''?'评论':'回复'}} {{releaseName}}"
+          bindinput="inputchange"
+          value='{{inputcontent}}'
+          ></textarea>
+    <view class="submit" bindtap='plAction'>发送</view>
+</view>
+

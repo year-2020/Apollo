@@ -1,0 +1,96 @@
+.content{
+  width: 100px;
+  height: 100px;
+  /* background-color: rgb(216, 55, 55); */
+  margin: 0 auto;
+  margin-top: 0rpx;
+  position: relative;
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+.canvasI{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+  /* background-color: red; */
+}
+.canvasIL{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+  /* background-color: red; */
+}
+
+.canvasII{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+  /* background-color: yellow; */
+}
+.jf-btn{
+  /* background-color: green; */
+  position: absolute;
+  width: 80px;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /* 文字不换行*/
+overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+} 
+.vip_level{
+  position: absolute;
+  top: 0px;
+  /* background-color: white; */
+  width: 45px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 10px;
+  
+}
+.in-jf{
+  /* position: relative; */
+  width: 60px;
+  height: 20px;
+  /* background-color: red; */
+font-size: 10px;
+line-height: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.in-num{
+  position: absolute;
+  /* background-color: yellow; */
+  height: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: #E51C23;
+}
+
+

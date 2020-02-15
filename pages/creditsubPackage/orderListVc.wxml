@@ -1,0 +1,6 @@
+<import src="ordercell.wxml"></import>
+ 
+<block wx:for='{{rows}}'>
+ <template is="h-item" data="{{item}}"></template>
+</block>
+<view class='no-data' wx:if='{{rows.length==0}}'>暂无数据</view>

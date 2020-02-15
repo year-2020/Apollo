@@ -1,0 +1,36 @@
+/* pages/personal/registervc.wxss */
+@import "/pages/personal/mpl/registerType.wxss";
+.regsteps > iview:nth-child(2){
+  background: red;
+}
+.input-form{
+  margin-top: 20px;
+}
+.yz-button{
+  background: #2593FB !important;
+  color: white !important;
+}
+.success-view{
+  margin-top: 100px;
+  width: 100%;
+   display:flex; 
+   justify-content:center; 
+   align-items:center;
+  flex-direction: column;
+}
+.sc-img{
+  width: 50px;
+  height: 50px;
+  
+}
+.sc-text{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 22px;
+  /* background-color: red; */
+}
+
+.fx-bt{
+  margin: 40px!important;
+
+}

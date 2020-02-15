@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "发布问题",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "van-tag": "/../../miniprogram_npm/vant-weapp/tag/index",
+    "van-cell": "/../../miniprogram_npm/vant-weapp/cell/index",
+      "van-field": "/../../miniprogram_npm/vant-weapp/field/index"
+      
+  }
+}

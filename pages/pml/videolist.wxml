@@ -1,0 +1,46 @@
+<template name="videoh">
+    <view class="videoList01">
+        <navigator class="videoListBox" url="/pages/videoBao/special/special">
+            <view class="videoListImg">
+                <image src="http://img3.imgtn.bdimg.com/it/u=2200166214,500725521&fm=26&gp=0.jpg"></image>
+            </view>
+            <text class="videoListContent">百度AI开发者大会开幕，Apollo开启量产新时代百度AI开发者大会开幕，Apollo开启量产新时代</text>
+            <view class="videoListico">
+                <text class="ion videoicon"></text>
+                <text class="ion videotext num">99999</text>
+                <text class="ion po comment"></text>
+                <text class="ion commentNum num">99999</text>
+            </view>
+        </navigator>
+    </view>
+</template>
+<template name="video">
+    <view class="videoList01" wx:if="{{item.is_recommend&&item.is_recommend==1}}">
+        <navigator class="videoListBox" hoverClass="none" url="/pages/videoBao/special/special?id={{item.id}}">
+            <view class="videoListImg">
+                <image mode="aspectFill" src="{{item.imgs}}"></image>
+            </view>
+            <text class="videoListContent">{{item.desc}}</text>
+            <view class="videoListico">
+                <text class="ion videoicon"></text>
+                <text class="ion videotext num">{{item.see_num}}</text>
+                <text class="ion po comment"></text>
+                <text class="ion commentNum num">{{item.answer_num}}</text>
+            </view>
+        </navigator>
+    </view>
+    <view class="videoList" wx:else>
+        <navigator class="videoListBox" hoverClass="none" url="/pages/videoBao/special/special?id={{item.id}}">
+            <view class="videoListImg">
+                <image src="{{item.imgs}}"></image>
+            </view>
+            <text class="videoListContent">{{item.desc}}</text>
+            <view class="videoListico">
+                <text class="ion videoicon"></text>
+                <text class="ion videotext num">{{item.see_num}}</text>
+                <text class="ion po comment"></text>
+                <text class="ion commentNum num">{{item.answer_num}}</text>
+            </view>
+        </navigator>
+    </view>
+</template>

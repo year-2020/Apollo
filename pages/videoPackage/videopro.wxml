@@ -1,0 +1,22 @@
+ <import src="/pages/index/component/videocell.wxml"></import>
+ <import src="/pages/pml/raduislaminated.wxml"></import>
+<import src="/pages/pml/commVideoCell.wxml"></import>
+
+<view class='ctab'>
+
+    <view class="{{menuFixed?'fixed':''}}" id="affix">
+    <view bindtap="nav" class="scrollviewitem {{tab==index?'active':''}}" data-tab="{{index}}" wx:for="{{tabArr}}" wx:key="tabarr">{{item}}</view>
+    </view>
+    </view>
+        <view class='line'></view>
+<view class='view1' bindtap='jumpMore'>
+        <view class='fb_title' wx:if='{{videoList.length>0}}'>进阶专题</view>
+        <!-- <view class='fb_tag'> 查看更多 ></view> -->
+    </view>
+    <view class='ctzt'>
+    <block wx:for='{{videoList}}' wx:key=''>
+    <template wx:if='{{index==0}}' is="videocell" data = '{{item}}'></template>
+    <template wx:if='{{index>=1}}' is="commVideoCell" data='{{item}}'></template>
+    </block>
+  </view>
+  <view class='no-data' wx:if='{{videoList.length==0}}'>暂无数据</view>

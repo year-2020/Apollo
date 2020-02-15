@@ -1,0 +1,80 @@
+<import src="/pages/personalPackage/template/card.wxml"></import>
+   <template is="card-item" data='{{mycardData,fromeditcard}}'></template>
+<van-field
+    value="{{mycardData.wxNickname}}"
+    label="姓名*"
+    placeholder="请输入姓名"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+<van-field
+
+    value="{{mycardData.atitle}}"
+    label="职位*"
+    placeholder="请输入职位"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+  <van-field
+
+    value="{{ password }}"
+    label="公司*"
+    placeholder="请输入公司"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+  <van-field
+    value="{{ mycardData.wxCity }}"
+    label="地区*"
+    placeholder="请输入地区"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+  <van-field
+
+    value="{{ mycardData.phonenumber }}"
+    type="number"
+    label="手机"
+    placeholder="请输入手机"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+  <van-field
+
+    value="{{ password }}"
+    type="number"
+    label="电话"
+    placeholder="请输入电话"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+  <van-field
+
+    value="{{ password }}"
+    label="微信"
+    placeholder="请输入微信"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+  <van-field
+    value="{{ mycardData.email }}"
+    label="邮箱"
+    placeholder="请输入邮箱"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+
+<button class='exchange-now' bindtap='buyRightNow' data-index="0">
+保存
+</button>
+<!-- 
+<view bind:tap="onClick"class="field-index--van-field van-cell van-cell van-cell--borderless van-cell--borderless"style=""role=""aria-label="">
+<view class="van-cell__title van-cell__title"style="max-width:90px;min-width:90px"role=""aria-label=""> 职位 </view>
+<view class="van-cell__value van-cell__value"role=""aria-label=""></view>
+</view>
+<view class="van-field__body van-field__body"role=""aria-label="">
+<input van-field__input"maxlength="-1"placeholder="请输入悬赏积分"placeholder-class="van-field__placeholder"placeholder-style=""type="number"value=""selection-start="-1"selection-end="-1"cursor="-1">
+请输入悬赏积分
+</input>
+</view> -->
+

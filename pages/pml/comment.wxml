@@ -1,0 +1,60 @@
+<template name="nav">
+    <view bindtap="bomNavInut" class="bomNavInut" data-comment_id="0" data-cty="0" data-parent_id="0" data-title="0">
+        <input bindconfirm="searchBtn" confirmType="search" disabled="disabled" placeholder="表达你的观点" placeholderClass="plac" type="text"></input>
+    </view>
+    <view bindtap="collection" class="bomView" data-collect="{{note.is_collect==0?'1':'0'}}">
+        <view>
+            <text class="starts  {{note.is_collect==0?'nstars':'sstars'}}"></text>
+            <text class="startsNum {{note.is_collect==0?'':'sele'}}">{{note.collect_num?note.collect_num:0}}</text>
+        </view>
+    </view>
+    <view class="bomView">
+        <view>
+            <text class="shareView share"></text>
+            <text class="startsNum">{{note.share_num?note.share_num:0}}</text>
+            <button openType="share"></button>
+        </view>
+    </view>
+</template>
+<template name="comment">
+    <view class="community">
+        <text class="communityText public_color">全部回答</text>
+        <view class="communityVlew" wx:for="{{arrList}}" wx:key="arr">
+            <view bindtap="ballClickEvent" class="cView" data-id="{{item.id}}" data-index="{{index}}" wx:if="{{item.adopt==1}}">采纳</view>
+            <image class="sView" src="/static/images/adopt.png" wx:if="{{item.status==2}}"></image>
+            <view bindtap="userInfo" class="communityInfo" data-id="{{item.id}}" data-uid="{{item.uid}}">
+                <image class="noteinfoViewImg" src="{{item.headimg}}"></image>
+                <text class="noteinfoViewName">{{item.nickname}}</text>
+                <text class="noteinfoViewtime" decode="true">{{index+1}}f&nbsp;&nbsp;{{item.release_time}}</text>
+            </view>
+            <view bindtap="borad" class="communityCon hunh" data-title="{{item.comments}}">{{item.comments}}</view>
+            <view class="communityCom" wx:if="{{item.reply.list.length>0}}">
+                <view class="hunh" wx:for="{{item.reply.list}}" wx:key="reply">
+                    <text bindtap="userInfo" class="comName01" data-id="{{item.uid}}" data-uid="{{item.uid}}">{{item.nickname}}：</text>
+                    <text bindtap="borad" class="c" data-title="{{item.comments}}" decode="true">{{item.comments}}</text>
+                </view>
+                <view bindtap="full" class="full" data-full="{{index}}" data-id="{{item.id}}" wx:if="{{item.click==0&&item.reply.count>6}}">{{'查看全部'+item.reply.count+'条回复'}}</view>
+            </view>
+            <view class="commentcomm">
+                <view bindtap="up" data-id="{{item.id}}" data-index="{{index}}" data-support="{{item.is_support==0?'1':'0'}}">
+                    <view>
+                        <text class="gwige {{item.is_support==1?'give':'nogive'}}"></text>
+                        <text>{{item.support_num?item.support_num:0}}</text>
+                    </view>
+                </view>
+                <view bindtap="step" data-id="{{item.id}}" data-index="{{index}}" data-step="{{item.is_step==0?'1':'0'}}">
+                    <view>
+                        <text class="gwige {{item.is_step==1?'step':'nostep'}}"></text>
+                        <text>{{item.step_num}}</text>
+                    </view>
+                </view>
+                <view bindtap="bomNavInut" data-comment_id="{{item.aid}}" data-cty="1" data-id="{{item.id}}" data-index="{{index}}" data-parent_id="{{item.uid}}" data-title="{{item.nickname}}" data-uid="{{item.uid}}">
+                    <view>
+                        <text class="gwige comm"></text>
+                        <text>{{item.reply.count?item.reply.count:0}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

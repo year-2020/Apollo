@@ -1,0 +1,10 @@
+ <import src="/pages/index/component/videocell.wxml"></import>
+
+ <view class='ctzt'>
+    <block wx:for='{{videoList}}' wx:key=''>
+    <template is="videocell" data = '{{item}}'></template>
+    </block>
+    <block wx:if='{{videoList.length==0}}'>
+    <view>暂无数据</view>
+    </block>
+  </view>

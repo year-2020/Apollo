@@ -1,0 +1,29 @@
+<view class="gallery">
+    <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+
+        <!-- 删除按钮 -->
+        <view class="delete" bindtap="deleteImv" data-index="{{index}}"></view>
+    </view>
+    <view class="item" bindtap="chooseImage" wx:if="{{images.length<9}}">
+        <view class='addIcon'>+</view>
+    </view>
+</view>
+<!-- <button type="primary" bindtap="submit">提交</button> -->
+<view class='input_container'>
+ <textarea class='input_titlee'bindinput='inputTitle' rows="1" placeholder="请输入你的意见让客服更好的回答...." maxlength="60" hidden='{{dleg3}}'>
+ </textarea>
+ <text class="currentWordNumber">{{currentTitleLen|0}}/{{noteMaxLen}}</text>
+</view>
+<view class='line'></view>
+<view class='input_detail'>
+ <textarea class='input_title' bindinput='inputContent' rows="1" placeholder="描述你的意见和详情，以及需要寻求的帮助." maxlength="500" hidden='{{dleg3}}'>
+ </textarea>
+ <text class="currentdetailWordNumber">{{currentContentLen|0}}/{{detailnoteMaxLen}}</text>
+</view>
+<view class='line'></view>
+
+
+<button class='login-account' bindtap='publish_question'>
+发送
+</button>

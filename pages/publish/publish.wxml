@@ -1,0 +1,67 @@
+<view class="gallery">
+    <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+        <canvas canvas-id='attendCanvasId' class='myCanvas'></canvas>
+
+        <!-- 删除按钮 -->
+        <view class="delete" bindtap="deleteImv" data-index="{{index}}"></view>
+    </view>
+    <view class="item" bindtap="chooseImage" wx:if="{{images.length<9}}">
+        <view class='addIcon'>+</view>
+    </view>
+</view>
+<!-- <button type="primary" bindtap="submit">提交</button> -->
+<view class='input_container'>
+ <textarea class='input_titlee' bindinput='inputTitle' rows="1" placeholder="请输入你的问题让开发者更好的回答...." maxlength="60" hidden='{{dleg3}}'>
+ </textarea>
+ <text class="currentWordNumber">{{currentTitleLen|0}}/{{noteMaxLen}}</text>
+</view>
+<view class='line'></view>
+<view class='input_detail'>
+ <textarea class='input_title' bindinput='inputContent' rows="1" placeholder="描述问题详情，以及需要寻求的帮助." maxlength="500" hidden='{{dleg3}}'>
+ </textarea>
+ <text class="currentdetailWordNumber">{{currentContentLen|0}}/{{detailnoteMaxLen}}</text>
+</view>
+<view class='line'></view>
+<view class='add-tag'>添加标签发布到广场更多人帮您解答</view>
+<!-- <view class="flex-row" style="display: flex;flex-direction: row;"> -->
+<view class='con-tags'>
+
+<block wx:if='{{fromQ !=1}}' wx:for="{{tags}}" wx:key="">
+  <van-tag wx:if="{{item.color==1}}" custom-class="vant-block__title" bindtap='selectTags' data-id='{{item.tagId}}'>{{item.name}}</van-tag>
+  <van-tag wx:else custom-class="demo-block__title" bindtap='selectTags'  data-id='{{item.tagId}}'>{{item.name}}</van-tag>
+ </block>
+
+  <van-tag wx:if='{{fromQ == 1}}' custom-class="demo-block__title" bindtap='selectname'  data-id='{{topicId}}'>{{topicName}}</van-tag>
+
+ </view>
+
+<!-- </view> -->
+<!-- <van-cell
+  title="帝都·夜上海会所"
+  icon="location-o"
+/> -->
+<!-- <van-cell
+  value="快抢"
+  icon=""
+  is-link
+>
+  <view slot="title" style='display:flex;flex-derection:row;justify-content:space-between;margin-right:10px;width: 70vw;'>
+    <view class="van-cell-text">悬赏积分</view>
+    <view style='color:#006AFE;'>k可是倒计时</view>
+  </view>
+</van-cell> -->
+<van-cell-group custom-class='xsjf'>
+      <van-field 
+    value="{{ password }}"
+    type="number"
+    label="悬赏积分"
+    placeholder="请输入悬赏积分"
+    bind:change="onChange"
+    border="{{ false }}"
+  />
+</van-cell-group>
+
+<button class='login-account' bindtap='publish_question'>
+发布
+</button>

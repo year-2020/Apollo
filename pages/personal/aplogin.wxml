@@ -1,0 +1,12 @@
+<!--pages/personal/aplogin.wxml-->
+<view class="authorization">
+    <view class="huanying">Apollo开发者社区</view>
+    <view class="section">
+  <input class='username' placeholder="请输入用户名或手机号" auto-focus />
+    <input class='password' placeholder="请输入密码" auto-focus />
+</view>
+<button class='login-account' bindtap='jumpToApLogin'>
+登录
+</button>
+
+</view>

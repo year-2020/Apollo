@@ -1,0 +1,147 @@
+<!--pages/creditvc/creditvc.wxml-->
+<view class='imgbox'>
+  <image class='ico' mode='aspectFill' src='https://ws3.sinaimg.cn/large/006tNc79gy1g1vhg04bnsj30ag08x75p.jpg'></image>
+    <view class='jf-tips'>
+    <image class='ap-ico' src='{{ico}}'></image>
+    <view class='ls-js'>
+    <view class='sb1'>
+    <view class='hx1'>今日获得积分</view>
+    <view class='hx01'>{{todayCredits}}</view>
+    </view>
+    <view class='sb2'>
+    <view class='hx1'>我的积分</view>
+    <view class='hx01'>{{credits}}</view>
+    </view>
+    <view class='sb3' bindtap='toJFshop'>
+    <view class='my-level'>积分商城 ></view>
+     </view>
+
+    </view>
+    </view>
+    
+<ul class="steps">
+<block wx:for='{{records}}'>
+  <view class="{{item.recordId ==1?'active':''}}">{{item.days}}
+      <image class='finishimg'wx:if='{{item.recordId ==1}}' src=''></image>
+
+  </view>
+
+</block>
+</ul>
+
+<button class='login-account'  bindtap='showMask'>{{checkin == false?"立即签到":"已签到"}}
+</button>
+</view>
+
+<block>
+<view  class='jf-cell'>
+<view class='click-view'>
+<view class="cell__title" style="font-size:18px;font-weight: bold;">
+做新手任务立即获取积分
+</view>
+</view>
+<view class='line'></view>
+
+</view>
+
+<block wx:for='{{newbieTask}}'>
+<view  class='jf-cell'>
+<view class='click-view'>
+<view class="cell__title"style="">
+•{{item.description}}
+<view class="cell__label">+{{item.credit}}积分</view>
+</view>
+<button class="{{item.finish==true?'cell__value__go':'cell__value'}}" bindtap='{{item.finish==true?"":"todoTask"}}' data-id='{{item.taskId}}'  >{{item.finish==true?'已完成':'去完成'}}</button>
+</view>
+<view class='line'></view>
+</view>
+
+</block>
+<view  class='jf-cell'>
+<view class='click-view'>
+<view class="cell__title" style="font-size:18px;font-weight: bold;">
+每日任务
+</view>
+</view>
+<view class='line'></view>
+</view>
+
+
+<block wx:for='{{dailyTask}}'>
+<view  class='jf-cell'>
+<view class='click-view'>
+<view class="cell__title"style="">
+•{{item.description}}
+<view class="cell__label">+{{item.credit}}积分</view>
+</view>
+<button class="{{item.finish==true?'cell__value__go':'cell__value'}}" bindtap='{{item.finish==true?"":"todoTask"}}' open-type='{{(item.taskId==6&&item.finish==false)?"share":""}}'data-id='{{item.taskId}}'>{{item.finish==true?'已完成':'去完成'}}</button>
+</view>
+<view class='line'></view>
+</view>
+
+</block>
+
+</block>
+
+<!-- 
+<i-steps current="{{current}}">
+    <i-step>
+        <view slot="title">
+              已完成
+        </view>
+     
+    </i-step>
+    <i-step>
+        <view slot="title">
+            进行中
+        </view>
+     
+    </i-step>
+    <i-step>
+        <view slot="title">
+            错误
+        </view>
+   
+    </i-step>
+     <i-step>
+        <view slot="title">
+              已完成
+        </view>
+     
+    </i-step>
+    <i-step>
+        <view slot="title">
+            进行中
+        </view>
+     
+    </i-step>
+    <i-step>
+        <view slot="title">
+            错误
+        </view>
+   
+    </i-step>
+     <i-step status="finish" icon="barrage">
+        <view slot="title">
+              已完成
+        </view>
+       
+    </i-step>
+
+</i-steps>
+
+
+<view class='isteps'>
+    <view class='istep'>
+      <view class='istep-item'>
+        <view class='istep-item-ico'>
+<icon class='iconnn' type="success" size="14" color="blue"/>
+          </view>
+        <view class='istep-item-main'>
+           <view class="istep-item-title"role=""aria-label="">第一天</view>
+          </view>
+        </view>
+    </view>
+
+
+</view> -->

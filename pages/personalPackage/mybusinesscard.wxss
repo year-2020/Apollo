@@ -1,0 +1,323 @@
+@import "/pages/personalPackage/template/card.wxss";
+
+.content{
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.jb-tab{
+  position: absolute;
+  /* background-color: #EDEFFD; */
+  height: 64px;
+  left:10px;
+right:10px;
+top:15px;
+display:flex;
+
+}
+
+.tab{
+  
+  flex: 1;
+  height: 44px;
+  /* background-color: #EDEFFD; */
+  padding: 10px;
+}
+.send-tab{
+  height: 44px;
+  width: 100%;
+  /* background-color: red; */
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+background-color:white;
+
+
+}
+.send-tab::after {
+  border: 0;
+}
+
+.like-tab{
+  height: 44px;
+  width: 100%;
+  /* background-color: red; */
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.num-tab{
+  height: 44px;
+  width: 100%;
+  /* background-color: red; */
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gz-num{
+  font-size: 16px;
+  line-height: 20px;
+
+}
+.post-ico{
+  width: 20px;
+  height: 20px;
+line-height: 20px;
+}
+
+.post-title{
+  /* position: absolute; */
+  font-size: 12px;
+  line-height: 20px;
+  /* background-color: white; */
+  top: 30px;
+
+}
+
+.titcard{
+  height: 44px;
+  width: 35%;
+  background-color: gray;
+  position: relative;
+  margin-top: 74px;
+  margin-left: 20px;
+  line-height: 44px;
+  color: white;
+  /* 缩进 */
+   Text-indent:20px;
+}
+
+
+.myinfo{
+  background-color: white;
+  margin: 20px;
+  height: 200px;
+  border-radius: 7px;
+  box-shadow:0px 2px 5px 5px lightgray;
+
+}
+.hline{
+  width: 50%;
+  height: 1px;
+  background-color: #4051B5;
+  margin-top: 40px;
+  position: absolute;
+}
+.right-container{
+   width: 45%;
+  height: 40px;
+  /* background-color: yellow; */
+  float: right;
+  margin-top: 15px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.left-container{
+  width: 45%;
+  height: 40px;
+  /* background-color: yellow; */
+  float: left;
+  margin-top: 15px;
+  margin-left: 10px;
+  text-align: left;
+  position:absolute;
+
+}
+.leftname-label{
+  width: 100%;
+  height: 20px;
+  /* background-color: purple; */
+  margin-top: 0px;
+  margin-right: 10px;
+  text-align: left;
+  color: #3F51B5;
+}
+.leftcompany-label{
+    width: 100%;
+  height: 20px;
+  /* background-color: red; */
+  margin-top: 0px;
+  margin-right: 10px;
+  text-align: left;
+font-size: 12px;
+
+}
+.name-label{
+  width: 100%;
+  height: 20px;
+  /* background-color: purple; */
+  margin-top: 0px;
+  margin-right: 10px;
+  text-align: right;
+  color: #3F51B5;
+}
+em{
+  font-size: 12px;
+}
+.company-label{
+   width: 100%;
+  height: 20px;
+  /* background-color: red; */
+  margin-top: 0px;
+  margin-right: 10px;
+  text-align: right;
+font-size: 12px;
+
+}
+.info-row{
+  height: 20px;
+  /* background-color: yellow; */
+  top:55px;
+  position: relative;
+  margin: 5px;
+display: flex;
+flex-direction: row;
+left: 20px;
+margin-top:20rpx;
+
+}
+.ico-info{
+  width: 20px;
+  height: 20px;
+  background-size:100% 100%;
+/* background-color: red; */
+}
+
+.ico-edit{
+  width: 20px;
+  height: 20px;
+  background-size:100% 100%;
+  position: absolute;
+  right: 30px;
+}
+.phone-num{
+  margin-left: 8px;
+  font-size: 12px;
+  color: #4051B5;
+  margin-top: -5px;
+padding-top:6rpx;
+}
+ 
+.table {
+  display: grid;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  overflow-x: hidden;
+  /* 设置列、行大小 fr单位是等分分配列空间*/
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 34px 34px;
+  /* 有多余数据时，自动添加新行时默认行高为：200rpx */
+  grid-auto-rows: 34px;
+  /* 设置网格线大小 */
+  grid-gap: 20rpx;
+}
+
+.table-th {
+  font-weight: bold;
+  background-color: #FF4181;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.table-td {
+  background-color: #FF4181;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+.edit-card{
+  width: 20%;
+  height: 40px;
+  background-color: #647AEC;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
+}
+
+.sendCard{
+  width:  60%;
+  height: 40px;
+  background-color: #647AEC;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
+}
+.demo-block__title {
+  
+  background-color: #FF3F81!important;
+  padding: 10px 10px 10px;
+    margin-right: 20px!important;
+    margin-left: 0px!important;
+height: 20px!important;
+line-height: 20px!important;
+border-radius: 3px!important;
+}
+.con-tags{
+  margin-left: 20px;
+  margin-right: 20px;
+  /* margin-top: 120px; */
+  position: relative;
+}
+
+.cards-view{
+  position: relative;
+  height: 240rpx;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #D1D1D1;
+  border-radius: 5px;
+  }
+
+  .card1{
+    width: 100%;
+    height: 240rpx;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+      background-color: #65B6FF;
+
+  }
+  .card2{
+    width: 100%;
+    height: 160rpx;
+    display: inline-block;
+  }
+
+  .recard{
+
+  height: 44px;
+  width: 40%;
+  background-color: #3F6F9C;
+  position: relative;
+  margin-top: -180rpx;
+  line-height: 44px;
+  color: white;
+  /* 缩进 */
+   Text-indent:20px;
+
+  }
+
+  .recardnoumber{
+  height:44px;
+width:40%;
+position:absolute;
+top:180rpx;
+right:10px;
+line-height:44px;
+color:black;
+Text-indent:20px;
+text-align:right;
+
+  }

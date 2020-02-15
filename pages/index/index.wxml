@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<import src="/pages/pml/raduislaminated.wxml"></import>
+<import src="/pages/index/component/homeitem.wxml"></import>
+<block >
+
+ <view class="searchView" bindtap="searchcik">
+        <view  class="searchViewC">
+          <image class='searchIcon'></image>
+          <text class='plast'>请输入搜索关键字</text>
+        </view>
+    </view>
+
+<i-toast id="toast" />
+<view class="swiper-container">
+  <swiper  indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item.imgUrl}}" class="img" bindtap="swipclick" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='tabseprator'>
+ <view wx:for="{{ t_tabs }}" wx:for-item="icon" wx:key="icon" class="icon-wrap" bind:tap="iconClick"id="{{index}}">
+    <view class="tab-icon">
+<!-- <van-icon custom-style="/static/images/wd.png" /> -->
+    <image src='{{icon.imgUrl}}' style='width:45px;height:45px;'></image>
+    </view>
+    <view class="icon-classname">{{ icon.title }}</view>
+  </view>
+</view>
+<view class='line'></view>
+
+<block> 
+        <!-- <view class='row-view'>
+        <view class='view1' bindtap='jumpTopost'>
+        <view class='fb_title'>发布</view>
+        <view class='fb_tag'> 30秒极速发布 </view>
+        <view class='fb_desc'>
+        <view class='fb_word'>立即查看</view>
+        </view>
+        </view>
+        <view class='view2' bindtap='jumpToTab2'>
+        <view class='new_push_title'>最新发布</view>
+        <view class='chat_point'>3456条话题</view>
+        </view>
+        </view> -->
+  <view class='row-views'>
+  <van-row gutter="10">
+    <van-col span="8" custom-class="sbu1" bindtap='jumpWeb' data-id='{{m_tabs[0].url}}'>
+    <view class='hx1'>{{m_tabs[0].title}}</view>
+    <view class='hx01'>{{m_tabs[0].subTitle}}</view>
+      </van-col>
+    <van-col span="8" custom-class="sbu2" bindtap='jumpWeb' data-id='{{m_tabs[1].url}}'>
+     <view class='hx1'>{{m_tabs[1].title}}</view>
+    <view class='hx01'>{{m_tabs[1].subTitle}}</view>
+    </van-col>
+    <van-col span="8" custom-class="sbu3" bindtap='jumpWeb' data-id='{{m_tabs[2].url}}'>
+     <view class='hx1'>{{m_tabs[2].title}}</view>
+    <view class='hx01'>{{m_tabs[2].subTitle}}</view>
+    </van-col>
+  </van-row>
+  </view>
+</block>
+<view class='line'></view>
+
+<block wx:for="{{ articleList }}" wx:for-item="item" wx:key="item">
+ <template is="h-item" data="{{item}}"></template>
+ 
+</block>
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>  
+
+</block>
+

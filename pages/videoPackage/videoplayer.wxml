@@ -1,0 +1,92 @@
+ <import src="/pages/pml/raduislaminated.wxml"></import>
+<import src='/pages/pml/commVideoCell.wxml'></import>
+<import src="/pages/pml/commentitem.wxml"></import>
+<import src='/pages/findvc/template/topicscell.wxml'/>
+
+
+<view class='xqcontainer'>
+
+<video class='badvideo' src="{{videoDetail.videoUrl}}" controls ></video>
+<view class='title-v'>{{videoDetail.title}}</view>
+<view class='line'></view>
+
+<view class='zz-info'>
+<image class='avator' src='{{videoDetail.wxAvatar}}' bindtap='jumptop'data-id="{{videoDetail.authorId}}" data-type='{{videoDetail.userBtype}}'></image>
+    <view class='n-s'>
+    <view class='author'>{{videoDetail.wxNickname}}</view>
+        <view class='st'>{{videoDetail.publishTime}}</view>
+
+    </view>
+    <button class='gz' wx:if='{{videoDetail.follow==false}}' bindtap='addfocus'>关注</button>
+
+    <button class='gz-ed' wx:if='{{videoDetail.follow==true}}' bindtap='addfocus'>已关注</button>
+</view>
+<view class='line'></view>
+<van-cell
+custom-class='ls'
+  title="课程简介"
+  value=""
+  is-link
+  arrow-direction="{{arrowDirection}}"
+  bind:click='showCollpose'
+/>
+
+<view class="parent" wx:if='{{arrowDirection=="up"}}'>
+  <view class='titx'>{{videoDetail.summary}}</view>
+</view>
+<view class='ctab'>
+
+    <view class="{{menuFixed?'fixed':''}}" id="affix">
+    <view bindtap="nav" class="scrollviewitem {{tab==index?'active':''}}" data-tab="{{index}}" wx:for="{{tabArr}}" wx:key="tabarr">{{item}}</view>
+    </view>
+    <view class='line'></view>
+  </view>
+<!-- <block wx:if='{{tab ==0}}' wx:for='{{videoList}}' wx:key=''>
+<template is='commVideoCell' data='{{tonewvideo,item,provideojp}}'></template>
+
+</block> -->
+ <view class="clea">
+ 
+ <!-- <block wx:for="{{ videoList }}" wx:for-item="item" wx:key="item">
+    <template is="topicscell" data="{{item}}"></template>
+
+</block> -->
+<block wx:if='{{tab ==0}}' wx:for='{{videoList}}' wx:key=''>
+<template is='commVideoCell' data='{{tonewvideo,item,provideojp}}'></template>
+
+</block>
+  </view>
+
+<block wx:if='{{tab ==1}}'>
+   <template is="commentitem" data='{{commentList,isShow}}'></template>
+</block>
+
+ <!-- <view class='action-view' wx:if='{{tab ==1}}'>
+    <view class='dz-view' bindtap='dzAction'> 
+     <image class='dz-img' src='/static/images/dz-new.png'></image>{{likeCount}}
+     </view>
+    <view class='pl-view' bindtap='bplAction'>
+          <image class='pl-img' src='/static/images/pinglu.png'></image>评论
+
+     </view>
+    
+  </view> -->
+
+<view class="release" wx:if='{{tab ==1}}'>
+    <textarea class="text"
+          placeholder-class="input_null" 
+          fixed="true" 
+          maxlength="-1" 
+          show-confirm-bar="false" 
+          cursor-spacing="15" 
+          auto-height="true" 
+          focus="{{releaseFocus}}"
+          placeholder="{{releaseName ==''?'评论':'回复'}} {{releaseName}}"
+          bindinput="inputchange"
+          value='{{inputcontent}}'
+          ></textarea>
+    <view class="submit" bindtap='plAction'>发送</view>
+</view>
+
+</view>
+

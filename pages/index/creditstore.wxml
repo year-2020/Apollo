@@ -1,0 +1,62 @@
+<!--pages/index/creditstore.wxml-->
+<import src="/pages/index/component/jfcell.wxml"></import>
+
+<view class='imgbox'>
+  <image class='ico' mode='scaleToFill' src='{{ico}}'></image>
+  <view class='jf-c'>
+    <view class='jr-jf'>今日积分</view>
+        <view class='jf-num'>{{credits}}</view>
+          <view class='dh-jf'>我的积分:{{totalCredits}}</view>
+    </view>
+    <!-- <button class='yq-btn'  open-type="share">邀请好友得积分</button> -->
+      <view class='spertor'>
+          <view class='phb' bindtap='jumpTocreditphVc'>
+          <image style='width:20px;height:20px;position:relative;top:4px' src='/static/images/phb.jpg'></image>
+          排行榜</view>
+          <view class='dhjl' bindtap='jumpToOrderList'><image style='width:20px;height:20px;position:relative;top:4px' src='/static/images/dhjl.jpg'></image>
+          兑换记录</view>
+        </view>
+        <!-- <view class='zline'></view> -->  
+</view>
+<view class='ctab'>
+      <view class='line'></view>
+
+    <view class="{{menuFixed?'fixed':''}}" id="affix">
+    <view bindtap="nav" class="scrollviewitem {{tab==index?'active':''}}" data-tab="{{index}}" wx:for="{{tabArr}}" wx:key="tabarr">{{item}}</view>
+    </view>
+    </view>
+
+  <!-- <view class='vip-t'>VIP专区</view>
+  <view class='sline'></view> -->
+  <view class='vip-container'>
+      <view class='v1' bindtap=''>
+      <image class='n-vip' mode="aspectFill" src='{{cards[0].imgUrl}}'bindtap='jumpTodetailVc' data-id='{{cards[0].goodId}}'></image>
+        </view>
+      <view class='v2'>
+        <view class='m-vip'>
+              <image class='y-img' mode="aspectFill" bindtap='jumpTodetailVc' data-id='{{cards[1].goodId}}' src='{{cards[1].imgUrl}}'></image>
+
+        </view>
+        <view class='h-vip'>
+                     <image class='h-img' mode="aspectFill" bindtap='jumpTodetailVc' data-id='{{cards[2].goodId}}' src='{{cards[2].imgUrl}}'></image>
+
+        </view>
+
+      </view>
+    </view>
+
+    <view class="table">
+  <block wx:for='{{subjects}}' wx:key='*this'>
+    <view class='table-th' bindtap='jumpTodetailVc' data-id='{{item.goodId}}'>
+      <image class='goods_img'  mode="widthFix" src='{{item.imgUrl}}'></image>
+        <view class='col-view'>
+              <view class='goods-title'>{{item.title}}</view>
+              <view class='goods-des'>{{item.summary}}</view>
+                  <view class='goods-ico'>
+                     <image class='ico-jf' src='/static/images/jf_normal.jpg'></image> {{item.credit}}
+                  </view>
+
+        </view>
+    </view>
+  </block>
+</view>

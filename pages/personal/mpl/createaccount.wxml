@@ -1,0 +1,42 @@
+<template name="create_new_account">
+<block wx:if="{{current ==0}}">
+<view class='input-form'>
+  <i-panel title="">
+    <i-input value="{{ value1 }}" title="用户名" autofocus placeholder="请输入用户名" bind:change="userNameChange"/>
+    <i-input value="{{ value2 }}" type="number" title="密码" placeholder="请输入密码" bind:change="userNameChange"/>
+    <i-input value="{{ value3 }}" type="textarea" title="确认密码" placeholder="请再次输入密码" maxlength="50" bind:change="userNameChange"/>
+    <i-input value="{{ value4 }}" title="手机号码" placeholder="请输入手机号码" bind:change="userNameChange"/>
+  </i-panel>
+
+  <van-cell-group>
+  <van-field
+    value="{{ sms }}"
+    center
+    clearable
+    label="短信验证码"
+    placeholder="请输入短信验证码"
+    border="{{ false }}"
+    use-button-slot
+  >
+    <van-button custom-class="yz-button" slot="button" size="small">发送验证码</van-button>
+  </van-field>
+    </van-cell-group>
+<view class='line'></view>
+    <!-- <i-radio value="{{animal}}" disabled="{{disabled}}" checked="{{checked}}" bindchange="handleAnimalChange"> -->
+    <!-- </i-radio> -->
+      <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    我已阅读并同意<navigator url="" class="weui-agree__link">《用户注册条款》</navigator>
+                </view>
+            </label>
+        </checkbox-group>
+
+ </view>
+
+</block>
+</template>

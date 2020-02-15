@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+      "coincircle": "/pages/personal/mpl/coincircle",
+      "van-icon": "/../../miniprogram_npm//vant-weapp/icon/index"
+          
+  }
+}

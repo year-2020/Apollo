@@ -1,0 +1,53 @@
+<template name="raduisla">
+<!-- <view class='imagev'>imageview</view>
+<view class="layout_horizontal">
+  <view style="flex:1" class='div-relative'>
+<view class="div-a"></view> 
+<view class="div-b"></view> 
+<view class="div-c"></view> 
+  </view>
+  <view style="flex:1" class='num'>{{pepoleNum}}人参与....</view>
+</view> -->
+<view class="videoList01" wx:if="{{testcelltype==1}}">
+        <navigator class="videoListBox" hoverClass="none" url="/pages/videoBao/special/special?id={{item.id}}">
+      <text class="fx_style">【#Apollo话题#百度咨询，最新热点】</text>
+
+            <view class="videoListImg">
+                <image mode="aspectFill" src="http://img3.imgtn.bdimg.com/it/u=2200166214,500725521&fm=26&gp=0.jpg"></image>
+            </view>
+            <!-- <view class="videoListico">
+                <text class="ion videoicon"></text>
+                <text class="ion videotext num">25</text>
+                <text class="ion po comment"></text>
+                <text class="ion commentNum num">44</text>
+            </view> -->
+        </navigator>
+    </view>
+ <view class="videoList" wx:else>
+        <navigator class="videoListBox" bindtap='jumpToPer' data-id='{{item.userId}}' hoverClass="none" url="{{fromMe==1?'':'/pages/videoPackage/videoplayer?videoUrl={{item.videoUrl}}'}}">
+            <view class="videoListImg">
+                <image src="{{fromMe==1?item.avatar:item.imgUrl}}"></image>
+            </view>
+<view class="layout_horizontal" wx:if="{{pepoleNum==1}}">
+  <view style="flex:1" class='div-relative'>
+  <view class="div-a"></view> 
+    <view class="div-b"></view> 
+    <view class="div-c"></view> 
+  </view>
+  <view style="flex:1" class='num'>{{pepoleNum}}人参与....</view>
+  </view>
+<view class="layout_horizontal" wx:else>
+      <view style="flex:4" class='name-v'>{{fromMe==1?item.name:item.wxNickname}}
+      <view class='desc-v'>{{fromMe==1?item.title:item.categoryName}}</view>
+      </view>
+      <view bindtap='likeAction'  style="flex:1;display:flex; justify-content:center; align-items:center;">
+            <image wx:if='{{item.isLiked==false}}' class='like-ico' src=""></image>
+            <image wx:else='{{item.isLiked==true}}' class='like-ico' src=""></image>
+      </view>
+
+
+  </view>
+        </navigator>
+    </view>
+
+</template>

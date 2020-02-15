@@ -1,0 +1,31 @@
+  <import src="../pml/loading.wxml"/>
+<import src="/pages/pml/noNetwork.wxml"></import>
+<import src="/pages/pml/raduislaminated.wxml"></import>
+<import src="/pages/personal/mpl/halfcircle.wxml"></import>
+<import src="/pages/personal/mpl/leveltemplate.wxml"></import>
+
+<!-- 画布大小按需定制 这里我按照手机的大小 -->
+<!-- <canvas  canvas-id="myCanvas"  style="width:{{Width}}px;height:{{Height}}px;"/> -->
+<!-- 生成分享图 这里的操作是把canvas绘制的图预览出来  -->
+<!-- <button class='share' type='primary' bindtap='share'>生成分享图</button> -->
+<!-- 刚开始是隐藏的 生成分享图之后显示, 用一个布尔变量来控制  -->
+<!-- 这里的样式可以自己定义，如大小和位置  -->
+<!-- <view hidden='{{hidden}}' class='preview'>
+  <image src='{{imagePath}}'  style="width:{{Width*0.8}}px;height:{{Height*0.8}}px;"></image>
+  <button type='primary' size='mini' bindtap='save'>保存分享图</button>
+</view> -->
+
+
+<!-- <view class='' bindtap='showMask'>显示遮罩</view>
+
+<view class="mask" hidden="{{flag}}">
+  <view class="maskContent">
+    <image class='share-img' src='{{imagePath}}'></image>
+    <view class='btn'>提交按钮</view>
+  </view>
+  <view class="closeImg" bindtap="closeMask">
+    <image  class="closeImg_image" src="/static/images/zuanshi.png"></image>
+  </view>
+</view>
+<template is='level-t'></template> -->
+<web-view src="{{activityUrl}}" bindload='load_success'></web-view>

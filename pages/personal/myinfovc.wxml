@@ -1,0 +1,18 @@
+<!--pages/personal/myinfovc.wxml-->
+<import src="/pages/personal/mpl/zlcell.wxml"></import>
+
+<view class='i-avator'>
+<image class='avator' src='/static/images/apollo_ico.png'></image>
+</view>
+<view class='name-v'>CICC</view>
+<view class='chat-v'>智能重卡解决方案提出者（微信ID：gaosuwuliuzhongka）</view>
+<button class='focus'>关注</button>
+
+ <view class="{{menuFixed?'fixed':''}}" id="affix">
+         <view bindtap="nav" class="scrollviewitem {{tab==index?'active':''}}" data-tab="{{index}}" wx:for="{{tabArr}}" wx:key="tabarr">{{item}}</view>
+  </view>
+<view class='line'></view>
+  <template is= 'zlcell'></template>
+    <template is= 'zlcell'></template>
+      <template is= 'zlcell'></template>
+        <template is= 'zlcell'></template>

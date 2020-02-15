@@ -1,0 +1,24 @@
+<template name='bds-item'>
+<view class='card'>
+<view class='card__header'>
+<view bind:tap="onClickThumb"class="card__thumb">
+<image class="card__img" mode="aspectFill" src="{{item.avatar}}"></image>
+</view>
+<view class="card__content" bindtap='itemClick'data-id="{{item.userId}}" data-type='{{item.userBtype}}'>
+  <view class=''></view>
+  <view class="card__bottom">
+  <text class="card__price"decode="{{true}}">{{item.title}}</text>
+
+  <view class="card__num nucl">{{item.likeCount}}\t
+  <image class='xihuan' src=''></image>
+  </view>
+  </view>
+<view class="card__title">{{item.name}}</view>
+<view class="sc__title">{{item.summary}}</view>
+
+  </view>
+</view>
+<view class='line'></view>
+
+</view>
+</template>

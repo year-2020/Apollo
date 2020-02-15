@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "积分",
+    "navigationBarBackgroundColor": "#00B1FF",
+        "navigationBarTextStyle": "white",
+    
+  "usingComponents": {
+    "i-steps": "../../dist/steps/index",
+    "i-step": "../../dist/step/index",
+    "van-cell": "/../../miniprogram_npm/vant-weapp/cell/index"
+    
+  }
+}

@@ -1,0 +1,23 @@
+<template name="topicscell">
+
+ <view class="videoList">
+        <navigator class="videoListBox" hoverClass="none" url="/pages/findvcPackage/topicstage?topicId={{item.topicId}}&avatars={{item.avatars}}&commentCount={{item.commentCount}}&imgUrl={{item.imgUrl}}&titletext={{item.name}}">
+            <view class="videoListImg">
+
+                <image style="opacity:0.4;filter:alpha(opacity=40)" src="{{item.imgUrl}}">
+                </image>
+                     <view class='item-title'>{{item.name}}</view>
+
+            </view>
+  <view class="layout_horizontal">
+  <view style="flex:1" class='div-relative'>
+  <image class="div-a" src='{{item.avatars[0]}}'></image> 
+    <image class="div-b" src='{{item.avatars[1]}}'></image> 
+    <image class="div-c" src='{{item.avatars[2]}}'></image> 
+  </view>
+  <view style="flex:1.5" class='num'>{{item.commentCount}}人参与讨论 ></view>
+  </view>
+
+        </navigator>
+    </view>
+</template>

@@ -1,0 +1,30 @@
+
+<import src='topicscell.wxml'/>
+
+<view class='view1'>
+        <view class='fb_title'>{{titletext}}</view>
+        <!-- <view class='fb_tag'>关注</view> -->
+
+        <view class='fb_desc'>
+        <view class='fb_word'>参与讨论APOLLO最新技术话题，了解开发动态</view>
+        </view>
+
+        <image class='big-img' src='{{imgUrl}}'></image>
+
+        <view class="layout_horizontal">
+  <view style="flex:1" class='div-relative'>
+  <image class="div-a" src='{{imgs[0]}}'></image> 
+    <image class="div-b" src='{{imgs[1]}}'></image> 
+    <image class="div-c" src='{{imgs[2]}}'></image> 
+  </view>
+  <view style="flex:4" class='num'>{{commCount}}人参与讨论 ></view>
+  </view>
+    <view class='tab-title' wx:if='{{topicsList.length>0}}'>精选帖子</view>
+     <view class='tab-line' wx:if='{{topicsList.length>0}}'></view>
+    </view>
+
+<view style='margin-top:40px;'>
+ <template is="topicscell"  data='{{topicsList,isShow,photoWidth}}'></template>
+</view>
+  <image src='/static/images/httw.jpg' size="50" class="post" bindtap="onPostClick"/>
+

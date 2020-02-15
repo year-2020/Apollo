@@ -1,0 +1,51 @@
+<!--pages/personal/registervc.wxml-->
+<!-- <view class='container'> -->
+<import src="/pages/personal/mpl/createaccount.wxml"></import>
+<import src="/pages/personal/mpl/registerType.wxml"></import>
+
+<i-steps current="{{current}}" i-class= "regsteps">
+    <i-step status="wait" >
+        <view slot="title">
+              创建账号
+        </view>
+        <view slot="content">
+            <!-- 这里是该步骤的描述信息 -->
+        </view>
+    </i-step>
+    <i-step >
+        <view slot="title">
+            选择注册类型
+        </view>
+        <view slot="content">
+            <!-- 这里是该步骤的描述信息 -->
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            注册成功
+        </view>
+        <view slot="content">
+            <!-- 这里是该步骤的描述信息 -->
+        </view>
+    </i-step>
+</i-steps>
+<template is="create_new_account" data="{{current,isAgree}}">
+</template>
+
+<!-- 显示注册类型的 view -->
+<block wx:if="{{current ==1}}">
+<!-- <view> 选择注册类型的页面</view> -->
+<template is="register_type" data="{{customType,radio1}}">
+</template>
+
+</block>
+<!-- 显示注册成功的 view -->
+<block wx:if="{{current ==2}}">
+<view class='success-view'>
+<image class='sc-img' src='/static/images/absence01.png'></image>
+<view class='sc-text'>恭喜您注册成功</view>
+</view>
+</block>
+
+<i-button i-class='fx-bt' bind:click="nextClick" type="primary">{{actionBt_title}}</i-button>
+<!-- </view> -->

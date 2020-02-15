@@ -1,0 +1,36 @@
+<!--pages/creditvc/exchangevc.wxml-->
+<import src="/pages/creditvc/template/Dialog.wxml" />
+<import src="/pages/pml/commentitem.wxml"></import>
+
+<view class='header-c'>
+<image style="width: {{imagewidth-40}}px; height: {{imageheight-40}}px;display: inline-block;margin-left:20px;margin-right:20px;" src='{{goodsDetail.imgUrl}}'bindload="imageLoad"></image>
+</view>
+    <view class='title-v'>
+        <view class='tag-v' wx:if='{{goodsDetail.tags !=""}}'>{{goodsDetail.tags}}</view>
+         <view class='evo-title-no' wx:if='{{goodsDetail.tags ==""}}'>{{goodsDetail.title}}</view>
+        <view class='evo-title' wx:else>{{goodsDetail.title}}</view>
+        <view class='jf-v'>
+            <image class='jf-ico' src='/static/images/jf_normal.jpg'></image>
+              <view class='jf-no'>{{goodsDetail.credit}}</view>
+            </view>
+     </view>
+      <!-- <view class='line'></view> -->
+    <view class='yx-v'>
+        <!-- <image class='date-img' src='/static/images/jf_normal.jpg'></image> -->
+        <!-- <view class='true-date'>有效期                  2019-1-10至2019-2-10</view> -->
+        {{goodsDetail.summary}}
+    </view>
+   <view class='contenx'>
+  <wxparse data="{{ content }}" type="html" padding="5"></wxparse>
+
+</view>
+      <view class='more-info' bindtap='readmore'>阅读更多信息</view>
+<button class='exchange-now' bindtap='buyRightNow' data-index="0">
+立即购买
+</button>
+<view class='line'></view>
+   <template is="commentitem" data='{{commentList}}'></template>
+
+
+<template is="diaView" data="{{showDialog:showDialog,address,orderprice,imgUrl,categoryId}}" />
+

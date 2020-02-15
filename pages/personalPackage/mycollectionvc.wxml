@@ -1,0 +1,37 @@
+<import src="/pages/personalPackage/template/collectioncell.wxml"></import>
+<!-- <view class="searchView" bindtap="searchcik">
+        <view  class="searchViewC">
+          <image class='searchIcon'></image>
+          <text class='plast'>请输入搜索关键字</text>
+        </view>
+    </view> -->
+    <view class='tags-view'>
+        <view class='tags-container'>
+    <view class="child">
+         <view class='hx01' bindtap='articleAction'>文章</view>
+         <view class='hx1' bindtap='holderAction'>测评</view>
+    </view>  
+    <view class='col-line'></view>
+    <view class="child" >
+     <view class='hx01' bindtap='questionAction'>问答<view class='col-line'></view>
+</view>
+         <view class='hx1' bindtap='holderAction'>商品</view>
+    </view> 
+ <view class='col-line'></view>
+    <view class="child" >
+     <view class='hx01' bindtap='holderAction'>视频</view>
+         <view class='hx1' bindtap='holderAction'>名片</view>
+    </view>  
+        <view class='col-line'></view>
+
+    <view class="child" >
+     <view class='hx01' bindtap='holderAction'>商品</view>
+         <view class='hx1' bindtap='holderAction'>活动</view>
+    </view>  
+        </view>
+    </view>
+<block wx:for="{{ rows }}" wx:for-item="item" wx:key="item">
+  <template is="h-item" data="{{item,fromCollectvc}}"></template>
+</block>
+
+  <view class='no-data' wx:if='{{nodata ==0&&rows.length==0}}'>{{nodatamsg}}</view>

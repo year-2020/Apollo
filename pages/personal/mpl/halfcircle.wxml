@@ -1,0 +1,13 @@
+<template name='halfcircle'>
+<view class='content'> 
+  <canvas canvas-id='bgCanvas' id='canvas-one'  class='canvasI'></canvas>
+  <canvas canvas-id='bgCanvas-left' id='canvas-two'  class='canvasIL'></canvas>
+  <canvas canvas-id="runCanvas" class='canvasII'></canvas>
+<view class='in-jf'>今日积分</view>
+<view class='in-num'>+80</view>
+
+  <view class='jf-btn' >您的积分:1888</view>
+     <view wx:if="{{vip=='1'}}" class='vip_level'>VIP2</view>
+
+ </view> 
+ </template>

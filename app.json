@@ -1,0 +1,136 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/login",
+    "pages/logs/logs",
+    "pages/personal/personal",
+    "pages/personal/aplogin",
+    "pages/personal/registervc",
+    "pages/findvc/findvc",
+    "pages/publish/publish",
+    "pages/publish/publishTemp",
+    "pages/creditvc/creditvc",
+    "pages/index/creditstore",
+    "pages/personal/myinfovc",
+    "pages/creditvc/exchangevc",
+    "pages/index/advanceddev",
+    "pages/index/skilltest",
+    "pages/index/videovc",
+    "pages/personal/businesscard",
+    "pages/creditvc/moreinfo"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/articlevc",
+      "pages": [
+        "addcomm",
+        "articlevc"
+      ]
+    },
+    {
+      "root": "pages/competency",
+      "pages": [
+        "grid",
+        "answer",
+        "wrongQuestion"
+      ]
+    },
+    {
+      "root": "pages/videoPackage",
+      "pages": [
+        "videoplayer",
+        "videopro",
+        "onlineVideo"
+      ]
+    },
+    {
+      "root": "pages/personalPackage",
+      "pages": [
+        "myfocus",
+        "search",
+        "mypublish",
+        "searchResult",
+        "advicevc",
+        "complateInfo",
+        "mycollectionvc",
+        "collectiondetail",
+        "personhome",
+        "personhomec",
+        "mybusinesscard",
+        "editcard",
+        "cardedit",
+        "myliked",
+        "myfollowers"
+      ]
+    },
+    {
+      "root": "pages/creditsubPackage",
+      "pages": [
+        "orderListVc",
+        "creditphVc"
+      ]
+    },
+    {
+      "root": "pages/findvcPackage",
+      "pages": [
+        "topicstage"
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#A09F9D",
+    "selectedColor": "#5096f5",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "社 区",
+        "iconPath": "static/images/home_normal.jpg",
+        "selectedIconPath": "static/images/home_seleted.jpg"
+      },
+      {
+        "pagePath": "pages/findvc/findvc",
+        "text": "问 答",
+        "iconPath": "static/images/find_normal.jpg",
+        "selectedIconPath": "static/images/find_selected.jpg"
+      },
+      {
+        "pagePath": "pages/publish/publishTemp",
+        "text": "发布 问题",
+        "iconPath": "static/images/add_ico.png",
+        "selectedIconPath": "static/images/add_ico.png"
+      },
+      {
+        "pagePath": "pages/creditvc/creditvc",
+        "text": "积 分",
+        "iconPath": "static/images/jf_normal.jpg",
+        "selectedIconPath": "static/images/jf_selected.jpg"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我 的",
+        "iconPath": "static/images/gr_normal.jpg",
+        "selectedIconPath": "static/images/gr_selected.jpg"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": " ",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "i-toast": "../../dist/toast/index",
+    "i-button": "../../dist/button/index",
+    "i-input": "../../dist/input/index",
+    "wxparse": "/../../wxparse/wxparse"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

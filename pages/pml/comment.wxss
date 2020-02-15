@@ -1,0 +1,357 @@
+page {
+    background: #fff;
+}
+
+.Distinguish {
+    padding-bottom: 106rpx;
+    box-sizing: border-box;
+}
+
+.noteContent {
+    min-height: 100rpx;
+    border-top: 2rpx solid #dcdcdc;
+    border-bottom: 2rpx solid #dcdcdc;
+    background: #fff;
+    padding-bottom: 30rpx;
+}
+
+.noteinfoView {
+    height: 74rpx;
+    padding: 30rpx;
+    position: relative;
+}
+
+.noteinfoViewImg {
+    height: 74rpx;
+    width: 74rpx;
+    border-radius: 50%;
+}
+
+.noteinfoViewName {
+    font-size: 30rpx;
+    color: #666;
+    position: absolute;
+    top: 32rpx;
+    left: 120rpx;
+}
+
+.noteinfoViewtime {
+    font-size: 22rpx;
+    color: #999;
+    position: absolute;
+    top: 80rpx;
+    left: 120rpx;
+}
+
+.title {
+    font-size: 34rpx;
+    color: #333;
+    padding: 0 30rpx;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.top {
+    padding-top: 30rpx;
+}
+
+.centent {
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    color: #333;
+    padding: 0 20rpx;
+    line-height: 1.6;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.centent image,.centent img {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.browsing {
+    width: 30rpx;
+    height: 23rpx;
+    position: absolute;
+    right: 92rpx;
+    top: 80rpx;
+}
+
+.browsingNum {
+    position: absolute;
+    right: 5rpx;
+    top: 72rpx;
+    color: #999;
+    font-size: 24rpx;
+    width: 80rpx;
+}
+
+.community {
+    padding-top: 20rpx;
+    position: relative;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.communityText {
+    display: block;
+    background: #fff;
+    width: 100%;
+    text-indent: 56rpx;
+    position: relative;
+    font-size: 30rpx;
+}
+
+.communityText::before {
+    position: absolute;
+    top: 6rpx;
+    left: 30rpx;
+    width: 6rpx;
+    height: 32rpx;
+    display: block;
+    content: '';
+    border-radius: 4rpx;
+}
+
+.communityVlew {
+    padding: 30rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #e5e5e5;
+    position: relative;
+}
+
+.cView {
+    width: 116rpx;
+    height: 44rpx;
+    text-align: center;
+    line-height: 44rpx;
+    font-size: 24rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 40rpx;
+    border: 1rpx solid #5096f5;
+    border-radius: 8rpx;
+    color: #5096f5;
+    z-index: 100;
+}
+
+.sView {
+    width: 106rpx;
+    height: 106rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 17rpx;
+}
+
+.communityInfo {
+    height: 74rpx;
+    position: relative;
+}
+
+.communityInfo>.noteinfoViewName {
+    top: 4rpx;
+    left: 90rpx;
+}
+
+.communityInfo>.noteinfoViewtime {
+    top: 44rpx;
+    left: 90rpx;
+}
+
+.communityCon {
+    margin-top: 30rpx;
+    padding-left: 96rpx;
+}
+
+.communityCom {
+    margin: 24rpx 0 0 96rpx;
+    background: #f3f4f6;
+    padding: 22rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+
+.communityCom .comName01 {
+    color: #46529b;
+}
+
+.communityCom .comName02 {
+    margin: 0 18rpx;
+    color: #46529b;
+}
+
+.commentcomm {
+    display: flex;
+    margin-top: 34rpx;
+}
+
+.commentcomm>view {
+    flex: 1;
+}
+
+.commentcomm>view view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 24rpx;
+    border-right: 1rpx solid #dcdcdc;
+}
+
+.commentcomm text {
+    display: block;
+}
+
+.commentcomm>view:last-child view {
+    border: 0;
+}
+
+.gwige {
+    width: 30rpx;
+    height: 28rpx;
+    display: block;
+    margin-right: 24rpx;
+}
+
+.bomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 106rpx;
+    background: #fff;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+}
+
+.bomNav>view {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.bomNavInut {
+    background: #fff;
+    width: 494rpx;
+    height: 100%;
+    margin: 0 30rpx;
+    border-radius: 10rpx;
+}
+
+.bomNavInut>input {
+    display: block;
+    width: 494rpx;
+    height: 70rpx;
+    text-indent: 42rpx;
+    background: #eee;
+    border-radius: 10rpx;
+}
+
+.plac {
+    color: #b1b1b1;
+    font-size: 32rpx;
+}
+
+.starts {
+    width: 36rpx;
+    height: 34rpx;
+    display: block;
+    text-align: center;
+    margin: 6rpx auto;
+    background-position: center center;
+}
+
+.shareView {
+    width: 30rpx;
+    height: 28rpx;
+    display: block;
+    text-align: center;
+    margin: 8rpx auto;
+}
+
+.bomView {
+    flex: 1;
+    text-align: center;
+}
+
+.bomView>view {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.bomView>view button {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+}
+
+.startsNum {
+    text-align: center;
+    display: block;
+    font-size: 24rpx;
+    width: 100%;
+}
+
+.sele {
+}
+
+.cView {
+    display: none;
+}
+
+.sView {
+    display: none;
+}
+
+.full {
+    color: #46529b;
+    font-size: 28rpx;
+    margin-top: 15rpx;
+}
+
+.imghs>image {
+    width: 100%;
+}
+
+.absenceView {
+    margin-top: 90rpx;
+}
+
+.mome {
+    width: 185rpx;
+    height: 246rpx;
+    margin-top: 100rpx;
+}
+
+.complete {
+    background: #fff;
+    color: #999;
+    width: 100%;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 28rpx;
+}
+
+.hunh {
+    word-wrap: break-word;
+}
+
+.wxParse-p {
+}
+
+.returnindex {
+    width: 90rpx;
+    height: 90rpx;
+    position: fixed;
+    bottom: 145rpx;
+    right: 30rpx;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA8FBMVEUAAAAAav4Aav4Aav4A av4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4A av4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Aav4Ba/5qqP7Y6P/7/f9g ov6jyf////+gx/+lyv8RdP5vq/6Zw/9Tmv5boP6UwP+Iuf9mpv6Atf98s/53sP6Rv/9Ml/6qzf/2+v9Ekv4Fbv6y0v89jv4yiP671//v9v8jf/7E3f8KcP7M4f8Pc/6+2f8gff6Pvv/g7f/q8//d6/9g CPd7AAAAJXRSTlMAFEZslrrW6fH17dvRC0+Rp3DgCHbrWR5cnRbIIinknEioeMMS8LZ66wAAAAFi S0dELLrdcasAAAAHdElNRQfiCw0QOgFcarR6AAAEEklEQVRYw62Z+2OaMBDHM+uztra1r9W+XLvU 0p1Du6qzRdwkTrdp+f//mwWCyOMShPn9QdCEj0dyuRwHIWp9yO3kC8VSmVZ2q3uF/E7uA8mu/drB Ho1p76C2nwmXO6xQiSqHudTGHdWpUvWjNGYen5zSRJ2eHG/KO6sn41wrzzbCnRc2wzkqnCfzPpY3 51Fa/pg0ehdpcI4ulCPZuEQvemg9ao9PDzjxsiHnXVVx3hdw1JYQq1cy3vUNzvsKWkvvaFLizbXE PgmvC9ozP37ToCsjojY28PulL6B9c0+eAHqSmaki43iMzwftAfS90xbAQEK8jM/1Ld7zO0DL/zIE GEqItzF/xvtFECF8WBEPP8fXR+wmAwMQUTm8CgtoJ2QaXldTFFMhyDtDu3BHeYn+tnIiRIHYs4/G qzfU8Rw3f0OB9XXIPZHwvmKO/GDAyESJJ76Bp0irOQIDXxjjHzD6iTXsrkzcQRonI/gxxseKji1g U6xhxwNiI/gLfsl4lM7mYKGjKHg5rI1Hq8Fg8Btp0fnvbdDQf2q6wEOs6Y8bAv9ig+G2oBbST+6U oPv5rLVYaB5w/NbhapljDzhaLFozFFhxpqUmHaqlAP5+BKH5TACX0itojQPzScAOvLcdvcNTIjDP gdUkYBc6VIAXicAqD9Q0CdgWlvFQ8ZoIpA3STAFsJwOb5G67wDtZ6M8KvJWE1szAAiluF1gkJRVw mhpYIorsbQ7PYeCrOMwVwDJRNA7A/jmjD5a30T2BNaO6uZTu9q5IRd7mL+KOBwwuaSlwV9GoL5Ya J3ib0jNj7H1pvyh5ZbJhgr6pSmTv/yFBFVWOnUX3qqWXRbeq4JBFd6rwlUVNVYDNooZqC8igqmKT 0ifiaOopgHnFNtplLklf5Zz9XkRYKluTbvSUTkVMGIoYRqlhCwHzToz4Ne5GTz4h1llczHY/mfPZ XbfZXSqVm4pgjuMCfWYIqMuydkdNeTonFM7ZTR5uGI8+zoFNkO51VcJpcvWh5xzM1XxDb+ipCxjw aJUSIzHRgICMFdChmKZ/GpGfEmNJuzHXfc1DQMuSAf2kHXusMAI70YbAwGMF8uBjgO0LNgOGii6F GNDu+7JDQNcPEWDo0YxcRbdn6S0LP4wDy5Gn+ujjrWGvF23Iwr6Y6hgwVsCJbAUGs3wxDzjt6XTK v3C/mQ4jMegiqUSA3bJjmc30CbAoDisRRIoYmB9S04D5xLGUse402LuKFoNCZZb4SpkYDOxVvaDP wFgjbySloOt60MKJL2GhbvUCE6H31mNSlxSCCDlXZJ9yFRU1v8/36Xn3n4lCxwdpeQdJhdNauoJk jSQqVcn0KplHtl7UJdsvO5OtF8Zdbbd0L8zc7ssFoYZ4/cGNrZSKzuuPRsIF/wCoMAwASMfD3gAA ACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0xMS0xM1QxNjo1ODowMSswODowMON4TCYAAAAldEVYdGRh dGU6bW9kaWZ5ADIwMTgtMTEtMTNUMTY6NTg6MDErMDg6MDCSJfSaAAAAAElFTkSuQmCC");
+    background-size: 100% 100%;
+}

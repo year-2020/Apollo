@@ -1,0 +1,59 @@
+.half-c{
+
+  margin: 0 auto;
+  margin-top: 0rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 60px;
+  width: 94px;
+  background-size:100% 100%;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTQiIGhlaWdodD0iNjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg5Ljc2NyA1OC4wMzhBNDQuOTYgNDQuOTYgMCAwIDAgOTIgNDRDOTIgMjUuMTgzIDgwLjQ1IDkuMDY0IDY0LjA1NCAyLjM0NE0zMC4wNTMgMi4zQzEzLjU5OSA4Ljk5NCAyIDI1LjE0MiAyIDQ0YzAgNC44Mi43NTggOS40NjIgMi4xNiAxMy44MTUiIHN0cm9rZT0iIzk3OTc5NyIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==)
+}
+.jf-btn{
+  /* background-color: green; */
+  position: absolute;
+  width: 80px;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  /* margin: 0 auto; */
+  text-align: center;
+  font-size: 12px;
+  /* 文字不换行*/
+overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
+} 
+.vip_level{
+  position: absolute;
+  top: -10px;
+  /* background-color: white; */
+  width: 25px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 8px;
+  
+}
+.in-jf{
+  /* position: relative; */
+  width: 60px;
+  height: 14px;
+  /* background-color: red; */
+font-size: 10px;
+line-height: 14px;
+text-align: center;
+margin-top: 20px;
+}
+
+.in-num{
+  position: absolute;
+  /* background-color: yellow; */
+  height: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 34px;
+  color: #E51C23;
+}

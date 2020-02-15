@@ -1,0 +1,44 @@
+/* pages/index/videovc.wxss */
+@import "/pages/index/component/videocell.wxss";
+@import "/pages/pml/raduislaminated.wxss";
+@import "/pages/pml/commVideoCell.wxss";
+
+.view1{
+  margin-left: 10px;
+  margin-right: 10px;
+  /* background-color: red; */
+  height: 40px;
+}
+.ctzt{
+  margin: 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.fb_title{
+  color: black;
+  /* background-color: red; */
+  display:inline-block;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.fb_tag{
+float:right;
+/* display:fixed; */
+/* background-color: white; */
+margin-right: 20rpx;
+margin-top: 15px;
+/* border-radius: 8px; */
+font-size: 12px;
+ padding-left:10px; 
+  padding-right:10px; 
+  color: darkgray;
+}
+.jumpBs {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    width: 14rpx;
+    height: 26rpx;
+}

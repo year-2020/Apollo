@@ -1,0 +1,8 @@
+@import "/pages/index/component/videocell.wxss";
+.ctzt{
+  margin: 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
+}

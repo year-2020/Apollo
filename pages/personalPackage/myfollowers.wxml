@@ -1,0 +1,6 @@
+<import src="/pages/personalPackage/template/bdscell.wxml"></import>
+
+<block wx:for="{{ rows }}" wx:for-item="item" wx:key="item">
+  <template is="bds-item" data="{{item}}" ></template>
+</block>
+  <view class='no-data' wx:if='{{nodata ==0}}'>{{nodatamsg}}</view>

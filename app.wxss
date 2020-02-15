@@ -1,0 +1,226 @@
+/**app.wxss**/
+@import 'weui.wxss';
+@import "/wxparse/wxparse.wxss";
+page {
+  color: #333;
+  font-size: 16px;
+  background:white;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 0 100rpx;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.searchIcon {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCRwPLA3MW8pRAAACJ0lEQVQ4y53UXWiNYRwA8J9TJ3Jqi3axGpFdmAslWblRbDdbUadIykdpa0+4GheaiFzgQqbJxyMUSz6nFWoKN0tNckHiKGqF2gUXw0TnxsV7jtmnc/xv3vf9v8/v/T/9n/d5ZhgXscI6zZaqlZH3Sc5DPWHQJDFjDKyyT5sMRnzwzUwLVIJ79ocX0+C43kWVhpzTOzow1spqVYdOe0N+UhyP6DDioK6xAwpvNzuuWr+14esEHI/okJMNb00RscoNDZ5ZHX4Uc6nCdzvkrJqaEj5r0qfe+TGVY5V3WDZ5R8etxFN1NoSe0cqHVdr9b0r4ajuOx3QBxyqtcuHSvymEAdcstLFYeb20k6VR0IVNRdyIntJtGDBkTTLxlHq58LmMygzIWJTgGiW0aky8QU2C076UiX9hToLJlIln4meCB5P5lxHz8DHBryyJs8vC9fJeJ/ixtObSZaxVpz/ZeSk35bWWUXcXria3qfDJbU2xocS6NdoMuV7AOCDvdKwoSV+Qcai4o1OE9/aqc7m4V6ape0KTvhCLzykInbpl3Zy+6/GMdsO2jmZShWuLblnP48qpehwf2WFEpcOj2b9Pzz2OSut1qrgUhfxK27RKu6XdNaucDTsnYOJix2Qx7Lm3fpplvhWq8dK+cJ84210NurWE/DicTNAWjZYX/vi8N564Egb+vE/4VdtDfgL+M6jCXN8NTzzFY9oda92yeUo8bd8T3vtfmJh20YPfQhmjjJUuX1oAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDktMjhUMTU6NDQ6MTMrMDg6MDC7sljrAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA5LTI4VDE1OjQ0OjEzKzA4OjAwyu/gVwAAAABJRU5ErkJggg==);
+    background-size: 100% 100%;
+}
+
+#affix .active,.sele,.scll .active,.public_color {
+    color: #006afe;
+}
+/* .communityText::before, */
+/* .active::after, */
+/* .recordText::after, */
+/* .preservation>button,  */
+.active::after,
+/* .public_bgcolor, */
+.titleText::before
+ {
+    background: #006afe;
+}
+
+/* .choiceView>.sle {
+    color: #006afe;
+    border: 2rpx solid #006afe;
+} */
+/* 横着的分割View样式 */
+/*分割线样式*/
+.line{
+/* margin: 5px ; */
+height: 2rpx;
+background-color: #EBEBEB;
+margin:0px 0px 0px auto;
+margin-left:20px;
+margin-right:20px;
+
+
+}
+.jumpBs {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAQAAADCOPeRAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCR4JLx7NTGx1AAABSklEQVQoz23RTyjecRwH8Nd+jJQ44GQ3tEg5YKTV419PbS2ZyYHSLltRO7k4ujnIlXJZVk7+rKYepcbz1Mqf2+K4OVFKEYmwaQdTHr/v9/p+9fl8+r6ffJwwbNYnfwVfTv2iQo0qLbsNgcgk6LcoLzwh40onnmvw1U0c8MO5JKq0mH9MIjBpGLT5rjgEmPbeLZqtKgkBZg36gxfSykKAOe/coFbGsxDgm26XqJa+J9mAlDcuUWFTZQiwpsMZyqXVhAAbko5RbksyBNjS6gSFUmGA+3bDoM6aUpx7mxuIm6wqwpEOO/EJif/xgRY78RXtVhRhT6tf8Ru6pBTgt8RdnA16LMjHrpf2410MmPcUP7U7jLf5wRcRtiUcPdx6B4bMiJCRdJp9dYRRU2Dd68cxkRHjYNkrF/Ffi4yBJb2uQr8e+ezajD7X4c7+AX/DUaklji86AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA5LTMwVDA5OjQ3OjMwKzA4OjAw0EjyiQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wOS0zMFQwOTo0NzozMCswODowMKEVSjUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAAElFTkSuQmCC);
+    background-size: 100% 100%;
+}
+.videoicon {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCxMSBBNdVCqNAAACyUlEQVQ4y43VX0zWdRTH8Re/ANMRCiyodeFyWMr0IhYXtmUXMdmympGik5W21dfsKh+ScrWxyCzHsNpa5q8Mtv7IoihtbP7Z3Ix14WbdhHuWZLOL5sCABhcK2uiCPz7wPE94Lj/nvL9/zvl+z8k5JM0WWq9alaVKMOiSc07pDtfmBubMgUsl7FSYvqIRB7WEwezw81osQb/vnZE0jCIVHrFBKYY1hLZMcL7P1OOCJp3+nZYDiHNt9JZytNsRxid90Qx6TL0J+6zWcROdWeJG6LDKfmzXFefPhtvUuG6T143LYmEsvKbOdevFqfALtpqwxbfmsdCpHtvi56bhMi14R9d86BS+H61xySTcaLGkN1Miyv1mSLNFGfkmvyuym5xDi/QrsNnXKe5WCfCXRkfCxFw63uKIEWWRJxW4POe2Jehx2T2+9FNclbb3N/oVejxSja704jjtfu8as8bZuD2+e3bhHEV15EH8mPFuo/ao8J0c21yI98QLUnxnUBVZhmTW5P4Raj2qV4F9kvFDM3oSSyN3YOh/i3PaA14y5N6UpA6jJHJrlidDZGR0KrtZLa7xqw8s0efpGbEIg5GLWJmVvC/udtwKI16xKpyd0StwKfIz1mYEFzug12MmfGJ5aA2pX2YtzkVOodZtaeg6fXbJ06MyhDAw6yJ5nsLJXMeMussmHSnev7EGf9odOjOcqc6d/tEdueojNEt9Agf1GvCGlTKg8e2a8XEYi3DAsOWzftVFq5V529WMudhrmUEtk19yQANeVTdfsSHeqgG7wtB0J2nTji9svgW0HYfD55A7pe5Q4gkdKjW5lgVcaK8EfvDipDL96MZtdBiNzntWXhqYH293XgKfqg03JtXZTf8Z702NmKN6JF1BqRUetkExrng5fHUzfO64KZawU3GGUw/50PthOFXKyTDoFqixTqVyhRjR5xcnnAxpHf0/dY3Q77ZYRD0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMTEtMTlUMTg6MDQ6MTkrMDg6MDB5A/iPAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTExLTE5VDE4OjA0OjE5KzA4OjAwCF5AMwAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=);
+    background-size: 100% 100%;
+}
+.comment {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAcCAQAAABFCR6XAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCRwPMy06b+QHAAAA+0lEQVQ4y83TsWoCQRDG8f8FA3ZpIunMC6S4ztK8QsDyCq3mTHHgA5yFdha2OlUgXifYROyEPIKkSqXpU2kngSSFBvGEk7lLcdst7PyWb2bX0REeWVbk6E8mACgAsGaRqtrl6o9YyH0aQV+pwkXWGHkhCkfZQgIuE05/MZbHRIKA6zNXNrUl2yQiRM4QkzgQI2TI0N6LfEzk34fqn7RziS+fBoLuyVBdpjxZiAHN2NNaMTcFkTZtey/yMZF8ELt2VvTDUPPNC6Fsjokit6aLAx7Ul9lu42gHzxjnhiIAEXe44Niza5lnqod9CgJAG/T2n+EtJQFaok+Nd+q/gKswxzJktR0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDktMjhUMTU6NTE6NDUrMDg6MDC3JXcxAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA5LTI4VDE1OjUxOjQ1KzA4OjAwxnjPjQAAAABJRU5ErkJggg==);
+    background-size: 100% 100%;
+}
+
+
+.bottomButton {
+    width: 93%;
+    /* position: fixed; */
+    /* bottom: 0; */
+    left: 0;
+    z-index: 10;
+    height: 80rpx;
+    padding: 20rpx 0;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+.bottomButtonCenter {
+    justify-content: center;
+}
+
+.bottomButtonDetail {
+    padding-bottom: 50rpx;
+}
+
+.bottomButtonDetailF {
+}
+
+.bottomButton .buttonDefault {
+    width: 33%;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+}
+
+.bottomButton .buttonMiddleL {
+    width: 48%;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+}
+
+.bottomButton .buttonMiddleR {
+    width: 48%;
+    color: #FFFFFF;
+    background: linear-gradient(51deg,#3949AB 0%,#5C6BC0 100%);
+}
+
+.bottomButton .buttonPrimaryDisabled {
+    width: 63%;
+    background-color: #E3E3E3;
+    color: #999999;
+}
+
+.bottomButton .buttonPrimary {
+    width: 63%;
+    background: linear-gradient(51deg,#3949AB 0%,#5C6BC0 100%);
+    color: #FFFFFF;
+}
+
+.bottomButton .buttonPrimaryBig {
+    width: 100%;
+    color: #FFFFFF;
+    background: linear-gradient(51deg,#3949AB 0%,#5C6BC0 100%);
+}
+
+.bottomButton .buttonPrimaryBigDisabled {
+    width: 100%;
+    background-color: #E3E3E3;
+    color: white;
+}
+
+.bottomButton .buttonDefaultBig {
+    width: 100%;
+    color: #333333;
+    background: #FFFFFF;
+    box-shadow: 0 0 4rpx 0 rgba(188,188,188,0.50);
+}
+
+.coverView {
+    width: 93%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    height: 80rpx;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+    padding-top: 20rpx;
+    padding-bottom: 50rpx;
+    display: flex!important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+}
+
+.coverView .buttonPrimaryBig,.coverView .buttonPrimary {
+    background-color: #3949AB;
+    border: 1px solid #3949AB;
+}
+
+@-webkit-keyframes moveLR {
+    0% {
+        opacity: 0.25;
+        left: -3%;
+    }
+
+    3% {
+        left: 0%;
+    }
+
+    92% {
+        left: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+@keyframes moveLR {
+    0% {
+        opacity: 0.25;
+        left: -3%;
+    }
+
+    3% {
+        left: 0%;
+    }
+
+    92% {
+        left: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.bottomButton .lineMove {
+    position: absolute;
+    top: 0rpx;
+    height: 120rpx;
+    margin-top: -20rpx;
+    left: 0rpx;
+    width: 30rpx;
+    background-color: #ffffff;
+    filter: blur(16rpx);
+    transform: rotate(-25deg);
+    animation: moveLR 2s linear infinite;
+}

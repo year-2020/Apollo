@@ -1,0 +1,22 @@
+<template name='gz-item'>
+<view class='card'>
+<view class='card__header'>
+<view bind:tap="onClickThumb"class="card__thumb">
+<image class="card__img" mode="scaleToFill" src="{{item.wxAvatar}}"></image>
+</view>
+<view class="card__content" bindtap='itemClick'data-id="{{fromCollectvc==1?item.collectionId:(item.articleId !=null?item.articleId:item.questionId)}}">
+  <view class=''></view>
+  <view class="card__bottom">
+  <view class="card__price">{{item.asummary}}{{item.atitle}}</view>
+
+  <view class="card__num nucl">{{item.likeCount}}\t
+  <image class='xihuan' src=''></image>
+  </view>
+  </view>
+<view class="card__title">{{item.wxNickname}}</view>
+  </view>
+</view>
+<view class='line'></view>
+
+</view>
+</template>

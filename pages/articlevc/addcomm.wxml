@@ -1,0 +1,8 @@
+<view class='input_detail'>
+ <textarea class='input_title' style='height:140px;margin-right:5px;font-size: 13px;' bindinput='inputContent' rows="1" placeholder="描述问题详情，以及需要寻求的帮助." maxlength="500" hidden='{{dleg3}}'>
+ </textarea>
+ <!-- {{currentContentLen|0}}/{{detailnoteMaxLen}} -->
+  <view class='lenLabel'>{{currentContentLen|0}}/{{detailnoteMaxLen}}</view>
+
+</view>
+<button class='post-comm' bindtap='postAction'>发布</button>

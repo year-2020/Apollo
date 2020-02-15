@@ -1,0 +1,55 @@
+/* pages/personal/aplogin.wxss */
+.authorization {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    background: #fff;
+    text-align: center;
+}
+.huanying {
+    color: #333333;
+    font-size: 54rpx;
+    padding-top: 100rpx;
+}
+.username{
+  margin-top: 170rpx;
+  height: 40px;
+  text-align: left;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+  border: 1PX solid gray;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 5px;
+
+}
+.password{
+  border-radius: 5px;
+  margin-top: 25px;
+  height: 40px;
+  text-align: left;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+  border: 1PX solid gray;
+  font-size: 14px;
+  padding-left: 5px;
+
+}
+.login-account{
+  margin-top: 60rpx;
+  color: white;
+  border: 1PX solid #2593FB;
+  margin-left: 84rpx;
+  margin-right: 84rpx;
+  font-size: 30rpx;
+  background: #2593FB;
+  height: 40px;
+  display: flex;
+  /* 横轴 */
+  justify-content: center;
+  /* 纵轴 */
+  align-items: center;
+ }

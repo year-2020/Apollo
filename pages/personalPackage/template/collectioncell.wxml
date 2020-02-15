@@ -1,0 +1,24 @@
+<template name='h-item'>
+<view class='card'>
+<view class='card__header'>
+<view bind:tap="onClickThumb"class="card__thumb">
+
+<image class="card__img"  mode="aspectFit" src="{{item.imgUrl !=''?item.imgUrl:'/static/images/picholder.jpg'}}"></image>
+
+
+<!-- <image class="card__img" wx:else mode="aspectFit" src="{{item.imgUrl !=''?item.imgUrl:'/static/images/picholder.jpg'}}"></image> -->
+</view>
+<view class="card__content" bindtap='itemClick'data-id="{{item.id}}" data-type='{{item.jtype}}'>
+<view class="card__title multi-ellipsis--l2">{{item.title}}</view>
+<view class="card__bottom">
+<view class="card__price">{{item.wxNickname}}</view>
+<view class="card__num nucl">
+<image class='xihuan' src=''></image>
+</view>
+</view>
+</view>
+</view>
+<view class='line'></view>
+
+</view>
+</template>

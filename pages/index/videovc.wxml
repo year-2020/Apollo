@@ -1,0 +1,40 @@
+ <import src="/pages/index/component/videocell.wxml"></import>
+ <import src="/pages/pml/raduislaminated.wxml"></import>
+ <import src='/pages/pml/commVideoCell.wxml'></import>
+<!-- <view class='view1' wx:if='{{onlineDic.list.length>0}}' bindtap='jumpToOnlineVideos' data-id='{{onlineDic.id}}'>
+        <view class='fb_title'>{{onlineDic.title}}</view>
+        <view class='fb_tag'> 查看更多</view>
+          <text class="jumpBs"></text>
+    </view>
+    <view class='ctzt'>
+    <block wx:for='{{onlineDic.list}}'wx:key=''>
+    <template is="videocell" data='{{item}}'></template>
+    </block>
+    </view> -->
+
+    <view class='line'></view>
+<view class='view1' wx:if='{{proVideoDic.list.length>0}}' bindtap='jumpToPro' data-id='{{proVideoDic.id}}'>
+        <view class='fb_title'>{{proVideoDic.title}}</view>
+        <view class='fb_tag'> 查看更多 ></view>
+          <!-- <text class="jumpBs"></text> -->
+    </view>
+  <view class='ctzt'>
+  <block wx:for='{{proVideoDic.list}}'wx:key=''>
+ <template wx:if='{{index==0}}' is="videocell" data = '{{item}}'></template>
+ <template wx:if='{{index>=1}}' is="commVideoCell" data='{{item}}'></template>
+  </block>
+      </view>
+
+  <view class='view1' wx:if='{{publicVideoDic.list.length>0}}' bindtap='jumpToPro' data-id='{{publicVideoDic.id}}'>
+        <view class='fb_title'>{{publicVideoDic.title}}</view>
+        <view class='fb_tag'> 查看更多 ></view>
+    </view>
+  <view class='ctzt'>
+    <block wx:for='{{publicVideoDic.list}}' wx:key=''>
+    <template wx:if='{{index==0}}' is="videocell" data = '{{item}}'></template>
+    <template wx:if='{{index>=1}}' is="commVideoCell" data='{{item}}'></template>
+
+    </block>
+  
+  </view>
+

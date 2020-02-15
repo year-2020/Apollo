@@ -1,0 +1,18 @@
+<template name="register_type">
+  <!-- 单选 -->
+<view class='rs-container'>
+  
+<van-radio-group 
+value="{{ radio1 }}"
+ data-key="radio1" 
+ custom-class="vip-radio-group" 
+ bind:change="customTypeChange"
+ wx:for="{{ customType }}" 
+ wx:for-item="item" 
+ wx:for-index="index" 
+ wx:key="item">
+<van-radio name="{{index}}" custom-class="vip-radio">{{item}}</van-radio>
+<view class='space-view'></view>
+</van-radio-group>
+</view>
+</template>

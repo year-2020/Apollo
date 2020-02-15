@@ -1,0 +1,43 @@
+
+<image class="ad-img" src="/static/images/jjkf.jpg" ></image>
+
+<view class="wrap">
+
+<!--我自己的排名信息-->
+<block wx:for='{{rows}}'>
+<view class="weui-flex my">
+    <view class="weui-flex__item align-center">
+    {{(index>2||index==3)?index+1:''}}
+      <image wx:if='{{index==0}}' src='/static/images/1.png'></image>
+            <image wx:if='{{index==1}}' src='/static/images/2.png'></image>
+
+      <image wx:if='{{index==2}}' src='/static/images/3.png'></image>
+
+    </view>
+    <view class="weui-flex__item item2 ">
+    <image src="{{item.wxAvatar}}"></image>
+    </view>
+    <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickname}}</view>
+    <view class="weui-flex__item align-center font_bold">{{item.credits}}积分</view>
+</view>
+</block>
+
+<!--前50名排名-->
+<view wx:for="{{users}}">
+
+<view class="weui-flex">
+    <view class="weui-flex__item align-center">{{index+1}}</view>
+    <view class="weui-flex__item item2 ">
+    <image src="{{item.avatarUrl}}"></image>
+    <span style="vertical-align:middle;">{{item.nickName}}</span>
+    </view>
+    <view class="weui-flex__item align-center font_green font_bold">{{item.score}}</view>
+    <view class="weui-flex__item align-center font_bold">{{item.suportor}}</view>
+</view>
+</view>
+<!-- <view class="btn_share">
+<span class="btn1" catchtap="backToGame">返回游戏</span>
+</view> -->
+</view>
+<!--提示分享-->
+<view class="weixin-share" hidden="{{isShare}}"></view>
