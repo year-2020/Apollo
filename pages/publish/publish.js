@@ -1,6 +1,5 @@
 // pages/publish/publish.js
 import cookies  from '../../vendor/weapp-cookie/dist/weapp-cookie'
-const api = require('../../utils/api.js')
 var app = getApp();
 
 Page({
@@ -131,7 +130,7 @@ Page({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: api.baseURL + '/community/upload/questionFile',
+            url: app.api.baseURL + '/community/upload/questionFile',
             filePath: tempFilePaths[i],
             name: 'questionFile',
             header: {
