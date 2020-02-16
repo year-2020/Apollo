@@ -38,7 +38,7 @@ wx.navigateTo({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: 'https://apollodev.apollo.auto/community/card/ocr',
+            url: 'http://testbox.xinnet.com/community/card/ocr',
             filePath: tempFilePaths[i],
             name: 'file',
             header: {

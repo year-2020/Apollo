@@ -28,7 +28,7 @@ Page({
     
         api._fetch({
           url: '/wxAuth/authorization/login',
-          data: { appid: 'wxc8ce46632dc823f6', code: res.code, inviteOpenid: getApp().globalData.inviteOpenid},
+          data: { appid: 'wx439876bd3be664f1', code: res.code, inviteOpenid: getApp().globalData.inviteOpenid},
           method: 'post'
         }).then(function (res) {
           console.info('login-callback')
