@@ -1,8 +1,6 @@
 //app.js
 import cookies from './vendor/weapp-cookie/dist/weapp-cookie'
-
-// const api = require('/utils/api.js')
-const api = require("/utils/api.js")
+const api = require("./utils/api.js")
 App({
   onLaunch: function () {
 
@@ -116,5 +114,4 @@ queryUserInfo:function(){
     stateList: [],
   },
   api: api
-
 })

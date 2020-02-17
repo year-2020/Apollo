@@ -89,7 +89,7 @@
   text-align: center;
   width: 14.2%;
   position: relative;
-  color: white;
+  color: #fff;
   z-index: 2;
   float: left;
 

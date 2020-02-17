@@ -43,8 +43,8 @@ Page({
     // var newArray=new Array();
     // newArray[0]="1";
     // newArray[1]="2";
-    // getApp().globalData.array.push(newArray);
-    // console.log("questionNum:" + getApp().globalData.array.length);
+    // app.globalData.array.push(newArray);
+    // console.log("questionNum:" + app.globalData.array.length);
     wx.request({
       url: 'https://www.apollodev.club/api/questions',
       method: 'GET',
@@ -149,7 +149,7 @@ Page({
           userResult = true;
           score = score + 10;
           // 将成绩存到app缓存中
-          getApp().globalData.score = score;
+          app.globalData.score = score;
           that.setData({
             score: score,
           });
@@ -163,13 +163,13 @@ Page({
       nowAnswerResult.yourChose = choseItem;
       console.log("nowAnswerResult", nowAnswerResult);
       if (userResult == true) {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult)
       }
       else {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult);
+        app.globalData.nowAnswerResultList.push(nowAnswerResult);
         // 将错题添加到错题集
-        //getApp().globalData.wrongAnswerList.push(nowQuestion)
-        getApp().globalData.wrongAnswerList.push(nowAnswerResult)
+        //app.globalData.wrongAnswerList.push(nowQuestion)
+        app.globalData.wrongAnswerList.push(nowAnswerResult)
       }
       that.setData({
         choseA: true,
@@ -204,7 +204,7 @@ Page({
         if ('B' == answer) {
           userResult = true;
           score = score + 10;
-          getApp().globalData.score = score;
+          app.globalData.score = score;
           that.setData({
             score: score,
           });
@@ -217,12 +217,12 @@ Page({
       nowAnswerResult.userResult = userResult;
       nowAnswerResult.yourChose = choseItem;
       if (userResult == true) {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult)
       }
       else {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult);
-        //getApp().globalData.wrongAnswerList.push(nowQuestion)
-        getApp().globalData.wrongAnswerList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult);
+        //app.globalData.wrongAnswerList.push(nowQuestion)
+        app.globalData.wrongAnswerList.push(nowAnswerResult)
       }
       that.setData({
         choseB: true,
@@ -258,7 +258,7 @@ Page({
         if ('C' == answer) {
           userResult = true;
           score = score + 10;
-          getApp().globalData.score = score;
+          app.globalData.score = score;
           that.setData({
             score: score,
           });
@@ -271,12 +271,12 @@ Page({
       nowAnswerResult.userResult = userResult;
       nowAnswerResult.yourChose = choseItem;
       if (userResult == true) {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult)
       }
       else {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult);
-        //getApp().globalData.wrongAnswerList.push(nowQuestion)
-        getApp().globalData.wrongAnswerList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult);
+        //app.globalData.wrongAnswerList.push(nowQuestion)
+        app.globalData.wrongAnswerList.push(nowAnswerResult)
       }
       that.setData({
         choseC: true,
@@ -311,7 +311,7 @@ Page({
         if ('D' == answer) {
           userResult = true;
           score = score + 10;
-          getApp().globalData.score = score;
+          app.globalData.score = score;
           that.setData({
             score: score,
           });
@@ -324,15 +324,15 @@ Page({
       nowAnswerResult.userResult = userResult;
       nowAnswerResult.yourChose = choseItem;
       // if (this.data.choseA == false && this.data.choseB == false && this.data.choseC == false && this.data.choseD == false) {
-      //   getApp().globalData.wrongAnswerList.push(nowAnswerResult)
+      //   app.globalData.wrongAnswerList.push(nowAnswerResult)
       // };
       if (userResult == true) {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult)
       }
       else {
-        getApp().globalData.nowAnswerResultList.push(nowAnswerResult);
-        //getApp().globalData.wrongAnswerList.push(nowQuestion)
-        getApp().globalData.wrongAnswerList.push(nowAnswerResult)
+        app.globalData.nowAnswerResultList.push(nowAnswerResult);
+        //app.globalData.wrongAnswerList.push(nowQuestion)
+        app.globalData.wrongAnswerList.push(nowAnswerResult)
       }
       that.setData({
         choseD: true,
@@ -390,7 +390,7 @@ Page({
       nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
       nowAnswerResult.userResult = false;
       nowAnswerResult.yourChose = "未选";
-      getApp().globalData.wrongAnswerList.push(nowAnswerResult)
+      app.globalData.wrongAnswerList.push(nowAnswerResult)
     };
     if (nowQuestionNumber + 1 < questionNum) {
       that.setData({

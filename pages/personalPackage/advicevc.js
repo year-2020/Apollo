@@ -117,7 +117,7 @@ Page({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: 'http://testbox.xinnet.com/community/upload/questionFile',
+            url: app.api.baseURL + '/community/upload/questionFile',
             filePath: tempFilePaths[i],
             name: 'questionFile',
             header: {
@@ -176,7 +176,7 @@ Page({
   uploadimg: function () {//这里触发图片上传的方法
     var pics = this.data.images;
     app.uploadimg({
-      url: 'http://testbox.xinnet.com/community/upload/questionFile',//这里是你图片上传的接口
+      url: app.api.baseURL + '/community/upload/questionFile',//这里是你图片上传的接口
       path: pics//这里是选取的图片的地址数组
     });
   },

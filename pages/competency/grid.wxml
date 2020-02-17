@@ -1,4 +1,48 @@
-<view class='login-icon'>
+
+<image class="ad-img" src="/static/images/jjkf.jpg" ></image>
+
+<view class="wrap">
+
+<!--我自己的排名信息-->
+<block wx:for='{{rows}}'>
+<view class="weui-flex my">
+    <view class="weui-flex__item align-center">
+    {{(index>2||index==3)?index+1:''}}
+      <image wx:if='{{index==0}}' src='/static/images/1.png'></image>
+            <image wx:if='{{index==1}}' src='/static/images/2.png'></image>
+
+      <image wx:if='{{index==2}}' src='/static/images/3.png'></image>
+
+    </view>
+    <view class="weui-flex__item item2 ">
+    <image src="{{item.wxAvatar}}"></image>
+    </view>
+    <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickname}}</view>
+    <view class="weui-flex__item align-center font_bold">{{item.credits}}积分</view>
+</view>
+</block>
+
+<!--前50名排名-->
+<view wx:for="{{users}}">
+
+<view class="weui-flex">
+    <view class="weui-flex__item align-center">{{index+1}}</view>
+    <view class="weui-flex__item item2 ">
+    <image src="{{item.avatarUrl}}"></image>
+    <span style="vertical-align:middle;">{{item.nickName}}</span>
+    </view>
+    <view class="weui-flex__item align-center font_green font_bold">{{item.score}}</view>
+    <view class="weui-flex__item align-center font_bold">{{item.suportor}}</view>
+</view>
+</view>
+<!-- <view class="btn_share">
+<span class="btn1" catchtap="backToGame">返回游戏</span>
+</view> -->
+</view>
+<!--提示分享-->
+<view class="weixin-share" hidden="{{isShare}}"></view>
+
+<!-- <view class='login-icon'>
   <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' circular='{{circular}}'>
       <block wx:for="{{imgUrls}}">
         <swiper-item>
@@ -6,7 +50,7 @@
         </swiper-item>
       </block>
   </swiper>
-</view>
+</view> -->
 <!-- 
 <i-grid>
     <i-row>
@@ -27,20 +71,33 @@
     </i-row>
 </i-grid> -->
 
-
-<i-grid>
+<view class="footer">
+  <view class="footer-item" bindtap='beginAnswer'>
+    <view class="footer-wrap">
+      <image src="../../static/images/bj_ico.jpg"></image>
+      <view class="text">测评一下</view>
+    </view>
+  </view>
+  <view class="footer-item" bindtap='openWrongQuestion'>
+    <view class="footer-wrap">
+      <image src="../../static/images/gr_selected.jpg"></image>
+      <view class="text">我的题库</view>
+    </view>
+  </view>
+</view>
+<!-- <i-grid class="footer">
   <i-row>
     <i-grid-item bindtap='beginAnswer'>
             <i-grid-icon >
-                <i-icon size="24" type="addressbook" />
+                <i-icon size="12" type="addressbook" />
                 <i-grid-label >考试中心</i-grid-label>
             </i-grid-icon>
         </i-grid-item>
     <i-grid-item bindtap='openWrongQuestion'>
             <i-grid-icon>
-                <i-icon size="24" type="computer" />
+                <i-icon size="12" type="computer" />
                 <i-grid-label>我的错题</i-grid-label>
             </i-grid-icon>
         </i-grid-item>
   </i-row>
-</i-grid>
+</i-grid> -->

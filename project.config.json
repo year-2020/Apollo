@@ -60,6 +60,13 @@
 					"id": -1,
 					"name": "pages/competency/answer",
 					"pathName": "pages/competency/answer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/competency/grid",
+					"pathName": "pages/competency/grid",
 					"scene": null
 				}
 			]

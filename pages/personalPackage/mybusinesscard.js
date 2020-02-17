@@ -38,7 +38,7 @@ wx.navigateTo({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: 'http://testbox.xinnet.com/community/card/ocr',
+            url: app.api.baseURL + '/community/card/ocr',
             filePath: tempFilePaths[i],
             name: 'file',
             header: {
