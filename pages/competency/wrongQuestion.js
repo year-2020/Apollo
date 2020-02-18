@@ -1,8 +1,6 @@
 var that;
 const app=getApp()
 Page({
-
-
   data: {
     questionList: [],
     nowQuestion: [],
@@ -25,18 +23,19 @@ Page({
     this.setData({
       title:options.title
     })
-    var wrongAnswerList=app.globalData.wrongAnswerList;
+    var wrongAnswerList = app.globalData.wrongAnswerList;
     console.log("wrongAnswerList",wrongAnswerList);
-
-    for (var i = 0; i < wrongAnswerList.length; i++) {
-      for (var j = i + 1; j < wrongAnswerList.length; j++) {
-        if (wrongAnswerList[i].question.id == wrongAnswerList[j].question.id) {
-          wrongAnswerList.splice(i,1);
-        }
-      }
-    }
+    // 删除重复题
+    // for (var i = 0; i < wrongAnswerList.length; i++) {
+    //   for (var j = i + 1; j < wrongAnswerList.length; j++) {
+    //     if (wrongAnswerList[i].question.id == wrongAnswerList[j].question.id) {
+    //       wrongAnswerList.splice(i,1);
+    //     }
+    //   }
+    // }
     var questionSum = 10;
     if (wrongAnswerList.length != 0){
+      console.log("wrongAnswerList2", wrongAnswerList[0]);
       that.setData({
         questionList: wrongAnswerList,
         nowQuestion: wrongAnswerList[0],
@@ -100,25 +99,42 @@ Page({
         showAnswer: false
       })
   },
-  //下一题
-  after1: function () {
+
+  // 上一题
+  toPrev: function () {
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var questionList = that.data.questionList;
     var questionListLength = that.data.questionListLength;
-    if (nowQuestionNumber + 1 < questionListLength) {
-      nowQuestionNumber++;
+    nowQuestionNumber--;
+    that.setData({
+      nowQuestion: questionList[nowQuestionNumber],
+      nowQuestionNumber: nowQuestionNumber,
+      after: false
+    })
+    if (nowQuestionNumber === 0) {
       that.setData({
-        nowQuestion: questionList[nowQuestionNumber],
-        nowQuestionNumber: nowQuestionNumber,
-        before: false
+        before: true
       })
-    } else {
+    }
+  },
+  //下一题
+  toNext: function () {
+    var nowQuestionNumber = that.data.nowQuestionNumber;
+    var questionList = that.data.questionList;
+    var questionListLength = that.data.questionListLength;
+    nowQuestionNumber++;
+    that.setData({
+      nowQuestion: questionList[nowQuestionNumber],
+      nowQuestionNumber: nowQuestionNumber,
+      before: false
+    })
+    if (nowQuestionNumber + 1 === questionListLength) {
+      console.error("11")
       that.setData({
         after: true
       })
     }
   },
-
   after10: function () {
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var questionList = that.data.questionList;
@@ -136,25 +152,6 @@ Page({
       })
     }
   },
-  // 上一题
-  before1: function () {
-    var nowQuestionNumber = that.data.nowQuestionNumber;
-    var questionList = that.data.questionList;
-    var questionListLength = that.data.questionListLength;
-    if (nowQuestionNumber != 0) {
-      nowQuestionNumber--;
-      that.setData({
-        nowQuestion: questionList[nowQuestionNumber],
-        nowQuestionNumber: nowQuestionNumber,
-        after: false
-      })
-    }else {
-      that.setData({
-        before: true
-      })
-    }
-  },
-
   before10: function () {
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var questionList = that.data.questionList;
@@ -172,12 +169,9 @@ Page({
       })
     }
   },
-
   showAnswer: function (e) {
     that.setData({
       showAnswer: true
     })
   }
-
-
 })

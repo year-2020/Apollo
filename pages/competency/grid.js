@@ -21,9 +21,6 @@ Page({
         showCancel: false,
         success: function (res) {
           console.log("确定")
-          wx.navigateTo({
-            url: './wrongQuestion',
-          })
         }
       })
     } else {
@@ -49,7 +46,41 @@ Page({
     }).catch(function (error) {
       console.log(error);
     });
-
+    app.globalData.wrongAnswerList = [
+      {
+        question: '问题一',
+        option: {
+          A: '问题A',
+          B: '问题B',
+          C: '问题C',
+          D: '问题D'
+        },
+        answer: 'A',
+        yourChose: 'A'
+      },
+      {
+        question: '问题二',
+        option: {
+          A: '问题A',
+          B: '问题B',
+          C: '问题C',
+          D: '问题D'
+        },
+        answer: 'B',
+        yourChose: 'B'
+      },
+      {
+        question: '问题三',
+        option: {
+          A: '问题A',
+          B: '问题B',
+          C: '问题C',
+          D: '问题D'
+        },
+        answer: 'C',
+        yourChose: 'C'
+      }
+    ]
   },
 
 

@@ -34,9 +34,25 @@
             </view>
 
   </view>
-    <button class='btn' style='margin-left:35px;float:left;' bindtap='before1' disabled="{{before}}">上一题</button>
-    <button class='btn' style='margin-right:35px;float:right;' bindtap='after1' disabled='{{after}}' data-id="{{nowQuestion.id}}">下一题</button>
+    <button class='btn' style='margin-left:35px;float:left;' bindtap='toPrev' disabled="{{before}}">上一题</button>
+    <button class='btn' style='margin-right:35px;float:right;' bindtap='toNext' disabled='{{after}}' data-id="{{nowQuestion.id}}">下一题</button>
    <view class='bottom'>
     <view class='afterQuestion' bindtap='submit'>交卷</view>
   </view> 
 </view>
+
+<!--弹窗-->
+
+<cover-view class="modal-mask" bindtap="hideModal"  wx:if="{{modal.isShow}}"></cover-view>
+<cover-view class="modal-dialog" wx:if="{{modal.isShow}}" >
+  <cover-view class="modal-title">{{modal.title}}</cover-view>
+  <cover-view class="modal-content">
+    <cover-view class="modal-score">本次得分：{{score}}</cover-view>
+    <cover-view class="modal-career">生涯总得分：{{career}}</cover-view>
+    <cover-image src="{{modal.src}}" class="img-full" style="height:auto;" mode="widthFix"></cover-image>
+  </cover-view>
+  <cover-view class="modal-footer">
+    <!-- <cover-view class="btn-cancel" bindtap="onCancel" data-status="cancel">{{modal.cancel}}</cover-view> -->
+    <cover-view class="btn-confirm" bindtap="onConfirm" data-status="confirm">{{modal.ok}}</cover-view>
+  </cover-view>
+</cover-view>
