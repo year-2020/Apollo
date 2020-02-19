@@ -3,6 +3,7 @@
   width: 100vw;
   height: 305px;
   overflow:hidden;
+  background: #333;
 }
 .ico{
   position: absolute;
