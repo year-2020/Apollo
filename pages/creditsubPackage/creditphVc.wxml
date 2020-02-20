@@ -1,5 +1,5 @@
 
-<image class="ad-img" src="/static/images/jjkf.jpg" ></image>
+<!-- <image class="ad-img" src="/static/images/jjkf.jpg" ></image> -->
 
 <view class="wrap">
 
@@ -14,10 +14,11 @@
       <image wx:if='{{index==2}}' src='/static/images/3.png'></image>
 
     </view>
-    <view class="weui-flex__item item2 ">
-    <image src="{{item.wxAvatar}}"></image>
+    <view class="weui-flex__item item2 font_green font_bold">
+      <image src="{{item.wxAvatar}}"></image>
+      {{item.wxNickname}}
     </view>
-    <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickname}}</view>
+    <!-- <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickname}}</view> -->
     <view class="weui-flex__item align-center font_bold">{{item.credits}}积分</view>
 </view>
 </block>

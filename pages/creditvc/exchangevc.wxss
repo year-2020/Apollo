@@ -89,22 +89,26 @@ overflow:hidden;text-overflow:ellipsis; white-space:nowrap;
   height: 20px;
   position: absolute;
   margin-top: 10px;
-  right: -30px;
+  right: 0px;
 display: flex;
 flex-direction: row;
-
+}
+.jf-v-wraper{
+  padding-right: 45rpx;
+  text-align: right;
+  width: 100%;
 }
 .jf-ico{
   width: 20px;
   height: 20px;
-
+  vertical-align: middle;
 }
 .jf-no{
-  width: 80px;
+  /* width: 80px; */
   height:20px;
   font-size: 12px;
   margin-left: 5px;
-
+  display: inline-block;
 }
 .exchange-now{
   margin-top: 120rpx;
@@ -250,4 +254,7 @@ font-family: SourceHanSansSC-regular;
 margin-top: 20px;
 margin-right:20px;
 
+}
+.goods-info{
+  padding: 0 10px;
 }

@@ -1,6 +1,11 @@
 <view class="pro-container">
-<image class="ad-img"  mode='scaleToFill' src="/static/images/jjkf.jpg" ></image>
-
+<!-- <image class="ad-img"  mode='scaleToFill' src="/static/images/jjkf.jpg" ></image> -->
+ <view class="searchView" bindtap="searchcik">
+    <view  class="searchViewC">
+      <image class='searchIcon'></image>
+      <text class='plast'>请输入搜索关键字</text>
+    </view>
+  </view>
 
   <scroll-view class="left-menu" scroll-y scroll-with-animation="true" scroll-top="{{leftMenuTop}}">
     <view class="menu-item {{index===currentActiveIndex?'menu-active':''}}" wx:for="{{advList}}" wx:key="{{item.index}}" id="{{index}}" catchtap='changeMenu' >{{item.categoryName}}</view>

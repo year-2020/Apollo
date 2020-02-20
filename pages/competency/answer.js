@@ -23,12 +23,12 @@ Page({
     interval:'',
     timeout:'',
     questionNum: 10,
-    hh: '',
-    mm: '',
-    ss: '',
+    // hh: '',
+    // mm: '',
+    // ss: '',
     title: '能力评测',
-    before: false,
-    after: false,
+    // before: false,
+    // after: false,
     modal: {
       isShow: false,// 图文弹框是否显示
       title: '提示',// 标题
@@ -78,7 +78,7 @@ Page({
       app.globalData.wrongAnswerList = []
     }
     // 启动定时器
-    this.count_down(countDown_time);
+    // this.count_down(countDown_time);
     this.countDownItem();
   },
   /**
@@ -127,56 +127,49 @@ Page({
     // 清除定时器
     clearTimeout(this.data.timeout);
     this.data.timeout = setTimeout(() => {
-      var nowAnswerResult = new Object;
-      var nowQuestionNumber = that.data.nowQuestionNumber;
-      var nowQuestion_list = that.data.SCList;
-      nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
-      nowAnswerResult.userResult = false;
-      nowAnswerResult.yourChose = 'E';
-      app.globalData.nowAnswerResultList.push(nowAnswerResult);
-
+      this.noChoseItem();
       this.toNext();
     }, 10000)
   },
   //倒计时
-  count_down: function (countDown_time) {
-    var time = countDown_time.split(':')
-    var hh = parseInt(time[0])
-    var mm = parseInt(time[1])
-    var ss = parseInt(time[2])
-    this.setData({
-      ss: (ss < 10) ? '0' + ss : ss,
-      mm: (mm < 10) ? '0' + mm : mm,
-      hh: (hh < 10) ? '0' + hh : hh
-    })
-    this.data.interval = setInterval(function () {
-      if (ss > 0) {
-        ss--
-      } else {
-        wx.showToast({
-          title: '考试结束，系统自动交卷',
-        })
-        that.submit()
-        clearInterval(this.data.interval)
-      }
-      if (ss == 0) {
-        if (mm > 0) {
-          mm--
-          ss = 59;
-        }
-        if (mm == 0 && hh > 0) {
-          hh--
-          ss = 59;
-          mm = 59;
-        }
-      }
-      that.setData({
-        ss: (ss < 10) ? '0' + ss : ss,
-        mm: (mm < 10) ? '0' + mm : mm,
-        hh: (hh < 10) ? '0' + hh : hh
-      })
-    }, 1000)
-  },
+  // count_down: function (countDown_time) {
+  //   var time = countDown_time.split(':')
+  //   var hh = parseInt(time[0])
+  //   var mm = parseInt(time[1])
+  //   var ss = parseInt(time[2])
+  //   this.setData({
+  //     ss: (ss < 10) ? '0' + ss : ss,
+  //     mm: (mm < 10) ? '0' + mm : mm,
+  //     hh: (hh < 10) ? '0' + hh : hh
+  //   })
+  //   this.data.interval = setInterval(function () {
+  //     if (ss > 0) {
+  //       ss--
+  //     } else {
+  //       wx.showToast({
+  //         title: '考试结束，系统自动交卷',
+  //       })
+  //       that.submit()
+  //       clearInterval(this.data.interval)
+  //     }
+  //     if (ss == 0) {
+  //       if (mm > 0) {
+  //         mm--
+  //         ss = 59;
+  //       }
+  //       if (mm == 0 && hh > 0) {
+  //         hh--
+  //         ss = 59;
+  //         mm = 59;
+  //       }
+  //     }
+  //     that.setData({
+  //       ss: (ss < 10) ? '0' + ss : ss,
+  //       mm: (mm < 10) ? '0' + mm : mm,
+  //       hh: (hh < 10) ? '0' + hh : hh
+  //     })
+  //   }, 1000)
+  // },
 
   choseItem: function (e) {
     // 获取点击该组件定义的data-choseitem
@@ -445,23 +438,31 @@ Page({
     ////////////////////////////////////选D end////////////////////////////////////////////
 
   },
-  // 点击上一题
-  toPrev: function () {
-
+  noChoseItem: function () {
+    var nowAnswerResult = new Object;
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var nowQuestion_list = that.data.SCList;
-    if (nowQuestionNumber != 0) {
-      nowQuestionNumber--;
-      that.setData({
-        nowQuestion: nowQuestion_list[nowQuestionNumber],
-        nowQuestionNumber: nowQuestionNumber,
-      })
-    } else {
-      that.setData({
-        before: true
-      })
-    }
+    nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
+    nowAnswerResult.userResult = false;
+    nowAnswerResult.yourChose = 'E';
+    app.globalData.nowAnswerResultList.push(nowAnswerResult);
   },
+  // 点击上一题
+  // toPrev: function () {
+  //   var nowQuestionNumber = that.data.nowQuestionNumber;
+  //   var nowQuestion_list = that.data.SCList;
+  //   if (nowQuestionNumber != 0) {
+  //     nowQuestionNumber--;
+  //     that.setData({
+  //       nowQuestion: nowQuestion_list[nowQuestionNumber],
+  //       nowQuestionNumber: nowQuestionNumber,
+  //     })
+  //   } else {
+  //     that.setData({
+  //       before: true
+  //     })
+  //   }
+  // },
   // 点击下一题
   toNext: function (e) {
     var nowQuestionNumber = that.data.nowQuestionNumber;
@@ -503,17 +504,8 @@ Page({
       // 清除定时器
       clearInterval(this.data.interval);
       clearTimeout(this.data.timeout);
-      /**列表数据 */
-      app.api._fetch({
-        url: '/community/examRecord/add',
-        data: { answerDetail: that.data.answerDetail.join(';')},
-        method: 'post'
-      }).then(function (res) {
-        this.showModal();
-      }).catch(function (error) {
-        console.log(error);
-      });
-      
+
+      this.submit(that.data.answerDetail.join(';'))
       that.setData({
         after:false
       })
@@ -524,12 +516,19 @@ Page({
     }
   },
   // 点击交卷
-  submit: function () {
-    wx.redirectTo({
-      url: './wrongQuestion?title=' + that.data.title
-    })
-    clearInterval(this.data.interval);
+  submit: function (param) {
+    app.api._fetch({
+      url: '/community/examRecord/add?answerDetail=' + param,
+      method: 'post'
+    }).then((res)=>{
+      console.log("提交成功")
+      this.setData({
+        score: res.data.data.score,
+        career: res.data.data.totalScore
+      })
+      this.showModal();
+    }).catch((error)=>{
+      console.log(error);
+    });
   }
-
-
 })

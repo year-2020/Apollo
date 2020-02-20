@@ -1,6 +1,6 @@
 page{ 
   background:white;
-
+  padding: 0;
 }
 .align-center{text-align: center;}
 .font_green{color:rgb(90, 183, 41);text-align:left;
@@ -35,6 +35,11 @@ display:flex;
 .weui-flex__item{padding: 5px 0;vertical-align: middle;}
 .weui-flex__item image{width: 25px;height: 25px;border-radius: 50%;vertical-align: middle;}
 .weui-flex__item span{vertical-align: middle;padding-left: 4px;}
+.item2{
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  flex: 2;
+}
 .btn_share{position: absolute;bottom: 10px;text-align: center;width: 100%;left: 0;}
 .btn1, .btn2{
 	display: inline-block;

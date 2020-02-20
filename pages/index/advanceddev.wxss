@@ -6,6 +6,38 @@ height:308rpx;
 margin-top: 10px;
 display:flex;
 }
+.searchView {
+  border-radius: 20px;
+  background-color: rgba(241, 241, 241, 1);
+  color: rgba(179, 179, 180, 1);
+  margin: 20rpx 40rpx;
+  display:flex; 
+  justify-content:center;
+   align-items:center;
+   height: 30px;
+}
+
+.searchViewC {
+    width: 150px;
+    height: 30px;   
+    /* background-color:red; */
+    color: rgba(179, 179, 180, 1);
+}
+.searchIcon{
+    position: absolute;
+  margin-top: 6px;
+  width: 18px;
+  height: 18px;
+}
+.plast{
+  height: 100%;
+  /* background: yellow; */
+   margin-left: 20px;
+   font-size: 14px;
+   display: flex;
+align-items: center;
+justify-content: center;
+}
 /*分割线样式*/
 .line{
 /* margin: 10px auto; */
@@ -16,7 +48,7 @@ margin:5px 5px 0px;
 
 .left-menu{
   position: absolute;
-    top: 154px;
+    top: 50px;
     left: 0;
     bottom: 0;
     right: 0;
@@ -49,7 +81,7 @@ margin:5px 5px 0px;
 .right-pro{
   position: absolute;
   left: 140px;
-  top:154px;
+  top:50px;
   bottom: 0;
   width:calc(100% - 140px);
   background-color: #fff;  

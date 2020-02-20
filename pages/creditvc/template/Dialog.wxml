@@ -12,6 +12,7 @@
             <image class='jf-ico' src='/static/images/jf_normal.jpg'></image>
               <view class='jf-no'>{{orderprice}}</view>
             </view>
+<view class="goods-info">
   <van-cell wx:if='{{categoryId !=1}}'
   title="配送信息"
   is-link
@@ -37,6 +38,7 @@
   is-link
   
 />
+</view>
     <view class='agree-v'>点击支付即表示您同意Apollo的销售条款</view>
      <button class='buy-now' bindtap='toPayCredit' data-index="0">
 立即支付

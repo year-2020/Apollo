@@ -10,9 +10,11 @@
          <view class='evo-title-no' wx:if='{{goodsDetail.tags ==""}}'>{{goodsDetail.title}}</view>
         <view class='evo-title' wx:else>{{goodsDetail.title}}</view>
         <view class='jf-v'>
+          <view class="jf-v-wraper">
             <image class='jf-ico' src='/static/images/jf_normal.jpg'></image>
-              <view class='jf-no'>{{goodsDetail.credit}}</view>
-            </view>
+            <view class='jf-no'>{{goodsDetail.credit}}</view>
+          </view>
+        </view>
      </view>
       <!-- <view class='line'></view> -->
     <view class='yx-v'>
