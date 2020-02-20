@@ -36,8 +36,9 @@ Page({
     const that = this;
     /**列表数据 */
     app.api._fetch({
-      url: '/user/creditRank',
+      url: '/community/examCharts/list',
       data: {},
+      method: 'post'
     }).then(function (res) {
       console.info('列表返回' + JSON.stringify(res))
       that.setData({

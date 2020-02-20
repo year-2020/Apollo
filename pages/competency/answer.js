@@ -16,12 +16,13 @@ Page({
     nowQuestionNumber: 0,
     wrongAnswerList: [],
     questionType: 'SC',
+    answerDetail:[],
     questionTypeCH: '(单选题)',
     score: 0,
     career: 0,
     interval:'',
     timeout:'',
-    questionNum: 3,
+    questionNum: 10,
     hh: '',
     mm: '',
     ss: '',
@@ -48,75 +49,19 @@ Page({
     var QBSC;
     var QBJD;
     var questionNum;
-
-    // wx.request({
-    //   url: 'https://www.apollodev.club/api/questions',
-    //   method: 'GET',
-    //   header: {
-    //     'content-type': 'application/json' //默认值
-    //   },
-    //   success: function (res) {
-    //     console.log("-----")
-    //     console.log(res)
-    //     // var listData1 = res.data.all_hits
-    //     // that.setData({
-    //     //   listData: listData1,
-    //     // })
-    //     that.setData({
-    //       SCList: res.data.all_hits,
-    //       nowQuestion: res.data.all_hits[0],
-    //       //考卷题目数
-    //       //questionNum: app.globalData.question.length
-    //       questionNum: 10
-    //     });
-    //   },
-    //   fail: function (res) { },
-    // });
-    that.setData({
-      SCList: [
-        {
-          question: '问题一',
-          option: {
-            A: '问题A',
-            B: '问题B',
-            C: '问题C',
-            D: '问题D'
-          },
-          answer: 'A'
-        },
-        {
-          question: '问题二',
-          option: {
-            A: '问题A',
-            B: '问题B',
-            C: '问题C',
-            D: '问题D'
-          },
-          answer: 'B'
-        },
-        {
-          question: '问题三',
-          option: {
-            A: '问题A',
-            B: '问题B',
-            C: '问题C',
-            D: '问题D'
-          },
-          answer: 'C'
-        }
-      ],
-      nowQuestion: {
-        question: '问题一',
-        option: {
-          A: '问题A',
-          B: '问题B',
-          C: '问题C',
-          D: '问题D'
-        },
-        answer: 'A'
-      }
-      //考卷题目数
-      //questionNum: app.globalData.question.length
+    /**列表数据 */
+    app.api._fetch({
+      url: '/community/examBank/getQuestions',
+      data: {},
+      method: 'post'
+    }).then(function (res) {
+      console.info('列表返回' + JSON.stringify(res.data))
+      that.setData({
+        SCList: res.data.data,
+        nowQuestion: res.data.data[0]
+      });
+    }).catch(function (error) {
+      console.log(error);
     });
   },
   onReady: function () {
@@ -175,9 +120,6 @@ Page({
    * 对话框确认按钮点击事件
    */
   onConfirm: function () {
-    // 清除定时器
-    clearInterval(this.data.interval);
-    clearTimeout(this.data.timeout);
     this.hideModal();
     this.backPage(2);
   },
@@ -185,6 +127,14 @@ Page({
     // 清除定时器
     clearTimeout(this.data.timeout);
     this.data.timeout = setTimeout(() => {
+      var nowAnswerResult = new Object;
+      var nowQuestionNumber = that.data.nowQuestionNumber;
+      var nowQuestion_list = that.data.SCList;
+      nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
+      nowAnswerResult.userResult = false;
+      nowAnswerResult.yourChose = 'E';
+      app.globalData.nowAnswerResultList.push(nowAnswerResult);
+
       this.toNext();
     }, 10000)
   },
@@ -232,8 +182,8 @@ Page({
     // 获取点击该组件定义的data-choseitem
     var choseItem = e.currentTarget.dataset.choseitem;
     var nowQuestion = that.data.nowQuestion;
-    var answer = nowQuestion.answer;
-    var options = nowQuestion.option;
+    var answer = nowQuestion.rightAnswer;
+    // var options = nowQuestion.option;
     var SCList = that.data.SCList;
     var JDList = that.data.JDList;
     var userResult = false;
@@ -242,6 +192,7 @@ Page({
     var score = that.data.score;
     ////////////////////////////////////选A start////////////////////////////////////////////
     if (choseItem == 'A') {
+      userResult = true;
       that.setData({
         choseB: false,
         choseC: false,
@@ -252,6 +203,7 @@ Page({
       });
     }
     if (choseItem == 'B') {
+      userResult = true;
       that.setData({
         choseA: false,
         choseC: false,
@@ -262,6 +214,7 @@ Page({
       });
     }
     if (choseItem == 'C') {
+      userResult = true;
       that.setData({
         choseA: false,
         choseB: false,
@@ -272,6 +225,7 @@ Page({
       });
     }
     if (choseItem == 'D') {
+      userResult = true;
       that.setData({
         choseA: false,
         choseB: false,
@@ -282,7 +236,7 @@ Page({
       });
     }
     ////////////////////////////////////选A end////////////////////////////////////////////
-    userResult = true;
+    
     if (choseItem == answer) {
       score = score + 10;
       // 将成绩存到app缓存中
@@ -309,12 +263,14 @@ Page({
     var nowAnswerResult = new Object;
     nowAnswerResult.question = nowQuestion;
     nowAnswerResult.userResult = userResult;
-    nowAnswerResult.yourChose = choseItem;
+    
     console.log("nowAnswerResult", nowAnswerResult);
     if (userResult == true) {
+      nowAnswerResult.yourChose = choseItem;
       app.globalData.nowAnswerResultList.push(nowAnswerResult)
     }
     else {
+      nowAnswerResult.yourChose = 'E';
       app.globalData.nowAnswerResultList.push(nowAnswerResult);
       // 将错题添加到错题集
       //app.globalData.wrongAnswerList.push(nowQuestion)
@@ -510,20 +466,23 @@ Page({
   toNext: function (e) {
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var nowQuestion_list = that.data.SCList;
-    
+    // 暂存当前题答案
+    let param = app.globalData.nowAnswerResultList[nowQuestionNumber].question.examId + ',' +app.globalData.nowAnswerResultList[nowQuestionNumber].yourChose
+    that.data.answerDetail.push(param)
+    console.log(that.data.answerDetail)
     var questionListLength = nowQuestion_list.length;
     var questionNum = that.data.questionNum;
-    if(this.data.choseA==false && this.data.choseB==false &&this.data.choseC==false &&this.data.choseD==false){
-      wx.showModal({
-        title: '提示',
-        content: '没有选择答案'
-      });
-      var nowAnswerResult = new Object;
-      nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
-      nowAnswerResult.userResult = false;
-      nowAnswerResult.yourChose = "未选";
-      app.globalData.wrongAnswerList.push(nowAnswerResult)
-    };
+    // if(this.data.choseA==false && this.data.choseB==false &&this.data.choseC==false &&this.data.choseD==false){
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '没有选择答案'
+    //   });
+    //   var nowAnswerResult = new Object;
+    //   nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
+    //   nowAnswerResult.userResult = false;
+    //   nowAnswerResult.yourChose = "未选";
+    //   app.globalData.wrongAnswerList.push(nowAnswerResult)
+    // };
     if (nowQuestionNumber + 1 < questionNum) {
       that.setData({
         choseA: false,
@@ -537,19 +496,32 @@ Page({
         nowQuestionNumber: nowQuestionNumber,
         before: false
       })
+      // 重新计时
+      this.countDownItem();
     } else if (nowQuestionNumber + 1 == that.data.questionNum) {
       console.log("答题结束")
-      this.showModal();
+      // 清除定时器
+      clearInterval(this.data.interval);
+      clearTimeout(this.data.timeout);
+      /**列表数据 */
+      app.api._fetch({
+        url: '/community/examRecord/add',
+        data: { answerDetail: that.data.answerDetail.join(';')},
+        method: 'post'
+      }).then(function (res) {
+        this.showModal();
+      }).catch(function (error) {
+        console.log(error);
+      });
+      
       that.setData({
         after:false
       })
     } else {
-      that.setData({
-        after: true
-      })
+      // that.setData({
+      //   after: true
+      // })
     }
-    // 重新计时
-    this.countDownItem();
   },
   // 点击交卷
   submit: function () {

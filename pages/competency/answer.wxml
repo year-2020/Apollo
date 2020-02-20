@@ -12,33 +12,33 @@
   </view> 
 
   <view class='questionTitle'>
-    {{nowQuestionNumber+1}}.{{nowQuestion.question}}
+    {{nowQuestionNumber+1}}.{{nowQuestion.examTitle}}
   </view>
  
   <view class='questionOption'  wx:if="{{questionType=='SC'}}">
             <view class="{{choseA==true? 'choseA':'noChoseA'}}" bindtap='choseItem' data-choseitem="A">
                 <radio checked="{{choseA == true ? true:false}}" value='' />
-                  A. {{nowQuestion.option.A}}
+                  A. {{nowQuestion.itemA}}
             </view>
             <view class="{{choseB==true? 'choseB':'noChoseB'}}" bindtap='choseItem' data-choseitem="B">
               <radio checked="{{choseB==true? true:false}}"></radio>
-                B. {{nowQuestion.option.B}}
+                B. {{nowQuestion.itemB}}
             </view>
             <view class="{{choseC==true? 'choseC':'noChoseC'}}" bindtap='choseItem' data-choseitem="C">
                 <radio checked='{{choseC==true?true:false}}'></radio>
-                C. {{nowQuestion.option.C}}
+                C. {{nowQuestion.itemC}}
             </view>
             <view class="{{choseD==true? 'choseD':'noChoseD'}}" bindtap='choseItem' data-choseitem="D">
                 <radio checked='{{choseD==true?true:false}}'></radio>
-                D. {{nowQuestion.option.D}}
+                D. {{nowQuestion.itemD}}
             </view>
 
   </view>
-    <button class='btn' style='margin-left:35px;float:left;' bindtap='toPrev' disabled="{{before}}">上一题</button>
+    <!-- <button class='btn' style='margin-left:35px;float:left;' bindtap='toPrev' disabled="{{before}}">上一题</button>
     <button class='btn' style='margin-right:35px;float:right;' bindtap='toNext' disabled='{{after}}' data-id="{{nowQuestion.id}}">下一题</button>
    <view class='bottom'>
     <view class='afterQuestion' bindtap='submit'>交卷</view>
-  </view> 
+  </view>  -->
 </view>
 
 <!--弹窗-->
