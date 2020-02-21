@@ -32,7 +32,8 @@
       "pages": [
         "grid",
         "answer",
-        "wrongQuestion"
+        "wrongQuestion",
+        "myExamBank"
       ]
     },
     {

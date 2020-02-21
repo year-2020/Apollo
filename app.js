@@ -109,6 +109,7 @@ queryUserInfo:function(){
     score: 0,
     nowAnswerResultList: [],
     wrongAnswerList: [],
+    myExamBankList: [],
     choseQB: '',
     array: [],
     stateList: [],

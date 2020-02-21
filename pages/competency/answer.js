@@ -33,7 +33,7 @@ Page({
       isShow: false,// 图文弹框是否显示
       title: '提示',// 标题
       desc: '提示内容',// 内容
-      src: '../../static/images/v2_pldoxo.png',// 图片地址，必填，如果没有图片，请直接使用wx.showModal
+      src: '../../static/images/star_0.png',// 图片地址，必填，如果没有图片，请直接使用wx.showModal
       ok: '确定',// 确定按钮文本
     }
   },
@@ -522,12 +522,54 @@ Page({
       method: 'post'
     }).then((res)=>{
       console.log("提交成功")
+      let score = res.data.data.score
+      let career = res.data.data.totalScore
+      let modalsrc = 'modal.src'
+      let src = ''
+      if (career >= 10 && career < 30) {
+        src = '../../static/images/star_1.png'
+      } else if (career >= 30 && career < 60) {
+        src = '../../static/images/star_2.png'
+      } else if (career >= 60 && career < 80) {
+        src = '../../static/images/star_3.png'
+      } else if (career >= 80 && career < 100) {
+        src = '../../static/images/star_4.png'
+      } else if (career >= 100) {
+        src = '../../static/images/star_5.png'
+      }
+      
       this.setData({
-        score: res.data.data.score,
-        career: res.data.data.totalScore
+        score: score,
+        career: career,
+        [modalsrc]: src
       })
       this.showModal();
+      // 10s 退回测评主页
+      this.data.timeout = setTimeout(() => {
+        clearTimeout(this.data.timeout)
+        this.onConfirm()
+      }, 10000)
     }).catch((error)=>{
+      console.log(error);
+    });
+  },
+  // 收藏
+  toStore: function () {
+    let examId = this.data.nowQuestion.examId
+    let meSelected = 'E'
+    app.api._fetch({
+      url: '/community/meExamBank/collect?examId=' + examId + '&meSelected=' + meSelected,
+      method: 'post'
+    }).then((res) => {
+      console.log("收藏成功")
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        image: '../../static/images/icon-tick.png',
+        mask: true,
+        duration: 300
+      });
+    }).catch((error) => {
       console.log(error);
     });
   }

@@ -20,8 +20,7 @@ Page({
     emailaddress:'',
     imagewidth: 0,//缩放后的宽
     imageheight: 0,//缩放后的高
-
-
+    chose: false
   },
   /**积分悬赏输入的文字 */
   onChange(event) {
@@ -141,8 +140,19 @@ Page({
       }
     })
   },
-
+  toAgree: function () {
+    this.setData({
+      chose: true
+    })
+  },
   toPayCredit:function(){
+    if (!this.data.chose) {
+      wx.showToast({
+        title: '请勾选我已阅读Apollo的销售条款',
+        icon: 'none'
+      })
+      return false;
+    }
     const that = this;
 
     if(that.data.categoryId ==1&&(that.data.emailaddress ==""||that.data.emailaddress==null)){

@@ -1,5 +1,5 @@
 //logs.js
-var util = require('../../utils/util.js')
+// var util = require('../../utils/util.js')
 //获取应用实例
 var app = getApp()
 Page({
@@ -13,21 +13,31 @@ Page({
       url: './answer',
     })
   },
-  openWrongQuestion: function () {
-    if (app.globalData.wrongAnswerList.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '暂无错题',
-        showCancel: false,
-        success: function (res) {
-          console.log("确定")
-        }
-      })
-    } else {
-      wx.navigateTo({
-        url: './wrongQuestion',
-      })
-    }
+  openExamBank: function () {
+    app.api._fetch({
+      url: '/community/meExamBank/list',
+      data: {},
+      method: 'post'
+    }).then((res) => {
+      console.info('我的题库：' + JSON.stringify(res.data))
+      app.globalData.myExamBankList = res.data.rows
+      if (app.globalData.myExamBankList.length == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '暂无错题',
+          showCancel: false,
+          success: function (res) {
+            console.log("确定")
+          }
+        })
+      } else {
+        wx.navigateTo({
+          url: './myExamBank',
+        })
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -47,41 +57,6 @@ Page({
     }).catch(function (error) {
       console.log(error);
     });
-    app.globalData.wrongAnswerList = [
-      {
-        question: '问题一',
-        option: {
-          A: '问题A',
-          B: '问题B',
-          C: '问题C',
-          D: '问题D'
-        },
-        answer: 'A',
-        yourChose: 'A'
-      },
-      {
-        question: '问题二',
-        option: {
-          A: '问题A',
-          B: '问题B',
-          C: '问题C',
-          D: '问题D'
-        },
-        answer: 'B',
-        yourChose: 'B'
-      },
-      {
-        question: '问题三',
-        option: {
-          A: '问题A',
-          B: '问题B',
-          C: '问题C',
-          D: '问题D'
-        },
-        answer: 'C',
-        yourChose: 'C'
-      }
-    ]
   },
 
 

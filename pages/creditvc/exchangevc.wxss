@@ -234,6 +234,15 @@ flex-direction: row;
   font-size: 14px;
   margin-top: 40rpx;
 }
+.agree-v radio{
+  transform: scale(0.65);
+  position: relative;
+  top: -1px;
+}
+.agree-v text{
+  color: #2593FB;
+  text-decoration: underline;
+}
 .more-info{
 float:left;
 margin-left: 20px;

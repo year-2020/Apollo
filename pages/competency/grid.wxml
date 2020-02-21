@@ -10,11 +10,12 @@
       <image wx:if='{{index==1}}' src='/static/images/2.png'></image>
       <image wx:if='{{index==2}}' src='/static/images/3.png'></image>
     </view>
-    <view class="weui-flex__item item2 ">
-      <image src="{{item.wxAvatar}}"></image>
+    <view class="weui-flex__item item2 font_green font_bold">
+      <image src="{{item.wxAvatar ? item.wxAvatar : '/static/images/apollo_ico.png'}}"></image>
+      {{item.wxNickName}}
     </view>
-    <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickName}}</view>
-    <view class="weui-flex__item align-center font_bold">{{item.score}}积分</view>
+    <!-- <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickName}}</view> -->
+    <view class="weui-flex__item align-center font_bold">{{item.score ? item.score : '无'}}积分</view>
 </view>
 </block>
 
@@ -73,7 +74,7 @@
       <view class="text">测评一下</view>
     </view>
   </view>
-  <view class="footer-item" bindtap='openWrongQuestion'>
+  <view class="footer-item" bindtap='openExamBank'>
     <view class="footer-wrap">
       <image src="../../static/images/gr_selected.jpg"></image>
       <view class="text">我的题库</view>

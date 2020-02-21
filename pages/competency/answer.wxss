@@ -158,7 +158,14 @@ page{
   height: 150rpx;
    z-index: 1;
 }
-
+.questionOption view{
+  padding-left: 30px;
+  position: relative;
+}
+.questionOption radio{
+  position: absolute;
+  left: 3px;
+}
 .noChoseA,.noChoseB,.noChoseC,.noChoseD{
   background-color: #f0f5fb;
   line-height: 70rpx;
@@ -245,6 +252,12 @@ display:inline-block;
 .modal-content .modal-score,
 .modal-content .modal-career{
   line-height: 1.5;
+}
+.img-full{
+  display: inline-block;
+  width: 332rpx;
+  height: 60rpx;
+  padding-top: 20rpx;
 }
 .modal-footer {
   display: flex;
