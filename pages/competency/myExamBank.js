@@ -89,7 +89,7 @@ Page({
     var nowQuestionNumber = this.data.nowQuestionNumber;
     // 
     app.api._fetch({
-      url: '/community/meExamBank/remove?ids=' + questionList[nowQuestionNumber].examId,
+      url: '/community/meExamBank/remove?ids=' + questionList[nowQuestionNumber].meExamId,
       method: 'post'
     }).then((res) => {
       questionList.splice(nowQuestionNumber, 1);
