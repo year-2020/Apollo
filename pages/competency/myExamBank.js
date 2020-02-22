@@ -11,8 +11,8 @@ Page({
     nowQuestionNumber: 0,
     questionListLength: 0,
     title: "我的题库",
-    before: false,
-    after: false
+    before: true,
+    after: true
   },
 
   /**
@@ -29,6 +29,11 @@ Page({
         nowQuestion: myExamBankList[0],
         questionListLength: myExamBankList.length
       })
+      if (myExamBankList.length > 1) {
+        this.setData({
+          after: false
+        })
+      }
     }
   },
 

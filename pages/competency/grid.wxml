@@ -1,5 +1,5 @@
 
-<image class="ad-img" src="/static/images/jjkf.jpg" ></image>
+<image class="ad-img" mode='aspectFill' src="/static/images/jjkf.jpg" ></image>
 <view class="wrap">
 <!--我自己的排名信息-->
 <block wx:for='{{rows}}'>
@@ -70,13 +70,13 @@
 <view class="footer">
   <view class="footer-item" bindtap='beginAnswer'>
     <view class="footer-wrap">
-      <image src="../../static/images/bj_ico.jpg"></image>
+      <image src="../../static/images/gr_test.png"></image>
       <view class="text">测评一下</view>
     </view>
   </view>
   <view class="footer-item" bindtap='openExamBank'>
     <view class="footer-wrap">
-      <image src="../../static/images/gr_selected.jpg"></image>
+      <image src="../../static/images/gr_normal.png"></image>
       <view class="text">我的题库</view>
     </view>
   </view>

@@ -86,14 +86,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "社 区",
-        "iconPath": "static/images/home_normal.jpg",
-        "selectedIconPath": "static/images/home_seleted.jpg"
+        "iconPath": "static/images/home_normal.png",
+        "selectedIconPath": "static/images/home_seleted.png"
       },
       {
         "pagePath": "pages/findvc/findvc",
         "text": "问 答",
-        "iconPath": "static/images/find_normal.jpg",
-        "selectedIconPath": "static/images/find_selected.jpg"
+        "iconPath": "static/images/find_normal.png",
+        "selectedIconPath": "static/images/find_selected.png"
       },
       {
         "pagePath": "pages/publish/publishTemp",
@@ -104,14 +104,14 @@
       {
         "pagePath": "pages/creditvc/creditvc",
         "text": "积 分",
-        "iconPath": "static/images/jf_normal.jpg",
-        "selectedIconPath": "static/images/jf_selected.jpg"
+        "iconPath": "static/images/jf_normal.png",
+        "selectedIconPath": "static/images/jf_selected.png"
       },
       {
         "pagePath": "pages/personal/personal",
         "text": "我 的",
-        "iconPath": "static/images/gr_normal.jpg",
-        "selectedIconPath": "static/images/gr_selected.jpg"
+        "iconPath": "static/images/gr_normal.png",
+        "selectedIconPath": "static/images/gr_selected.png"
       }
     ]
   },

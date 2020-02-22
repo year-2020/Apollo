@@ -238,7 +238,7 @@ Page({
         score: score,
       });
       wx.showToast({
-        title: '成功',
+        title: '正确',
         icon: 'success',
         image: '../../static/images/icon-tick.png',
         mask: true,
