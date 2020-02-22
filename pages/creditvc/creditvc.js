@@ -14,8 +14,8 @@ Page({
     credits:'',
     todayCredits:'',
     flag: true,
-    checkin:false
-
+    checkin:false,
+    newbieTaskAllFinished: true
   },
 
   /**
@@ -120,6 +120,7 @@ toJFshop:function(){
     }).then(function (res) {
       console.info('积分数据返回' + JSON.stringify(res.data))
       that.setData({
+        newbieTaskAllFinished: res.data.newbieTaskAllFinished,
         ico: res.data.wxAvatar,
         newbieTask: res.data.newbieTask,
         dailyTask: res.data.dailyTask,
