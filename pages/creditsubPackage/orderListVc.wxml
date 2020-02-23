@@ -3,4 +3,7 @@
 <block wx:for='{{rows}}'>
  <template is="h-item" data="{{item}}"></template>
 </block>
-<view class='no-data' wx:if='{{rows.length==0}}'>暂无数据</view>
+<view class='no-data' wx:if='{{rows.length==0}}'>
+  <image src="../../static/images/nulldata.png"></image>
+  <view>快快做任务领积分换周边吧!</view>
+</view>
