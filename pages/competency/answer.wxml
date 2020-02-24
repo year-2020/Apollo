@@ -34,6 +34,13 @@
             </view>
 
   </view>
+  <view style="text-align:center">
+    <view class="countdown">
+      <image src="../../static/images/logo_1.png"></image>
+      <view class="animate {{animateWidth==true?'animateWidth':''}}"><image src="../../static/images/logo_2.png"></image></view>
+  </view>
+  </view>
+
     <!-- <button class='btn' style='margin-left:35px;float:left;' bindtap='toPrev' disabled="{{before}}">上一题</button>
     <button class='btn' style='margin-right:35px;float:right;' bindtap='toNext' disabled='{{after}}' data-id="{{nowQuestion.id}}">下一题</button>
    <view class='bottom'>

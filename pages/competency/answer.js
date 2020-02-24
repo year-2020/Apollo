@@ -23,6 +23,7 @@ Page({
     interval:'',
     timeout:'',
     questionNum: 10,
+    animateWidth: false,
     // hh: '',
     // mm: '',
     // ss: '',
@@ -79,6 +80,9 @@ Page({
     }
     // 启动定时器
     // this.count_down(countDown_time);
+    this.setData({
+      animateWidth: true
+    })
     this.countDownItem();
   },
   /**
@@ -124,8 +128,6 @@ Page({
     this.backPage(2);
   },
   countDownItem: function () {
-    // 清除定时器
-    clearTimeout(this.data.timeout);
     this.data.timeout = setTimeout(() => {
       this.noChoseItem();
       this.toNext();
@@ -172,6 +174,11 @@ Page({
   // },
 
   choseItem: function (e) {
+    // 清除定时器
+    clearTimeout(this.data.timeout);
+    this.setData({
+      animateWidth: false
+    })
     // 获取点击该组件定义的data-choseitem
     var choseItem = e.currentTarget.dataset.choseitem;
     var nowQuestion = that.data.nowQuestion;
@@ -227,9 +234,7 @@ Page({
       that.setData({
         choseD: true,
       });
-    }
-    ////////////////////////////////////选A end////////////////////////////////////////////
-    
+    }    
     if (choseItem == answer) {
       score = score + 10;
       // 将成绩存到app缓存中
@@ -273,172 +278,10 @@ Page({
     setTimeout(()=>{
       this.toNext();
     }, 1000)
-    
-    ////////////////////////////////////选B  start////////////////////////////////////////////
-    // if (choseItem == 'B') {
-    //   that.setData({
-    //     choseA: false,
-    //     choseC: false,
-    //     choseD: false,
-    //   })
-    //   for (var i = 0; i < 4; i++) {
-    //     if ('B' == answer) {
-    //       userResult = true;
-    //       score = score + 10;
-    //       app.globalData.score = score;
-    //       that.setData({
-    //         score: score,
-    //       });
-    //       break;
-    //     }
-
-    //   }
-    //   var nowAnswerResult = new Object;
-    //   nowAnswerResult.question = nowQuestion;
-    //   nowAnswerResult.userResult = userResult;
-    //   nowAnswerResult.yourChose = choseItem;
-    //   if (userResult == true) {
-    //     app.globalData.nowAnswerResultList.push(nowAnswerResult)
-    //   }
-    //   else {
-    //     app.globalData.nowAnswerResultList.push(nowAnswerResult);
-    //     //app.globalData.wrongAnswerList.push(nowQuestion)
-    //     app.globalData.wrongAnswerList.push(nowAnswerResult)
-    //   }
-    //   that.setData({
-    //     choseB: true,
-    //   });
-    
-    //   // that.nextQuestion = setTimeout(function () {
-    //   //   if (nowQuestionNumber < 9) {
-    //   //     that.setData({
-    //   //       nowQuestion: SCList[nowQuestionNumber + 1],
-    //   //       nowQuestionNumber: nowQuestionNumber + 1,
-    //   //       choseB: false,
-    //   //     });
-    //   //   }
-    //   //   else if (nowQuestionNumber == 9) {
-    //   //     wx.redirectTo({
-    //   //       // url: '../result/result'
-    //   //       url: '../wrongQuestion/wrongQuestion?title=' + that.data.title
-    //   //     })
-    //   //   }
-    //   // }, 9000);
-    // }
-    ////////////////////////////////////选B end////////////////////////////////////////////
-
-    ////////////////////////////////////选C start////////////////////////////////////////////
-    
-    // if (choseItem == 'C') {
-    //   that.setData({
-    //     choseA: false,
-    //     choseB: false,
-    //     choseD: false,
-    //   })
-    //   for (var i = 0; i < 4; i++) {
-    //     if ('C' == answer) {
-    //       userResult = true;
-    //       score = score + 10;
-    //       app.globalData.score = score;
-    //       that.setData({
-    //         score: score,
-    //       });
-    //       break;
-    //     }
-
-    //   }
-    //   var nowAnswerResult = new Object;
-    //   nowAnswerResult.question = nowQuestion;
-    //   nowAnswerResult.userResult = userResult;
-    //   nowAnswerResult.yourChose = choseItem;
-    //   if (userResult == true) {
-    //     app.globalData.nowAnswerResultList.push(nowAnswerResult)
-    //   }
-    //   else {
-    //     app.globalData.nowAnswerResultList.push(nowAnswerResult);
-    //     //app.globalData.wrongAnswerList.push(nowQuestion)
-    //     app.globalData.wrongAnswerList.push(nowAnswerResult)
-    //   }
-    //   that.setData({
-    //     choseC: true,
-    //   });
-
-    //   // that.nextQuestion = setTimeout(function () {
-    //   //   if (nowQuestionNumber < 9) {
-    //   //     that.setData({
-    //   //       nowQuestion: SCList[nowQuestionNumber + 1],
-    //   //       nowQuestionNumber: nowQuestionNumber + 1,
-    //   //       choseC: false,
-    //   //     });
-    //   //   }
-    //   //   else if (nowQuestionNumber == 9) {
-    //   //     wx.redirectTo({
-    //   //       // url: '../result/result'
-    //   //       url: '../wrongQuestion/wrongQuestion?title=' + that.data.title
-    //   //     })
-    //   //   }
-    //   // }, 9000);
-    // }
-    ////////////////////////////////////C////////////////////////////////////////////
-
-    ////////////////////////////////////选D start////////////////////////////////////////////
-    // if (choseItem == 'D') {
-    //   that.setData({
-    //     choseA: false,
-    //     choseB: false,
-    //     choseC: false,
-    //   })
-    //   for (var i = 0; i < 4; i++) {
-    //     if ('D' == answer) {
-    //       userResult = true;
-    //       score = score + 10;
-    //       app.globalData.score = score;
-    //       that.setData({
-    //         score: score,
-    //       });
-    //       break;
-    //     }
-
-    //   }
-    //   var nowAnswerResult = new Object;
-    //   nowAnswerResult.question = nowQuestion;
-    //   nowAnswerResult.userResult = userResult;
-    //   nowAnswerResult.yourChose = choseItem;
-    //   // if (this.data.choseA == false && this.data.choseB == false && this.data.choseC == false && this.data.choseD == false) {
-    //   //   app.globalData.wrongAnswerList.push(nowAnswerResult)
-    //   // };
-    //   if (userResult == true) {
-    //     app.globalData.nowAnswerResultList.push(nowAnswerResult)
-    //   }
-    //   else {
-    //     app.globalData.nowAnswerResultList.push(nowAnswerResult);
-    //     //app.globalData.wrongAnswerList.push(nowQuestion)
-    //     app.globalData.wrongAnswerList.push(nowAnswerResult)
-    //   }
-    //   that.setData({
-    //     choseD: true,
-    //   });
-      
-    //   // that.nextQuestion = setTimeout(function () {
-    //   //   if (nowQuestionNumber < 9) {
-    //   //     that.setData({
-    //   //       nowQuestion: SCList[nowQuestionNumber + 1],
-    //   //       nowQuestionNumber: nowQuestionNumber + 1,
-    //   //       choseD: false,
-    //   //     });
-    //   //   }
-    //   //   else if (nowQuestionNumber == 9) {
-    //   //     wx.redirectTo({
-    //   //       // url: '../result/result'
-    //   //       url: '../wrongQuestion/wrongQuestion?title=' + that.data.title
-    //   //     })
-    //   //   }
-    //   // }, 9000);
-    // }
-    ////////////////////////////////////选D end////////////////////////////////////////////
-
   },
   noChoseItem: function () {
+    // 清除定时器
+    clearTimeout(this.data.timeout);
     var nowAnswerResult = new Object;
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var nowQuestion_list = that.data.SCList;
@@ -465,55 +308,61 @@ Page({
   // },
   // 点击下一题
   toNext: function (e) {
-    var nowQuestionNumber = that.data.nowQuestionNumber;
-    var nowQuestion_list = that.data.SCList;
-    // 暂存当前题答案
-    let param = app.globalData.nowAnswerResultList[nowQuestionNumber].question.examId + ',' +app.globalData.nowAnswerResultList[nowQuestionNumber].yourChose
-    that.data.answerDetail.push(param)
-    console.log(that.data.answerDetail)
-    var questionListLength = nowQuestion_list.length;
-    var questionNum = that.data.questionNum;
-    // if(this.data.choseA==false && this.data.choseB==false &&this.data.choseC==false &&this.data.choseD==false){
-    //   wx.showModal({
-    //     title: '提示',
-    //     content: '没有选择答案'
-    //   });
-    //   var nowAnswerResult = new Object;
-    //   nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
-    //   nowAnswerResult.userResult = false;
-    //   nowAnswerResult.yourChose = "未选";
-    //   app.globalData.wrongAnswerList.push(nowAnswerResult)
-    // };
-    if (nowQuestionNumber + 1 < questionNum) {
-      that.setData({
-        choseA: false,
-        choseB: false,
-        choseC: false,
-        choseD: false,
-      })
-      nowQuestionNumber++;
-      that.setData({
-        nowQuestion: nowQuestion_list[nowQuestionNumber],
-        nowQuestionNumber: nowQuestionNumber,
-        before: false
-      })
-      // 重新计时
-      this.countDownItem();
-    } else if (nowQuestionNumber + 1 == that.data.questionNum) {
-      console.log("答题结束")
-      // 清除定时器
-      clearInterval(this.data.interval);
-      clearTimeout(this.data.timeout);
+    this.setData({
+      animateWidth: false
+    })
+    setTimeout(() => {
+      var nowQuestionNumber = that.data.nowQuestionNumber;
+      var nowQuestion_list = that.data.SCList;
+      // 暂存当前题答案
+      let param = app.globalData.nowAnswerResultList[nowQuestionNumber].question.examId + ',' + app.globalData.nowAnswerResultList[nowQuestionNumber].yourChose
+      that.data.answerDetail.push(param)
+      console.log(that.data.answerDetail)
+      var questionListLength = nowQuestion_list.length;
+      var questionNum = that.data.questionNum;
+      // if(this.data.choseA==false && this.data.choseB==false &&this.data.choseC==false &&this.data.choseD==false){
+      //   wx.showModal({
+      //     title: '提示',
+      //     content: '没有选择答案'
+      //   });
+      //   var nowAnswerResult = new Object;
+      //   nowAnswerResult.question = nowQuestion_list[nowQuestionNumber];
+      //   nowAnswerResult.userResult = false;
+      //   nowAnswerResult.yourChose = "未选";
+      //   app.globalData.wrongAnswerList.push(nowAnswerResult)
+      // };
+      if (nowQuestionNumber + 1 < questionNum) {
+        that.setData({
+          choseA: false,
+          choseB: false,
+          choseC: false,
+          choseD: false,
+        })
+        nowQuestionNumber++;
+        that.setData({
+          nowQuestion: nowQuestion_list[nowQuestionNumber],
+          nowQuestionNumber: nowQuestionNumber,
+          before: false,
+          animateWidth: true
+        })
+        // 重新计时
+        this.countDownItem();
+      } else if (nowQuestionNumber + 1 == questionNum) {
+        console.log("答题结束")
+        // 清除定时器
+        // clearInterval(this.data.interval);
+        clearTimeout(this.data.timeout);
 
-      this.submit(that.data.answerDetail.join(';'))
-      that.setData({
-        after:false
-      })
-    } else {
-      // that.setData({
-      //   after: true
-      // })
-    }
+        this.submit(that.data.answerDetail.join(';'))
+        that.setData({
+          after: false
+        })
+      } else {
+        // that.setData({
+        //   after: true
+        // })
+      }
+    }, 500)
   },
   // 点击交卷
   submit: function (param) {
@@ -572,5 +421,13 @@ Page({
     }).catch((error) => {
       console.log(error);
     });
-  }
+  },
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    // 清除定时器
+    // clearInterval(this.data.interval);
+    clearTimeout(this.data.timeout);
+  },
 })

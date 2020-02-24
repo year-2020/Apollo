@@ -281,4 +281,27 @@ display:inline-block;
   text-align: center;
   line-height: 86rpx;
 }
-
+.countdown{
+  position: relative;
+  width: 369rpx;
+  height: 123rpx;
+  display: inline-block;
+}
+.countdown image{
+  width: 369rpx;
+  height: 123rpx;
+}
+.countdown view{
+  height: 100%;
+  width: 0%;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.animateWidth{
+  width:100%!important;
+  transition: width 10s;
+}
