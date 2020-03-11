@@ -145,34 +145,27 @@ Page({
       chose: true
     })
   },
-  toPayCredit:function(){
-    if (!this.data.chose) {
-      wx.showToast({
-        title: '请勾选我已阅读Apollo的销售条款',
-        icon: 'none'
-      })
-      return false;
-    }
+  toPayCredit: function () {
     const that = this;
 
-    if(that.data.categoryId ==1&&(that.data.emailaddress ==""||that.data.emailaddress==null)){
+    if (that.data.categoryId == 1 && (that.data.emailaddress == "" || that.data.emailaddress == null)) {
       wx.showToast({
         title: '请输入邮箱地址',
         icon: 'none'
       })
       return;
     }
-    console.info('地址的字典='+JSON.stringify(that.data.addressDic));
-    if (that.data.categoryId != 1 &&(that.data.addressDic ==null||!that.data.addressDic.userName)){
+    console.info('地址的字典=' + JSON.stringify(that.data.addressDic));
+    if (that.data.categoryId != 1 && (that.data.addressDic == null || !that.data.addressDic.userName)) {
       wx.showToast({
         title: '请选择地址',
-        icon:'none'
+        icon: 'none'
       })
       return;
     }
     app.api._fetch({
       url: '/community/orders/submit',
-      data: { 'acceptName': that.data.addressDic.userName, 'address': that.data.addressDic.detailInfo, 'area': that.data.addressDic.cityName, 'goodId': that.data.goodsDetail.goodId, 'mobile': that.data.addressDic.telNumber, 'postCode': that.data.addressDic.postalCode,'email':that.data.emailaddress},
+      data: { 'acceptName': that.data.addressDic.userName, 'address': that.data.addressDic.detailInfo, 'area': that.data.addressDic.cityName, 'goodId': that.data.goodsDetail.goodId, 'mobile': that.data.addressDic.telNumber, 'postCode': that.data.addressDic.postalCode, 'email': that.data.emailaddress },
       method: 'post'
     }).then(function (res) {
       wx.showToast({
@@ -181,15 +174,60 @@ Page({
       })
       if (res.data.code == 0) {
         wx.navigateBack({
-          
+
         })
-      } 
+      }
       console.log('/community/orders/submit')
       console.info(res)
     }).catch(function (error) {
       console.log(error);
     });
   },
+  // toPayCredit:function(){
+  //   if (!this.data.chose) {
+  //     wx.showToast({
+  //       title: '请勾选我已阅读Apollo的销售条款',
+  //       icon: 'none'
+  //     })
+  //     return false;
+  //   }
+  //   const that = this;
+
+  //   if(that.data.categoryId ==1&&(that.data.emailaddress ==""||that.data.emailaddress==null)){
+  //     wx.showToast({
+  //       title: '请输入邮箱地址',
+  //       icon: 'none'
+  //     })
+  //     return;
+  //   }
+  //   console.info('地址的字典='+JSON.stringify(that.data.addressDic));
+  //   if (that.data.categoryId != 1 &&(that.data.addressDic ==null||!that.data.addressDic.userName)){
+  //     wx.showToast({
+  //       title: '请选择地址',
+  //       icon:'none'
+  //     })
+  //     return;
+  //   }
+  //   app.api._fetch({
+  //     url: '/community/orders/submit',
+  //     data: { 'acceptName': that.data.addressDic.userName, 'address': that.data.addressDic.detailInfo, 'area': that.data.addressDic.cityName, 'goodId': that.data.goodsDetail.goodId, 'mobile': that.data.addressDic.telNumber, 'postCode': that.data.addressDic.postalCode,'email':that.data.emailaddress},
+  //     method: 'post'
+  //   }).then(function (res) {
+  //     wx.showToast({
+  //       title: `${res.data.msg}`,
+  //       icon: 'none'
+  //     })
+  //     if (res.data.code == 0) {
+  //       wx.navigateBack({
+          
+  //       })
+  //     } 
+  //     console.log('/community/orders/submit')
+  //     console.info(res)
+  //   }).catch(function (error) {
+  //     console.log(error);
+  //   });
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
