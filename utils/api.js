@@ -5,6 +5,7 @@ const app = getApp()
 //realUrl:http://www.shengdh123.com:8080/apollo
 
 const baseURL = 'https://testbox.xinnet.com'
+// const baseURL = 'https://apollodev.apollo.auto/'
 // const realUrl = 'http://www.shengdh123.com:80/apollo'
 // 封装网络请求开始
 const http = ({ url, data, method, ...other } = {}) => {

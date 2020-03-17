@@ -26,7 +26,7 @@
   <wxparse data="{{ content }}" type="html" padding="5"></wxparse>
 
 </view>
-      <view class='more-info' bindtap='readmore'>阅读更多信息</view>
+      <!-- <view class='more-info' bindtap='readmore'>阅读更多信息</view> -->
 <button class='exchange-now' bindtap='buyRightNow' data-index="0">
 立即购买
 </button>

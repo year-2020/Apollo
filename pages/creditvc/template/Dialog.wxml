@@ -39,11 +39,12 @@
   
 />
 </view>
-    <view class='agree-v'><radio checked="{{chose == true ? true:false}}" value='' bindtap="toAgree" />我已阅读<text>Apollo的销售条款</text></view>
-     <button class='buy-now' bindtap='toPayCredit' data-index="0">
-立即支付
-</button>
-     
+    <view class='agree-v'>点击支付即表示您同意Apollo的销售条款</view> 
+    <!-- <view class='agree-v'>
+      <radio checked="{{chose == true ? true:false}}" value='' bindtap="toAgree" />我已阅读<text>Apollo的销售条款</text>
+    </view> -->
+    <button class='buy-now' bindtap='toPayCredit' data-index="0">立即支付</button>
+        
       </view>
 
     </view>
