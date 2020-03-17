@@ -22,31 +22,36 @@ Page({
     var that = this;
     getApp().globalData.inviteOpenid = options.inviteOpenid;
     console.info('login页面的' + options.inviteOpenid);
-    // 登录
+    // 登录 
     wx.login({
       success: res => {
-    
-        api._fetch({
-          url: '/wxAuth/authorization/login',
-          data: { appid: 'wx439876bd3be664f1', code: res.code, inviteOpenid: getApp().globalData.inviteOpenid},
-          method: 'post'
-        }).then(function (res) {
-          console.info('login-callback')
-          console.log(' 登录的返回' + JSON.stringify(res));
-        if(res&&res.data.data){
-          wx.setStorageSync('jid', res.data.data.sessionId)
-        }
-          getApp().globalData.sessionId = res.data.data.sessionId;
-          getApp().globalData.wxOpenid = res.data.data.wxOpenid;
-          wx.setStorage({
-            key: "loginres",
-            data: res.data.data
+        if (res.code) {
+          api._fetch({
+            url: '/wxAuth/authorization/login',
+            data: { appid: 'wx439876bd3be664f1', code: res.code, inviteOpenid: getApp().globalData.inviteOpenid },
+            method: 'post'
+          }).then(function (res) {
+            console.info('login-callback')
+            console.log(' 登录的返回' + JSON.stringify(res));
+            if (res && res.data.data) {
+              wx.setStorageSync('jid', res.data.data.sessionId)
+            }
+            getApp().globalData.sessionId = res.data.data.sessionId;
+            getApp().globalData.wxOpenid = res.data.data.wxOpenid;
+            wx.setStorage({
+              key: "loginres",
+              data: res.data.data
+            })
+          }).catch(function (error) {
+            console.info('login-error')
+            console.log(error);
+          });
+        } else {
+          wx.showToast({
+            title: '登录失败！',
           })
-        }).catch(function (error) {
-          console.info('login-error')
-          console.log(error);
-        });
-
+          console.log('登录失败！' + res.errMsg)
+        }
       }
     })
 

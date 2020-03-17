@@ -375,7 +375,9 @@ Page({
       let career = res.data.data.totalScore
       let modalsrc = 'modal.src'
       let src = ''
-      if (career >= 10 && career < 30) {
+      if (career < 10) {
+        src = '../../static/images/star_0.png'
+      } else if (career >= 10 && career < 30) {
         src = '../../static/images/star_1.png'
       } else if (career >= 30 && career < 60) {
         src = '../../static/images/star_2.png'
