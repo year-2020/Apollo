@@ -7,9 +7,11 @@
       <view class="number"> /{{questionListLength}}</view>
     </view>
     <view class='topRight'>
-      <view><view class="btnDel" bindtap="remove">删除</view></view>
+      <view>
+        <image src='../../static/images/del.png' class='delImage' bindtap="remove"></image>
+      </view>
     </view>
-  </view> 
+  </view>
   <view class='content'>
     <view class='title'>{{nowQuestionNumber + 1}}.{{nowQuestion.relationExamBank.examTitle}}</view>
   </view>

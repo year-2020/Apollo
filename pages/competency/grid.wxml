@@ -1,6 +1,7 @@
 
-<image class="ad-img" mode='aspectFill' src="/static/images/jjkf.jpg" ></image>
+<!-- <image class="ad-img" mode='aspectFill' src="/static/images/jjkf.jpg" ></image> -->
 <view class="wrap">
+  <text class="title">能力测评排行榜</text>
 <!--我自己的排名信息-->
 <block wx:for='{{rows}}'>
 <view class="weui-flex my">

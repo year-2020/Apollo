@@ -10,7 +10,7 @@ Page({
   },
   beginAnswer: function () {
     wx.navigateTo({
-      url: './answer',
+      url: './answerBegin',
     })
   },
   openExamBank: function () {
@@ -24,7 +24,7 @@ Page({
       if (app.globalData.myExamBankList.length == 0) {
         wx.showModal({
           title: '提示',
-          content: '暂无错题',
+          content: '题库为空',
           showCancel: false,
           success: function (res) {
             console.log("确定")

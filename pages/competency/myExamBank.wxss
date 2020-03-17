@@ -48,6 +48,11 @@ page{
   font-size: 30rpx;
   text-align: right;
 }
+.delImage{
+  height: 16px;
+  width: 16px;
+  margin: 10px 20px 0 0;
+}
 .topRight>view{
   width: 100%;
   display: block;

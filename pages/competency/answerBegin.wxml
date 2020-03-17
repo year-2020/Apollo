@@ -1,0 +1,18 @@
+<!--pages/competency/answerBegin.wxml-->
+<view class="textWrap">
+  <text class="title">欢迎您参加能力测评</text>
+  <text>测评包括 <text class="text-red">10</text> 道单选题，</text>
+  <text>每道题的作答时间为 <text class="text-red">10</text> 秒钟。</text>
+  <text>您的初始成绩为 <text class="text-red">0</text> 分，</text>
+  <text>每答对一题得 <text class="text-red">1</text> 分，</text>
+  <text>答错一题或未在规定时间作答扣 <text class="text-red">0.5</text> 分。</text>
+  <text>预祝您取得好成绩。</text>
+</view>
+
+
+<view class="btns">
+  <button class='btn' bindtap='beginAnswer'>开始作答</button>
+</view>
+
+
+

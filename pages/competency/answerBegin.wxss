@@ -1,0 +1,33 @@
+/* pages/competency/answerBegin.wxss */
+.title{
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px!important;
+  display: block;
+  color: #335ee1;
+  padding: 20px 0;
+}
+.textWrap{
+  padding: 20px;
+}
+.textWrap text{
+  display: block;
+  font-size: 15px;
+}
+.textWrap text.text-red{
+  display: inline-block;
+  color: #f00;
+}
+.btns{
+  padding-top:75rpx;
+  text-align: center;
+}
+.btn{
+  background-color:#2593FB;
+  color:white;
+  border-radius:12rpx;
+  height:35px;
+  font-size:15px;
+  display:inline-block;
+  margin: 0 20px;
+}
