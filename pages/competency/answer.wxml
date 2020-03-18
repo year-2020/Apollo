@@ -39,7 +39,7 @@
     <button class='btn' bindtap='submit' wx:if='{{showSubmit}}'>查看最终得分</button>
     <view class="countdown">
       <image src="../../static/images/logo_1.png"></image>
-      <view class="animate {{animateWidth==true?'animateWidth':''}}"><image src="../../static/images/logo_2.png"></image></view>
+      <view style="width:{{(ss*10)+'%'}}" ><image src="../../static/images/logo_2.png"></image></view>
     </view>
   </view>
 

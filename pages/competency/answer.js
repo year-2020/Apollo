@@ -10,7 +10,7 @@ Page({
     nowQuestion: [],
     nowAnswerResult_question: {},
     nowAnswerResult_userResult: false,
-    nowAnswerResult_yourChose: '',
+    nowAnswerResult_yourChose: 'E',
     choseA: false,
     choseB: false,
     choseC: false,
@@ -29,7 +29,7 @@ Page({
     animateWidth: false,
     // hh: '',
     // mm: '',
-    // ss: '',
+    ss: 0,
     title: '能力评测',
     // before: false,
     after: false,
@@ -97,6 +97,7 @@ Page({
     var pages = getCurrentPages(); //当前页面
     var beforePage = pages[pages.length - num];
     wx.navigateBack({
+      delta: num,
       success: function () {
         beforePage.onLoad(); // 执行前一个页面的onLoad方法
       }
@@ -129,13 +130,21 @@ Page({
    * 对话框确认按钮点击事件
    */
   onConfirm: function () {
+    clearTimeout(this.data.timeout);
     this.hideModal();
     this.backPage(2);
   },
   countDownItem: function () {
-    this.data.timeout = setTimeout(() => {
-      this.noChoseItem();
-    }, 10000)
+    this.data.timeInterval = setInterval(() => {
+      if (that.data.ss === 10) {
+        clearInterval(this.data.timeInterval);
+        this.noChoseItem();
+      } else {
+        that.setData({
+          ss: that.data.ss + 1
+        })
+      }
+    }, 1000)
   },
   //倒计时
   // count_down: function (countDown_time) {
@@ -178,7 +187,6 @@ Page({
   // },
 
   choseItem: function (e) {
-    console.log(that)
     if (!that.data.canChose) {
       return false
     }
@@ -254,17 +262,17 @@ Page({
     } else {
       wx.showToast({
         title: '错误，\r\n正确答案：' + answer,
-        icon: 'success',
-        image: '../../static/images/icon-fail.png',
+        icon: 'none',
+        // image: '../../static/images/icon-fail.png',
         mask: true,
         duration: 1000
       });
     }
     
     // var nowAnswerResult = new Object;
-    that.nowAnswerResult_question = nowQuestion
-    that.nowAnswerResult_userResult = userResult
-    that.nowAnswerResult_yourChose = choseItem
+    that.data.nowAnswerResult_question = nowQuestion
+    that.data.nowAnswerResult_userResult = userResult
+    that.data.nowAnswerResult_yourChose = choseItem
     var nowAnswerResult = {
       nowQuestion: nowQuestion,
       userResult: userResult,
@@ -286,9 +294,10 @@ Page({
         after: true,
       });
     }
-    that.data.canChose = false;
-    clearTimeout(this.data.timeout);
-    
+    clearInterval(this.data.timeInterval);
+    that.setData({
+      canChose: false
+    })
     // console.log("nowAnswerResult", nowAnswerResult);
     
     // if (userResult == true) {
@@ -304,18 +313,40 @@ Page({
     // }
   },
   noChoseItem: function () {
-    wx.showModal({
-      title: '提示',
-      content: '时间到，请作答下一题',
-      showCancel: false,
-      success: function (res) {
-        if (res.cancel) {
-          //点击取消,默认隐藏弹框
-        } else {
-          that.toNext()
+    clearInterval(this.data.timeInterval);
+    var nowQuestionNumber = that.data.nowQuestionNumber;
+    var nowQuestion_list = that.data.SCList;
+    var questionListLength = nowQuestion_list.length;
+    that.data.nowAnswerResult_question = nowQuestion_list[nowQuestionNumber]
+    that.data.nowAnswerResult_userResult = false
+    that.data.nowAnswerResult_yourChose = 'E'
+    if (nowQuestionNumber + 1 === questionListLength) {
+      wx.showModal({
+        title: '提示',
+        content: '时间到，作答结束',
+        showCancel: false,
+        success: function (res) {
+          if (res.cancel) {
+            //点击取消,默认隐藏弹框
+          } else {
+            that.submit()
+          }
         }
-      }
-    });
+      });
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '时间到，请作答下一题',
+        showCancel: false,
+        success: function (res) {
+          if (res.cancel) {
+            //点击取消,默认隐藏弹框
+          } else {
+            that.toNext()
+          }
+        }
+      });
+    }
   },
   // 点击上一题
   // toPrev: function () {
@@ -338,23 +369,19 @@ Page({
     // this.setData({
     //   animateWidth: false
     // });
-    clearTimeout(this.data.timeout);
-    that.data.canChose = true;
-    this.setData({
-      after: false
-    });
+    that.setData({
+      ss: 0,
+      canChose: true,
+      after: false,
+      nowAnswerResult_yourChose: "E"
+    })
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var nowQuestion_list = that.data.SCList;
-    var questionListLength = nowQuestion_list.length;
-    var questionNum = that.data.questionNum;
-    if(this.data.choseA==false && this.data.choseB==false &&this.data.choseC==false &&this.data.choseD==false){
-      that.nowAnswerResult_question = nowQuestion_list[nowQuestionNumber]
-      that.nowAnswerResult_userResult = false
-      that.nowAnswerResult_yourChose = 'E'
-    }
+
     // 暂存当前题答案
-    let param = that.nowAnswerResult_question.examId + ',' + that.nowAnswerResult_yourChose
+    let param = that.data.nowAnswerResult_question.examId + ',' + that.data.nowAnswerResult_yourChose
     that.data.answerDetail.push(param)
+    console.log(that.data.answerDetail)
     // 开始新题数据
     that.setData({
       choseA: false,
@@ -365,9 +392,7 @@ Page({
     nowQuestionNumber++;
     that.setData({
       nowQuestion: nowQuestion_list[nowQuestionNumber],
-      nowQuestionNumber: nowQuestionNumber,
-      before: false,
-      animateWidth: true
+      nowQuestionNumber: nowQuestionNumber
     })
     // 重新计时
     this.countDownItem();
@@ -391,7 +416,6 @@ Page({
   },
   // 点击交卷
   submit: function (param) {
-    clearTimeout(this.data.timeout);
     app.api._fetch({
       url: '/community/examRecord/add?answerDetail=' + param,
       method: 'post'
@@ -432,19 +456,18 @@ Page({
   // 收藏
   toStore: function () {
     let examId = this.data.nowQuestion.examId
-    let meSelected = 'E'
+    let meSelected = that.data.nowAnswerResult_yourChose
     app.api._fetch({
       url: '/community/meExamBank/collect?examId=' + examId + '&meSelected=' + meSelected,
       method: 'post'
     }).then((res) => {
-      console.log("收藏成功")
       wx.showToast({
         title: '收藏成功',
         icon: 'success',
         image: '../../static/images/icon-tick.png',
         mask: true,
         duration: 300
-      });
+      })
     }).catch((error) => {
       console.log(error);
     });
@@ -456,5 +479,6 @@ Page({
     // 清除定时器
     // clearInterval(this.data.interval);
     clearTimeout(this.data.timeout);
+    clearInterval(this.data.timeInterval);
   },
 })
