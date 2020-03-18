@@ -13,7 +13,7 @@ page{
   font-weight: 600;
   font-size: 25px;
   display: block;
-  color: #335ee1;
+  color: #2593FB;
   padding: 20px 0;
 }
 .ad-img{
@@ -97,7 +97,7 @@ display:flex;
 .footer-item image{
   width: 81rpx;
   height: 81rpx;
-  margin-top: 10rpx;
+  margin-top: 15rpx;
 } 
 .footer-item .text{
   font-size: 16px;

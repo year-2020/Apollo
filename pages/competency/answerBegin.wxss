@@ -4,7 +4,7 @@
   font-weight: 600;
   font-size: 25px!important;
   display: block;
-  color: #335ee1;
+  color: #2593FB;
   padding: 20px 0;
 }
 .textWrap{
@@ -17,6 +17,7 @@
 .textWrap text.text-red{
   display: inline-block;
   color: #f00;
+  font-weight: 600;
 }
 .btns{
   padding-top:75rpx;

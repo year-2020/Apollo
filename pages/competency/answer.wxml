@@ -1,4 +1,4 @@
-<view class="page">
+<view class="page pageAnswer">
   <view class='top'>  
     <view class='topLeft'><text style='margin-left:20rpx;'><text style='margin-left:10rpx;margin-right:10rpx;'>{{nowQuestionNumber+1}} / {{questionNum}}</text>{{questionTypeCH}}</text></view>
     <view class='topRight'>
@@ -34,11 +34,13 @@
             </view>
 
   </view>
-  <view style="text-align:center">
+  <view style="overflow:hidden;padding: 20px 10px;">
+    <button class='btn' bindtap='toNext' wx:if='{{after}}'>下一题</button>
+    <button class='btn' bindtap='submit' wx:if='{{showSubmit}}'>查看最终得分</button>
     <view class="countdown">
       <image src="../../static/images/logo_1.png"></image>
       <view class="animate {{animateWidth==true?'animateWidth':''}}"><image src="../../static/images/logo_2.png"></image></view>
-  </view>
+    </view>
   </view>
 
     <!-- <button class='btn' style='margin-left:35px;float:left;' bindtap='toPrev' disabled="{{before}}">上一题</button>
