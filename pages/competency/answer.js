@@ -415,9 +415,9 @@ Page({
     // }
   },
   // 点击交卷
-  submit: function (param) {
+  submit: function () {
     app.api._fetch({
-      url: '/community/examRecord/add?answerDetail=' + param,
+      url: '/community/examRecord/add?answerDetail=' + that.data.answerDetail.join(';'),
       method: 'post'
     }).then((res)=>{
       console.log("提交成功")
