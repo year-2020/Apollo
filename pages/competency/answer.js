@@ -1,6 +1,7 @@
 var that;
 const app = getApp()
 var countDown_time = '00:20:01';
+const { $Toast } = require('../../dist/base/index');
 Page({
   data: {
     SCNumberList: [],
@@ -253,19 +254,17 @@ Page({
       //   score: score,
       // });
       wx.showToast({
-        title: '正确',
+        title: '正确答案：' + answer,
         icon: 'success',
         image: '../../static/images/icon-tick.png',
         mask: true,
         duration: 1000
       });
     } else {
-      wx.showToast({
-        title: '错误，\r\n正确答案：' + answer,
-        icon: 'none',
-        // image: '../../static/images/icon-fail.png',
-        mask: true,
-        duration: 1000
+      $Toast({
+        content: '错误，正确答案：' + answer,
+        icon: 'close',
+        duration: 1
       });
     }
     

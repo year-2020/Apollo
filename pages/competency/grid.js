@@ -6,7 +6,7 @@ Page({
   data: {
     mySortInfo: {},
     rows: [],
-    title: '能力评测'
+    title: '能力测评'
   },
   beginAnswer: function () {
     wx.navigateTo({

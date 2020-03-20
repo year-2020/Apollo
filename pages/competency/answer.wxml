@@ -17,19 +17,19 @@
  
   <view class='questionOption'  wx:if="{{questionType=='SC'}}">
             <view class="{{choseA==true? 'choseA':'noChoseA'}}" bindtap='choseItem' data-choseitem="A">
-                <radio checked="{{choseA == true ? true:false}}" value='' />
+                <radio checked="{{choseA == true ? true:false}}" disabled="{{choseA != true ? true:false}}" value='' />
                   A. {{nowQuestion.itemA}}
             </view>
             <view class="{{choseB==true? 'choseB':'noChoseB'}}" bindtap='choseItem' data-choseitem="B">
-              <radio checked="{{choseB==true? true:false}}"></radio>
+              <radio checked="{{choseB==true? true:false}}" disabled="{{choseB!=true? true:false}}"></radio>
                 B. {{nowQuestion.itemB}}
             </view>
             <view class="{{choseC==true? 'choseC':'noChoseC'}}" bindtap='choseItem' data-choseitem="C">
-                <radio checked='{{choseC==true?true:false}}'></radio>
+                <radio checked='{{choseC==true?true:false}}' disabled="{{choseC!=true?true:false}}"></radio>
                 C. {{nowQuestion.itemC}}
             </view>
             <view class="{{choseD==true? 'choseD':'noChoseD'}}" bindtap='choseItem' data-choseitem="D">
-                <radio checked='{{choseD==true?true:false}}'></radio>
+                <radio checked='{{choseD==true?true:false}}' disabled="{{choseD!=true?true:false}}"></radio>
                 D. {{nowQuestion.itemD}}
             </view>
 
@@ -65,3 +65,4 @@
     <cover-view class="btn-confirm" bindtap="onConfirm" data-status="confirm">{{modal.ok}}</cover-view>
   </cover-view>
 </cover-view>
+<i-toast id="toast" />

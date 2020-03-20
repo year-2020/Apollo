@@ -118,32 +118,47 @@ Page({
           duration: 500
         })
       }
-
-      if (nowQuestionNumber == questionList.length) {
-        nowQuestionNumber -= 1;
+      if (questionList.length === 1) {
         this.setData({
-          after: true
+          before: true,
+          after: true,
         })
-        if (questionList.length > 1) {
+      } else {
+        if (nowQuestionNumber === questionList.length) {
+          nowQuestionNumber -= 1;
           this.setData({
-            before: false
+            after: true
+          })
+          if (questionList.length > 1) {
+            this.setData({
+              before: false
+            })
+          } else {
+            this.setData({
+              before: true
+            })
+          }
+        } else if (nowQuestionNumber === 0){
+          this.setData({
+            after: false,
+            before: true
           })
         } else {
-          this.setData({
-            before: true
-          })
-        }
-      } else {
-        this.setData({
-          after: false,
-          before: false
-        })
-        if (nowQuestionNumber === 1) {
-          this.setData({
-            before: true
-          })
+          if ((nowQuestionNumber + 1) === questionList.length) {
+            this.setData({
+              after: true,
+              before: false
+            })
+          } else {
+            this.setData({
+              after: false,
+              before: false
+            })
+          }
+
         }
       }
+
       // console.error(questionList.length)
       this.setData({
         questionList: questionList,
