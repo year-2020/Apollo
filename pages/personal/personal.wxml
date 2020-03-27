@@ -4,91 +4,125 @@
 <import src="/pages/personal/mpl/pbdscell.wxml"></import>
 
 <view class='header'>
- <image class='h_img'  src='/static/images/mine_header.jpg'></image>
+  <image class='h_img' src='/static/images/mine_header.jpg'></image>
   <view class='p_tags'>
-  <image class='ap-ico' src='{{personalData.wxAvatar}}' bindtap='jumpInfovc'></image>
-  <view class='ls-js' bindtap="jumpInfovc">
-    <view class='hx1'>{{personalData.wxNickname}}</view>
-    <view class='kf-level' wx:if='{{personalData.atitle !=""}}'>{{personalData.atitle}}</view>
-   </view>
-     <!-- <van-progress custom-class='progress'  pivot-text="1850" percentage="90"/> -->
-
-<view class='top-tab'>
-  <view class="tab">
-  <view class="send-tab" bindtap='jump_myfocus'>
-        <text class="gz-num">{{personalData.followCount}}</text>
-
-    <text class="post-title">关注</text>
-  </view>
-
-  </view>
-<view class="tab">
-<view class="like-tab" bindtap='jump_myfollowers'>
-        <text class="gz-num">{{personalData.followerCount}}</text>
-    <text class="post-title">粉丝</text>
-</view>
-</view>
-
-<view class="tab">
-  <view class="num-tab" bindtap='mypublishAction'>
-        <text class="gz-num">{{personalData.quesCount}}</text>
-    <text class="post-title">发帖数</text>
-</view>
-</view>
+    <image class='ap-ico' src='{{personalData.wxAvatar}}' bindtap='jumpInfovc'></image>
+    <view class='ls-js' bindtap="jumpInfovc">
+      <view class='hx1'>{{personalData.wxNickname}}</view>
+      <view class='kf-level' wx:if='{{personalData.atitle !=""}}'>{{personalData.atitle}}</view>
     </view>
-  <!-- <view class='qd-container' bindtap='showMask'>
+    <!-- <van-progress custom-class='progress'  pivot-text="1850" percentage="90"/> -->
+
+    <view class='top-tab'>
+      <view class="tab">
+        <view class="send-tab" bindtap='jump_myfocus'>
+          <text class="gz-num">{{personalData.followCount}}</text>
+
+          <text class="post-title">关注</text>
+        </view>
+
+      </view>
+      <view class="tab">
+        <view class="like-tab" bindtap='jump_myfollowers'>
+          <text class="gz-num">{{personalData.followerCount}}</text>
+          <text class="post-title">粉丝</text>
+        </view>
+      </view>
+
+      <view class="tab">
+        <view class="num-tab" bindtap='mypublishAction'>
+          <text class="gz-num">{{personalData.quesCount}}</text>
+          <text class="post-title">发帖数</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='qd-container' bindtap='showMask'>
   <image class='mine-sign' src='/static/images/qiaquan.png'></image>
  <view class='dk'>打卡</view>
  
 
  </view> -->
- </view>
+  </view>
 </view>
-<view class='bl-v'>
+<!-- <view class='bl-v'>
 <view class='card-title'>社区布道师专卡</view>
 <view class='unlock-vip'>即将开放</view>
-</view>
+</view> -->
 
 <view class='m-view'>
   <view class='title-v'>
     <image class='zs' src='/static/images/zuanshi.png'></image>
-      <view class='jf-title'>我的积分</view>
-       <image class='right-arrow' src='/static/images/rightarrow.png' bindtap='jumptomycredit'></image> 
-    </view>
-    <view class='contain-cir'>
+    <view class='jf-title'>我的积分</view>
+    <image class='right-arrow' src='/static/images/rightarrow.png' bindtap='jumptomycredit'></image>
+  </view>
+  <view class='contain-cir'>
     <!-- <template is='halfcircle' data="{{vip}}"></template> -->
-      <template is='level-t' data="{{mycredits,todayCredits}}"></template>
-    </view>
+    <template is='level-t' data="{{mycredits,todayCredits}}"></template>
+  </view>
 
   <view class='jf-right'>
     <text class='coin-detail'>收集散落积分\n换取更多好物</text>
     <view class='cion-farm' bindtap='jumptostore'>前往积分商城</view>
-   </view>
-<view class='jb-tab'>
-  <view class="tab">
-  <view class="send-tab" bindtap='mypublishAction'>
-    <image class="post-ico" src="/static/images/fabu.png" ></image>
-    <text class="post-title">我的发布</text>
   </view>
+  <view class='jb-tab'>
+    <view class="tab">
+      <view class="send-tab" bindtap='mypublishAction'>
+        <image class="post-ico" src="/static/images/fabu.png"></image>
+        <text class="post-title">我的发布</text>
+      </view>
 
-  </view>
-<view class="tab">
-<view class="like-tab" bindtap='jump_myliked'>
-  <image class="post-ico" src="/static/images/xihuan.png" ></image>
-    <text class="post-title">我的喜欢</text>
-</view>
-</view>
-
-<view class="tab">
-  <view class="num-tab" bindtap='jump_mycollection'>
-  <image class="post-ico" src="/static/images/shoucang.png" ></image>
-    <text class="post-title">我的收藏</text>
-</view>
-</view>
     </view>
+    <view class="tab">
+      <view class="like-tab" bindtap='jump_myliked'>
+        <image class="post-ico" src="/static/images/xihuan.png"></image>
+        <text class="post-title">我的喜欢</text>
+      </view>
+    </view>
+
+    <view class="tab">
+      <view class="num-tab" bindtap='jump_mycollection'>
+        <image class="post-ico" src="/static/images/shoucang.png"></image>
+        <text class="post-title">我的收藏</text>
+      </view>
+    </view>
+  </view>
 </view>
 
- <!-- <view class="four-tabs">
+<view class='m-view cooper'>
+  <view class='title-v'>
+    <image class='zs' src='/static/images/hezuo-4.png'></image>
+    <view class='jf-title'>合作</view>
+  </view>
+  <view class='jb-tab'>
+    <view class="tab">
+      <navigator class="send-tab" url="/pages/outurl/link1">
+        <view class="img"><image class="post-ico" src="/static/images/qiche-3.png"></image></view>
+        <text class="post-title">开发套件</text>
+      </navigator>
+    </view>
+    <view class="tab">
+      <navigator class="send-tab" url="/pages/outurl/link2">
+        <view class="img"><image class="post-ico" src="/static/images/chepi.png"></image></view>
+        <text class="post-title">低速微型套件</text>
+      </navigator>
+    </view>
+
+    <view class="tab">
+      <navigator class="send-tab" url="/pages/outurl/link3">
+        <view class="img"><image class="post-ico" src="/static/images/yinhang-copy.png"></image></view>
+        <text class="post-title">教育合作</text>
+      </navigator>
+    </view>
+    <view class="tab">
+      <navigator class="send-tab" url="/pages/outurl/link4">
+        <view class="img"><image class="post-ico" src="/static/images/hezuo-5.png"></image></view>
+        <text class="post-title">商业合作</text>
+      </navigator>
+    </view>
+  </view>
+  <button class='btn' bindtap='jumpCooper'>合作登记</button>
+</view>
+<!-- <view class="four-tabs">
    <view class="tab">
   <view class="send-tab" bindtap='completecard'>
     <image class="post-ico" src="/static/images/iconfont01.png" ></image>
@@ -128,7 +162,7 @@
   </swiper>
 </view> -->
 
-<view class='kc-titleV' wx:if='{{personalData.budaoshi.length>0}}'>
+<!-- <view class='kc-titleV' wx:if='{{personalData.budaoshi.length>0}}'>
   <view class='title'>社区布道师</view>
     <view class='rightA'>换批试试</view>
     <image class='refresh-ico' src=''></image>
@@ -136,31 +170,20 @@
 
 <view class="clea">
   <block wx:for='{{personalData.budaoshi}}' wx:key=''>
-        <!-- <template is="raduisla" data='{{fromMe,item}}'></template> -->
   <template is="bds-item" data="{{romMe,item}}" ></template>
 
   </block>
-  </view>
+  </view> -->
 
 
 <view class="mask" hidden="{{flag}}">
   <view class="maskContent">
     <image class='share-img' src='{{imagePath}}'></image>
-        <view class='sc-title'>打卡成功！</view>
-        <view class='jf-one'>积分+1</view>
-        <view class='save-picBtn'>保存图片</view>
+    <view class='sc-title'>打卡成功！</view>
+    <view class='jf-one'>积分+1</view>
+    <view class='save-picBtn'>保存图片</view>
   </view>
   <view class="closeImg" bindtap="closeMask">
-    <image  class="closeImg_image" src="/static/images/close.png"></image>
+    <image class="closeImg_image" src="/static/images/close.png"></image>
   </view>
 </view>
-
-
-
-
-
-
-
-
-
-  

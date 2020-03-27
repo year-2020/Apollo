@@ -143,7 +143,7 @@ border: 1px;
   margin-right: 20px;
   background-color: white;
   border-radius: 6px;
-  margin-top: 10px;
+  margin-top: 100px;
 }
 .title-v{
 position: absolute;
@@ -452,4 +452,47 @@ swiper-item image {
   height: 100%;
 }
 
+.m-view.cooper{
+  height: 240px;
+  margin-top: 20px;
+}
+.m-view.cooper .jb-tab {
+  top: 55px;
+  bottom: none;
+  background: none;
+}
+.m-view.cooper .jb-tab .tab{
+  padding: 0px;
+  height: auto;
+}
+.m-view.cooper .jb-tab .send-tab{
+  height: auto;
+}
+.m-view.cooper .jb-tab .img{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  line-height: 50px;
+  background: #e0c37e;
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+.m-view.cooper .jb-tab .post-ico{
+  width: 50px;
+  height: 50px;
+}
+.m-view.cooper button{
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  background: #f29b38;
+  top: 155px;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  border: none;
+}
 

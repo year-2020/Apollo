@@ -17,7 +17,12 @@
     "pages/index/skilltest",
     "pages/index/videovc",
     "pages/personal/businesscard",
-    "pages/creditvc/moreinfo"
+    "pages/personal/cooper",
+    "pages/creditvc/moreinfo",
+    "pages/outurl/link1",
+    "pages/outurl/link2",
+    "pages/outurl/link3",
+    "pages/outurl/link4"
   ],
   "subpackages": [
     {

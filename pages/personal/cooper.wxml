@@ -1,0 +1,57 @@
+<!--pages/personal/cooper.wxml-->
+<view class="pageCooper">
+  <van-collapse class="collapse" value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item name="1">
+      <view slot="title">1.您想与Apollo合作的项目类型是？<text style="color: #f00">*</text> </view>
+      <van-radio-group value="{{ result }}" bind:change="handleChange">
+        <van-radio wx:for="{{projectType}}" name="{{item.id}}">{{item.name}}</van-radio>
+      </van-radio-group>
+    </van-collapse-item>
+    <van-collapse-item name="2">
+      <view slot="title">2.组织名称<text style="color: #f00">*</text> </view>
+      <van-cell-group>
+        <van-field value="{{ organizationName }}" placeholder="组织名称" />
+      </van-cell-group>
+    </van-collapse-item>
+    <van-collapse-item name="3">
+      <view slot="title">3.姓名<text style="color: #f00">*</text> </view>
+      <van-cell-group>
+        <van-field value="{{ name }}" placeholder="姓名" />
+      </van-cell-group>
+    </van-collapse-item>
+    <van-collapse-item name="4">
+      <view slot="title">4.职位<text style="color: #f00">*</text> </view>
+      <van-cell-group>
+        <van-field value="{{ position }}" placeholder="职位" />
+      </van-cell-group>
+    </van-collapse-item>
+    <van-collapse-item name="5">
+      <view slot="title">5.联系电话<text style="color: #f00">*</text> </view>
+      <van-cell-group>
+        <van-field value="{{ contactNumber }}" placeholder="联系电话" />
+      </van-cell-group>
+    </van-collapse-item>
+    <van-collapse-item name="6">
+      <view slot="title">6.联系邮箱<text style="color: #f00">*</text> </view>
+      <van-cell-group>
+        <van-field value="{{ contactEmail }}" placeholder="联系邮箱" />
+      </van-cell-group>
+    </van-collapse-item>
+    <van-collapse-item title="7.您的项目背景，当前阶段及预期实现的时间节点是？" name="7">
+      <van-cell-group>
+        <van-field value="{{ timeNode }}" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" />
+      </van-cell-group>
+    </van-collapse-item>
+    <van-collapse-item title="8.请简要描述下您的合作需求。" name="8">
+      <van-cell-group>
+        <van-field value="{{ cooperationNeeds }}" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" />
+      </van-cell-group>
+    </van-collapse-item>
+  </van-collapse>
+  <button class='btn' bindtap='handleSubmit'>合作登记</button>
+  <cover-view class="modal-mask" bindtap="hideModal" wx:if="{{modalShow}}"></cover-view>
+  <cover-view class="modal-dialog" wx:if="{{modalShow}}">
+    <image class="img" mode="aspectFit" src="/static/images/cooper.png"></image>
+  </cover-view>
+</view>
+<i-toast id="toast" />

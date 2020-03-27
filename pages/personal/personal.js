@@ -93,6 +93,11 @@ Page({
       url: '/pages/index/creditstore',
     })
   },
+  jumpCooper: function () {
+    wx.navigateTo({
+      url: '/pages/personal/cooper',
+    })
+  },
   mypublishAction:function(){
     wx.navigateTo({
       url: '/pages/personalPackage/mypublish',
