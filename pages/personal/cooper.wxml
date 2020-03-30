@@ -10,48 +10,48 @@
     <van-collapse-item name="2">
       <view slot="title">2.组织名称<text style="color: #f00">*</text> </view>
       <van-cell-group>
-        <van-field value="{{ organizationName }}" placeholder="组织名称" />
+        <van-field value="{{ organizationName }}" id="organizationName" placeholder="组织名称" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
     <van-collapse-item name="3">
       <view slot="title">3.姓名<text style="color: #f00">*</text> </view>
       <van-cell-group>
-        <van-field value="{{ name }}" placeholder="姓名" />
+        <van-field value="{{ name }}" id="name" placeholder="姓名" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
     <van-collapse-item name="4">
       <view slot="title">4.职位<text style="color: #f00">*</text> </view>
       <van-cell-group>
-        <van-field value="{{ position }}" placeholder="职位" />
+        <van-field value="{{ position }}" id="position" placeholder="职位" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
     <van-collapse-item name="5">
       <view slot="title">5.联系电话<text style="color: #f00">*</text> </view>
       <van-cell-group>
-        <van-field value="{{ contactNumber }}" placeholder="联系电话" />
+        <van-field value="{{ contactNumber }}" id="contactNumber" placeholder="联系电话" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
     <van-collapse-item name="6">
       <view slot="title">6.联系邮箱<text style="color: #f00">*</text> </view>
       <van-cell-group>
-        <van-field value="{{ contactEmail }}" placeholder="联系邮箱" />
+        <van-field value="{{ contactEmail }}" id="contactEmail" placeholder="联系邮箱" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
     <van-collapse-item title="7.您的项目背景，当前阶段及预期实现的时间节点是？" name="7">
       <van-cell-group>
-        <van-field value="{{ timeNode }}" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" />
+        <van-field value="{{ timeNode }}" id="timeNode" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
     <van-collapse-item title="8.请简要描述下您的合作需求。" name="8">
       <van-cell-group>
-        <van-field value="{{ cooperationNeeds }}" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" />
+        <van-field value="{{ cooperationNeeds }}" id="cooperationNeeds" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" bind:change="changeVanField" />
       </van-cell-group>
     </van-collapse-item>
   </van-collapse>
   <button class='btn' bindtap='handleSubmit'>合作登记</button>
   <cover-view class="modal-mask" bindtap="hideModal" wx:if="{{modalShow}}"></cover-view>
   <cover-view class="modal-dialog" wx:if="{{modalShow}}">
-    <image class="img" mode="aspectFit" src="/static/images/cooper.png"></image>
+    <cover-image class="img" mode="aspectFit" src="/static/images/cooper.png"></cover-image>
   </cover-view>
 </view>
 <i-toast id="toast" />

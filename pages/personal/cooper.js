@@ -1,5 +1,6 @@
 // pages/personal/cooper.js
 const { $Toast } = require('../../dist/base/index');
+const app = getApp()
 Page({
 
   /**
@@ -120,6 +121,13 @@ Page({
       activeNames: event.detail
     });
   },
+  changeVanField (data) {
+    let curid = data.currentTarget.id;
+    let val = data.detail;
+    this.setData({
+      [curid]: val
+    });
+  },
   handleSubmit () {
     let result = ''
     if (!this.data.result.length) {
@@ -136,7 +144,25 @@ Page({
       result = '请填写 联系邮箱'
     }
     if (!result) {
-      this.showModal()
+      let param = {
+        projectType: this.data.result,
+        organizationName: this.data.organizationName,
+        name: this.data.name,
+        position: this.data.position,
+        contactNumber: this.data.contactNumber,
+        contactEmail: this.data.contactEmail,
+        timeNode: this.data.timeNode,
+        cooperationNeeds: this.data.cooperationNeeds
+      }
+      app.api._fetch({
+        url: '/community/cooperateRegiste/add',
+        method: 'post',
+        data: param,
+      }).then((res) => {
+        this.showModal()
+      }).catch((error) => {
+        console.log(error);
+      });
     } else {
       $Toast({
         content: result,
