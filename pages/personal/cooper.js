@@ -31,7 +31,16 @@ Page({
       id: '其他',
       name: '其他',
     }],
-    activeNames: ['1'],
+    activeNames: {
+      "s1": false,
+      "s2": false,
+      "s3": false,
+      "s4": false,
+      "s5": false,
+      "s6": false,
+      "s7": false,
+      "s8": false
+    },
     result: ''
   },
 
@@ -91,6 +100,19 @@ Page({
 
   },
   /**
+   * 页面回退
+   */
+  backPage: function (num) {
+    var pages = getCurrentPages(); //当前页面
+    var beforePage = pages[pages.length - num];
+    wx.navigateBack({
+      delta: num,
+      success: function () {
+        beforePage.onLoad(); // 执行前一个页面的onLoad方法
+      }
+    });
+  },
+  /**
    * 弹出框蒙层截断touchmove事件
    */
   preventTouchMove: function () {
@@ -110,6 +132,20 @@ Page({
     this.setData({
       modalShow: false
     });
+    this.backPage(1)
+  },
+  handleOpen: function (e) {
+    var id = e.currentTarget.id;
+    var thisdata = 'activeNames.'+id
+    if (this.data.activeNames[id]) {
+      this.setData({
+        [thisdata]: false
+      });
+    } else {
+      this.setData({
+        [thisdata]: true
+      });
+    }
   },
   handleChange(event) {
     this.setData({

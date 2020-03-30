@@ -33,6 +33,20 @@ page{
 .pageCooper{
   padding-top: 20px;
 }
+.pageCooper .form-item{
+  margin-bottom: 10px;
+}
+.pageCooper .form-item-tit{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 14px;
+  padding: 0 10px;
+  background: #fff;
+}
+.pageCooper .form-item-cont{
+  padding: 10px;
+  display: none;
+}
 .pageCooper .van-collapse-item__content{
   background: #F5F5F5;
 }
@@ -60,4 +74,6 @@ page{
   background: #d7ca99;
   border: none;
   margin: 20px 30px;
+  position: relative;
+  z-index: 10;
 }
