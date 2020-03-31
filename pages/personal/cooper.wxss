@@ -90,3 +90,17 @@ page{
   -moz-transform:rotate(-90deg);
   transform:rotate(-90deg);
 }
+.pageCooper .form-item-cont .input{
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #a3c3f8;
+  display: block;
+}
+.pageCooper .form-item-cont .textarea{
+  height: 60px;
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #a3c3f8;
+  display: block;
+  width: auto;
+}

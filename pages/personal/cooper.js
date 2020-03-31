@@ -157,11 +157,12 @@ Page({
       activeNames: event.detail
     });
   },
-  changeVanField (data) {
-    let curid = data.currentTarget.id;
-    let val = data.detail;
+  changeVanField(event) {
+    var value = event.detail.value;
+    let curid = event.currentTarget.id;
+    let that = this;
     this.setData({
-      [curid]: val
+      [curid]: value
     });
   },
   handleSubmit () {
