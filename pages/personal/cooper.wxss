@@ -77,3 +77,6 @@ page{
   position: relative;
   z-index: 10;
 }
+.pageCooper .form-item-tit .i-icon{
+  font-size: 20px;
+}

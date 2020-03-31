@@ -193,7 +193,7 @@ Page({
       app.api._fetch({
         url: '/community/cooperateRegiste/add',
         method: 'post',
-        data: param,
+        data: JSON.stringify(param),
       }).then((res) => {
         this.showModal()
       }).catch((error) => {

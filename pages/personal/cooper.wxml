@@ -50,7 +50,7 @@
   </van-collapse> -->
   <view class="form">
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s1">1.您想与Apollo合作的项目类型是？<text style="color: #f00">*</text></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s1">1.您想与Apollo合作的项目类型是？<text style="color: #f00">*</text><i-icon type="packup" /></view>
       <view class="form-item-cont" style="{{activeNames['s1'] ? 'display:block':'display:none'}}">
         <van-radio-group value="{{ result }}" bind:change="handleChange">
           <van-radio wx:for="{{projectType}}" name="{{item.id}}">{{item.name}}</van-radio>
