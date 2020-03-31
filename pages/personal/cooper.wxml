@@ -50,7 +50,9 @@
   </van-collapse> -->
   <view class="form">
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s1">1.您想与Apollo合作的项目类型是？<text style="color: #f00">*</text><i-icon type="packup" /></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s1">1.您想与Apollo合作的项目类型是？<text style="color: #f00">*</text>
+        <image class="icon {{activeNames['s1'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s1'] ? 'display:block':'display:none'}}">
         <van-radio-group value="{{ result }}" bind:change="handleChange">
           <van-radio wx:for="{{projectType}}" name="{{item.id}}">{{item.name}}</van-radio>
@@ -58,43 +60,57 @@
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s2">2.组织名称<text style="color: #f00">*</text></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s2">2.组织名称<text style="color: #f00">*</text>
+        <image class="icon {{activeNames['s2'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s2'] ? 'display:block':'display:none'}}">
         <van-field value="{{ organizationName }}" id="organizationName" placeholder="组织名称" bind:change="changeVanField" />
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s3">3.姓名<text style="color: #f00">*</text></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s3">3.姓名<text style="color: #f00">*</text>
+        <image class="icon {{activeNames['s3'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s3'] ? 'display:block':'display:none'}}">
         <van-field value="{{ name }}" id="name" placeholder="姓名" bind:change="changeVanField" />
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s4">4.职位<text style="color: #f00">*</text></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s4">4.职位<text style="color: #f00">*</text>
+        <image class="icon {{activeNames['s4'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s4'] ? 'display:block':'display:none'}}">
         <van-field value="{{ position }}" id="position" placeholder="职位" bind:change="changeVanField" />
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s5">5.联系电话<text style="color: #f00">*</text></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s5">5.联系电话<text style="color: #f00">*</text>
+        <image class="icon {{activeNames['s5'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s5'] ? 'display:block':'display:none'}}">
         <van-field value="{{ contactNumber }}" id="contactNumber" placeholder="联系电话" bind:change="changeVanField" type="number" />
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s6">6.联系邮箱<text style="color: #f00">*</text></view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s6">6.联系邮箱<text style="color: #f00">*</text>
+        <image class="icon {{activeNames['s6'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s6'] ? 'display:block':'display:none'}}">
         <van-field value="{{ contactEmail }}" id="contactEmail" placeholder="联系邮箱" bind:change="changeVanField" />
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s7">7.您的项目背景，当前阶段及预期实现的时间节点是？</view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s7">7.您的项目背景，当前阶段及预期实现的时间节点是？
+        <image class="icon {{activeNames['s7'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s7'] ? 'display:block':'display:none'}}">
         <van-field value="{{ timeNode }}" id="timeNode" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" bind:change="changeVanField" />
       </view>
     </view>
     <view class="form-item">
-      <view class="form-item-tit" bindtap="handleOpen" id="s8">8.请简要描述下您的合作需求。</view>
+      <view class="form-item-tit" bindtap="handleOpen" id="s8">8.请简要描述下您的合作需求。
+        <image class="icon {{activeNames['s8'] ? 'rotate':''}}" src="/static/images/jt_ico.png"></image>
+      </view>
       <view class="form-item-cont" style="{{activeNames['s8'] ? 'display:block':'display:none'}}">
         <van-field value="{{ cooperationNeeds }}" id="cooperationNeeds" placeholder="" type="textarea" autosize="{{ true }}" maxlength="2000" bind:change="changeVanField" />
       </view>

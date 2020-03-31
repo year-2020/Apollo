@@ -42,6 +42,7 @@ page{
   font-size: 14px;
   padding: 0 10px;
   background: #fff;
+  position: relative;
 }
 .pageCooper .form-item-cont{
   padding: 10px;
@@ -77,6 +78,15 @@ page{
   position: relative;
   z-index: 10;
 }
-.pageCooper .form-item-tit .i-icon{
-  font-size: 20px;
+.pageCooper .form-item-tit .icon{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+.pageCooper .form-item-tit .rotate{
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  transform:rotate(-90deg);
 }
