@@ -1,18 +1,36 @@
 /* pages/competency/answerBegin.wxss */
+page{
+  padding: 0px;
+}
+.page{
+  height: 100vh;
+  position: relative;
+}
+.page .bg{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.page .cont{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+}
 .title{
   text-align: center;
   font-weight: 600;
-  font-size: 25px!important;
+  font-size: 29px!important;
   display: block;
-  color: #2593FB;
-  padding: 20px 0;
-}
-.textWrap{
-  padding: 20px;
+  color: #fff;
+  padding: 81px 0;
 }
 .textWrap text{
   display: block;
   font-size: 15px;
+  color: #fff;
+  line-height: 30px;
 }
 .textWrap text.text-red{
   display: inline-block;
@@ -24,11 +42,12 @@
   text-align: center;
 }
 .btn{
-  background-color:#2593FB;
+  background-color:#f29b38;
   color:white;
   border-radius:12rpx;
-  height:35px;
-  font-size:15px;
-  display:inline-block;
-  margin: 0 20px;
+  height:50px;
+  line-height: 50px;
+  font-size:20px;
+  display:block;
+  margin: 0 35px;
 }

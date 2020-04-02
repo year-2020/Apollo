@@ -34,12 +34,14 @@
             </view>
 
   </view>
-  <view style="overflow:hidden;padding: 20px 10px;">
-    <button class='btn' bindtap='toNext' wx:if='{{after}}'>下一题</button>
-    <button class='btn' bindtap='submit' wx:if='{{showSubmit}}'>查看最终得分</button>
+  <view style="overflow:hidden;padding: 10px;text-align:center;">
     <view class="countdown">
       <image src="../../static/images/logo_1.png"></image>
       <view style="width:{{(ss*10)+'%'}}" ><image src="../../static/images/logo_2.png"></image></view>
+    </view>
+    <view style="padding-top: 10px;">
+      <button class='btn' bindtap='toNext' wx:if='{{after}}'>下一题</button>
+      <button class='btn' bindtap='submit' wx:if='{{showSubmit}}'>查看最终得分</button>
     </view>
   </view>
 

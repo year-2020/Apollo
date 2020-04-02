@@ -1,22 +1,21 @@
 
-<!-- <image class="ad-img" mode='aspectFill' src="/static/images/jjkf.jpg" ></image> -->
+<image class="ad-img" mode='aspectFill' src="/static/images/grid.png" ></image>
 <view class="wrap">
-  <text class="title">能力测评排行榜</text>
 <!--我自己的排名信息-->
 <block wx:for='{{rows}}'>
 <view class="weui-flex my">
-    <view class="weui-flex__item align-center">
+    <view class="weui-flex__item item1 align-center">
     {{(index>2||index==3)?index+1:''}}
-      <image wx:if='{{index==0}}' src='/static/images/1.png'></image>
-      <image wx:if='{{index==1}}' src='/static/images/2.png'></image>
-      <image wx:if='{{index==2}}' src='/static/images/3.png'></image>
+      <image wx:if='{{index==0}}' src='/static/images/1_2.png'></image>
+      <image wx:if='{{index==1}}' src='/static/images/2_2.png'></image>
+      <image wx:if='{{index==2}}' src='/static/images/3_2.png'></image>
     </view>
-    <view class="weui-flex__item item2 font_green font_bold">
+    <view class="weui-flex__item item2 font_bold">
       <image src="{{item.wxAvatar ? item.wxAvatar : '/static/images/apollo_ico.png'}}"></image>
       {{item.wxNickName}}
     </view>
     <!-- <view class="weui-flex__item align-center font_green font_bold">{{item.wxNickName}}</view> -->
-    <view class="weui-flex__item align-center font_bold">{{item.score ? item.score : '无'}}积分</view>
+    <view class="weui-flex__item item3">{{item.score ? item.score : '无'}}积分</view>
 </view>
 </block>
 
@@ -77,7 +76,7 @@
   </view>
   <view class="footer-item" bindtap='openExamBank'>
     <view class="footer-wrap">
-      <image src="../../static/images/gr_normal.png"></image>
+      <image src="../../static/images/gr_qu.png"></image>
       <view class="text">我的题库</view>
     </view>
   </view>
