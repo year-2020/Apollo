@@ -88,7 +88,7 @@
   </view>
 </view>
 
-<view class='m-view cooper'>
+<view class='m-view cooper' style="display:none">
   <view class='title-v'>
     <image class='zs' src='/static/images/hezuo-4.png'></image>
     <view class='jf-title'>合作</view>

@@ -12,6 +12,7 @@ Page({
     nowAnswerResult_question: {},
     nowAnswerResult_userResult: false,
     nowAnswerResult_yourChose: 'E',
+    nowAnswerResult_store: false,
     choseA: false,
     choseB: false,
     choseC: false,
@@ -297,6 +298,9 @@ Page({
     that.setData({
       canChose: false
     })
+    if (this.data.nowAnswerResult_store) {
+      this.toStore2()
+    }
     // console.log("nowAnswerResult", nowAnswerResult);
     
     // if (userResult == true) {
@@ -368,12 +372,7 @@ Page({
     // this.setData({
     //   animateWidth: false
     // });
-    that.setData({
-      ss: 0,
-      canChose: true,
-      after: false,
-      nowAnswerResult_yourChose: "E"
-    })
+
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var nowQuestion_list = that.data.SCList;
 
@@ -387,6 +386,11 @@ Page({
       choseB: false,
       choseC: false,
       choseD: false,
+      ss: 0,
+      canChose: true,
+      after: false,
+      nowAnswerResult_yourChose: "E",
+      nowAnswerResult_question: false
     })
     nowQuestionNumber++;
     that.setData({
@@ -454,8 +458,12 @@ Page({
   },
   // 收藏
   toStore: function () {
+    // console.log(e)
     let examId = this.data.nowQuestion.examId
     let meSelected = that.data.nowAnswerResult_yourChose
+    this.setData({
+      nowAnswerResult_store: true
+    })
     app.api._fetch({
       url: '/community/meExamBank/collect?examId=' + examId + '&meSelected=' + meSelected,
       method: 'post'
@@ -470,6 +478,29 @@ Page({
     }).catch((error) => {
       console.log(error);
     });
+  },
+  // 收藏
+  toStore2: function () {
+    // console.log(e)
+    let examId = this.data.nowQuestion.examId
+    let meSelected = that.data.nowAnswerResult_yourChose
+    this.setData({
+      nowAnswerResult_store: true
+    })
+    wx.request({
+      url: app.api.baseURL + '/community/meExamBank/collect?examId=' + examId + '&meSelected=' + meSelected,
+      // data: {
+      //   examId: examId,
+      //   meSelected: meSelected
+      // },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面卸载
