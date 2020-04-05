@@ -25,6 +25,8 @@ Page({
     questionTypeCH: '(单选题)',
     score: 0,
     career: 0,
+    text: '',
+    text2: '',
     interval:'',
     timeout:'',
     questionNum: 10,
@@ -390,7 +392,7 @@ Page({
       canChose: true,
       after: false,
       nowAnswerResult_yourChose: "E",
-      nowAnswerResult_question: false
+      nowAnswerResult_store: false
     })
     nowQuestionNumber++;
     that.setData({
@@ -426,32 +428,48 @@ Page({
       console.log("提交成功")
       let score = res.data.data.score
       let career = res.data.data.totalScore
+      let text = ''
+      let text2 = ''
       let modalsrc = 'modal.src'
       let src = ''
-      if (career < 10) {
+      if (score <= -2) {
         src = '../../static/images/star_0.png'
-      } else if (career >= 10 && career < 30) {
+        text = '您的段位：青铜'
+        text2 = '入门课程学起来!'
+      } else if (score >= -2 && score < 1) {
         src = '../../static/images/star_1.png'
-      } else if (career >= 30 && career < 60) {
+        text = '您的段位：白银'
+        text2 = '进阶开发刷起来!'
+      } else if (score >= 1 && score < 4) {
         src = '../../static/images/star_2.png'
-      } else if (career >= 60 && career < 80) {
+        text = '您的段位：黄金'
+        text2 = '视频教程看起来!'
+      } else if (score >= 4 && score < 7) {
         src = '../../static/images/star_3.png'
-      } else if (career >= 80 && career < 100) {
+        text = '您的段位：铂金'
+        text2 = '技术文档练起来!'
+      } else if (score >= 7 && score <= 9) {
         src = '../../static/images/star_4.png'
-      } else if (career >= 100) {
+        text = '您的段位：钻石'
+        text2 = '技术可以呀，继续修炼吧!'
+      } else if (score >= 10) {
         src = '../../static/images/star_5.png'
+        text = '您的段位：王者'
+        text2 = '大佬！快去问答板块帮开发者答题吧!'
       }
       
       this.setData({
         score: score,
         career: career,
+        text: text,
+        text2: text2,
         [modalsrc]: src
       })
       this.showModal();
       // 10s 退回测评主页
       this.data.timeout = setTimeout(() => {
         this.onConfirm()
-      }, 10000)
+      }, 30000)
     }).catch((error)=>{
       console.log(error);
     });
@@ -461,19 +479,27 @@ Page({
     // console.log(e)
     let examId = this.data.nowQuestion.examId
     let meSelected = that.data.nowAnswerResult_yourChose
-    this.setData({
-      nowAnswerResult_store: true
-    })
     app.api._fetch({
       url: '/community/meExamBank/collect?examId=' + examId + '&meSelected=' + meSelected,
       method: 'post'
     }).then((res) => {
-      wx.showToast({
-        title: '收藏成功',
-        icon: 'success',
-        image: '../../static/images/icon-tick.png',
-        mask: true,
-        duration: 300
+      if (!this.data.nowAnswerResult_store) {
+        wx.showToast({
+          title: '收藏成功',
+          icon: 'success',
+          image: '../../static/images/icon-tick.png',
+          mask: true,
+          duration: 300
+        })
+      } else {
+        wx.showToast({
+          title: '已收藏',
+          icon: 'none',
+          duration: 300
+        })
+      }
+      this.setData({
+        nowAnswerResult_store: true
       })
     }).catch((error) => {
       console.log(error);
@@ -484,9 +510,9 @@ Page({
     // console.log(e)
     let examId = this.data.nowQuestion.examId
     let meSelected = that.data.nowAnswerResult_yourChose
-    this.setData({
-      nowAnswerResult_store: true
-    })
+    // this.setData({
+    //   nowAnswerResult_store: true
+    // })
     wx.request({
       url: app.api.baseURL + '/community/meExamBank/collect?examId=' + examId + '&meSelected=' + meSelected,
       // data: {

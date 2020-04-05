@@ -6,7 +6,9 @@ Page({
   data: {
     mySortInfo: {},
     rows: [],
-    title: '能力测评'
+    title: '能力测评',
+    scrollHeight: 0,
+    screenHeight: 0
   },
   beginAnswer: function () {
     wx.navigateTo({
@@ -44,6 +46,7 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
+
     /**列表数据 */
     app.api._fetch({
       url: '/community/examCharts/list',
@@ -70,6 +73,36 @@ Page({
   onReady: function () {
     wx.setNavigationBarTitle({
       title: this.data.title,
-    })
-  }
+    });
+
+  },
+  onShow: function () {
+    wx.getSystemInfo({
+      success: res => {
+
+        console.log(res);
+        this.setData({
+          screenHeight: res.windowHeight
+        })
+        //创建节点选择器
+        var query = wx.createSelectorQuery();
+        //选择id
+        query.select('#ad-img').boundingClientRect()
+        query.exec((res) => {
+          console.log("===============")
+          console.log(this.data.screenHeight);
+          console.log("===============")
+          console.log(res[0].height);
+          setTimeout(()=>{
+            this.setData({
+              scrollHeight: this.data.screenHeight - res[0].height - 75
+            })
+            console.log("===============")
+            console.log(this.data.scrollHeight)
+          },2000)
+
+        })
+      }
+    });
+  },
 })

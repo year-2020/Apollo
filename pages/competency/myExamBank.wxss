@@ -52,6 +52,7 @@ page{
   height: 16px;
   width: 16px;
   margin: 10px 20px 0 0;
+  padding: 10px;
 }
 .topRight>view{
   width: 100%;

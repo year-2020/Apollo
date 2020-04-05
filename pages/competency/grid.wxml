@@ -1,6 +1,6 @@
 
-<image class="ad-img" mode='aspectFill' src="/static/images/grid.png" ></image>
-<view class="wrap">
+<image class="ad-img" id="ad-img" mode='aspectFill' src="/static/images/grid.png" ></image>
+<view class="wrap" style="height:{{scrollHeight}}px;overflow:auto;padding:0px;">
 <!--我自己的排名信息-->
 <block wx:for='{{rows}}'>
 <view class="weui-flex my">

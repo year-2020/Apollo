@@ -119,6 +119,7 @@ Page({
         })
       }
       if (questionList.length === 1) {
+        nowQuestionNumber = 0
         this.setData({
           before: true,
           after: true,

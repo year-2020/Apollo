@@ -38,7 +38,7 @@ page{
   font-weight: 600;
 }
 .btns{
-  padding-top:75rpx;
+  padding-top:105rpx;
   text-align: center;
 }
 .btn{

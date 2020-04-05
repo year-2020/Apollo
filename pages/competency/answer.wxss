@@ -191,6 +191,7 @@ page{
   width: 16px;
   height: 16px;
   margin-top: 25rpx;
+  padding: 10px;
 }
 
 /* 单选钮样式 */
@@ -242,14 +243,15 @@ radio {
   text-align: center;
 }
 .modal-content .modal-score,
-.modal-content .modal-career{
+.modal-content .modal-career,
+.modal-content .modal-text{
   line-height: 1.5;
 }
 .img-full{
   display: inline-block;
   width: 332rpx;
   height: 60rpx;
-  padding-top: 20rpx;
+  padding: 20rpx 0;
 }
 .modal-footer {
   display: flex;
@@ -275,6 +277,7 @@ radio {
 }
 
 .pageAnswer .btn{
+  width: 240rpx;
 background-color:#2593FB;
 color:white;
 border-radius:12rpx;

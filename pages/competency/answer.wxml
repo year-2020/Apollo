@@ -1,6 +1,6 @@
 <view class="page pageAnswer">
   <view class='top'>  
-    <view class='topLeft'><text style='margin-left:20rpx;'><text style='margin-left:10rpx;margin-right:10rpx;'>{{nowQuestionNumber+1}} / {{questionNum}}</text>{{questionTypeCH}}</text></view>
+    <!-- <view class='topLeft'><text style='margin-left:20rpx;'><text style='margin-left:10rpx;margin-right:10rpx;'>{{nowQuestionNumber+1}} / {{questionNum}}</text>{{questionTypeCH}}</text></view> -->
     <view class='topRight'>
       <view class='topRightContent'>
         <!-- <image src='../../static/images/time.png' class="timeImage"></image>
@@ -59,8 +59,10 @@
   <cover-view class="modal-title">{{modal.title}}</cover-view>
   <cover-view class="modal-content">
     <cover-view class="modal-score">本次得分：{{score}}</cover-view>
-    <cover-view class="modal-career">生涯总得分：{{career}}</cover-view>
+    <cover-view class="modal-career">累计得分：{{career}}</cover-view>
     <cover-image src="{{modal.src}}" class="img-full" mode="widthFix"></cover-image>
+    <cover-view class="modal-text">{{text}}</cover-view>
+    <cover-view class="modal-text">{{text2}}</cover-view>
   </cover-view>
   <cover-view class="modal-footer">
     <!-- <cover-view class="btn-cancel" bindtap="onCancel" data-status="cancel">{{modal.cancel}}</cover-view> -->
