@@ -459,7 +459,7 @@ Page({
       } else if (score >= 10) {
         src = '../../static/images/star_5.png'
         text = '您的段位：王者'
-        text2 = '大佬！快去问答板块帮开发者答题吧!'
+        text2 = '大佬！快去问答板块答个题吧!'
       }
       
       this.setData({
