@@ -303,6 +303,10 @@ Page({
     if (this.data.nowAnswerResult_store) {
       this.toStore2()
     }
+    // 暂存当前题答案
+    let param = that.data.nowAnswerResult_question.examId + ',' + that.data.nowAnswerResult_yourChose
+    that.data.answerDetail.push(param)
+    console.log(that.data.answerDetail)
     // console.log("nowAnswerResult", nowAnswerResult);
     
     // if (userResult == true) {
@@ -325,6 +329,10 @@ Page({
     that.data.nowAnswerResult_question = nowQuestion_list[nowQuestionNumber]
     that.data.nowAnswerResult_userResult = false
     that.data.nowAnswerResult_yourChose = 'E'
+    // 暂存当前题答案
+    let param = that.data.nowAnswerResult_question.examId + ',' + that.data.nowAnswerResult_yourChose
+    that.data.answerDetail.push(param)
+    console.log(that.data.answerDetail)
     if (nowQuestionNumber + 1 === questionListLength) {
       wx.showModal({
         title: '提示',
@@ -378,10 +386,6 @@ Page({
     var nowQuestionNumber = that.data.nowQuestionNumber;
     var nowQuestion_list = that.data.SCList;
 
-    // 暂存当前题答案
-    let param = that.data.nowAnswerResult_question.examId + ',' + that.data.nowAnswerResult_yourChose
-    that.data.answerDetail.push(param)
-    console.log(that.data.answerDetail)
     // 开始新题数据
     that.setData({
       choseA: false,
