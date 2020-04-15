@@ -26,8 +26,8 @@ page{
   text-align: center;
 }
 .modal-dialog .img{
-  width: 238px;
-  height: 400px;
+  /* width: 238px; */
+  height: 100%;
   display: inline-block;
 }
 .pageCooper{

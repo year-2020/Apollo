@@ -118,9 +118,9 @@
   </view>
 
   <button class='btn' bindtap='handleSubmit' role="button" aria-disabled="false">合作登记</button>
-  <cover-view class="modal-mask" bindtap="hideModal" wx:if="{{modalShow}}"></cover-view>
-  <cover-view class="modal-dialog" wx:if="{{modalShow}}" bindtap="hideModal">
-    <cover-image class="img" mode="aspectFit" src="/static/images/cooper.png"></cover-image>
-  </cover-view>
+  <view class="modal-mask" bindtap="hideModal" wx:if="{{modalShow}}"></view>
+  <view class="modal-dialog" wx:if="{{modalShow}}" bindtap="hideModal">
+    <image class="img" mode="aspectFit" src="/static/images/cooper.png"></image>
+  </view>
 </view>
 <i-toast id="toast" />
