@@ -17,13 +17,13 @@
     </view> -->
 
     <view class='info-row'>
-              <view class='ico-info'>公司*</view>
+              <view class='ico-info'>公司/学校*</view>
               <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
                 <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.asummary}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='1'/>
 
     </view>
     <view class='info-row'>
-              <view class='ico-info'>职位*</view>
+              <view class='ico-info'>职位/专业*</view>
               <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
                 <input class='name-num' type="text" placeholder="未设置" value='{{myInfoData.atitle}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='2'/>
 
@@ -67,3 +67,4 @@
     <button class='save-info' bindtap='saveinfo'>
 保存
 </button>
+<i-toast id="toast" />

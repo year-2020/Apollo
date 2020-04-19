@@ -51,6 +51,11 @@ Page({
   /**喜欢的action */
   likeAction: function(e) {
     const that = this;
+    let count = e.currentTarget.dataset.count;
+    let like = e.currentTarget.dataset.like;
+    let idx = e.currentTarget.dataset.idx;
+    let thisCount = "articleList[" + idx + "].likeCount";
+    let thisLike = "articleList[" + idx + "].like";
     console.info(e);
     app.api._fetch({
       url: '/community/article/like?ownedId=' + e.currentTarget.dataset.id,
@@ -58,14 +63,28 @@ Page({
     }).then(function(res) {
       console.info('点赞返回的结果' + JSON.stringify(res.data))
       if (res.data.code == 0) {
-        wx.showToast({
-          title: '喜欢成功',
-        })
-        that.setData({
-          searchPageNum: 1, //当前页的一些初始数据，视业务需求而定
-          articleList: []
-        })
-        that.onLoad(); //重新加载onLoad()
+        if (like) {
+          wx.showToast({
+            title: '已取消喜欢',
+            icon: 'none'
+          })
+          that.setData({
+            [thisCount]: count - 1,
+            [thisLike]: false
+          })
+        } else {
+          wx.showToast({
+            title: '已加入我的喜欢',
+            icon: 'none'
+          })
+          that.setData({
+            [thisCount]: count + 1,
+            [thisLike]: true
+          })
+        }
+
+        // that.requestListData();
+        // that.onLoad(); //重新加载onLoad()
 
       }
 
@@ -296,7 +315,8 @@ Page({
         pageNum: '1'
       },
     }).then(function(res) {
-      console.info('列表返回' + JSON.stringify(res))
+      console.info('列表返回')
+      console.info(res.data.rows)
       that.setData({
         articleList: res.data.rows,
         searchLoading: true //把"上拉加载"的变量设为false，显示  

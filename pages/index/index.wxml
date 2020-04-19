@@ -64,8 +64,8 @@
 </block>
 <view class='line'></view>
 
-<block wx:for="{{ articleList }}" wx:for-item="item" wx:key="item">
- <template is="h-item" data="{{item}}"></template>
+<block wx:for="{{ articleList }}" wx:for-item="item" wx:for-index="idx" wx:key="item">
+ <template is="h-item" data="{{item:item,idx:idx}}"></template>
  
 </block>
   <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  

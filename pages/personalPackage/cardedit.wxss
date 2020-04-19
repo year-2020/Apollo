@@ -31,7 +31,7 @@ margin-top: 20px;
 .ico-info{
   width: 100px;
   height: 20px;
-  font-size: 14px;
+  font-size: 15px;
   background-size:100% 100%;
 /* background-color: red; */
  top: 50%;
@@ -49,7 +49,7 @@ position: absolute;
 
 .name-num{
   right: 30px;
-  font-size: 12px;
+  font-size: 15px;
   color: black;
   margin-top: -5px;
   position: absolute;

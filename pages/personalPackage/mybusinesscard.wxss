@@ -85,8 +85,7 @@ line-height: 20px;
   margin-left: 20px;
   line-height: 44px;
   color: white;
-  /* 缩进 */
-   Text-indent:20px;
+  text-align: center;
 }
 
 
@@ -304,8 +303,7 @@ border-radius: 3px!important;
   margin-top: -180rpx;
   line-height: 44px;
   color: white;
-  /* 缩进 */
-   Text-indent:20px;
+  text-align: center
 
   }
 

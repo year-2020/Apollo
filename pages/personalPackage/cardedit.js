@@ -2,6 +2,7 @@
 
 const app = getApp();
 import cookies from '../../vendor/weapp-cookie/dist/weapp-cookie'
+const { $Toast } = require('../../dist/base/index');
 
 Page({
 
@@ -30,11 +31,12 @@ Page({
 saveinfo:function(){
   const that = this;
 
-  if (that.data.address == null || that.data.wxNickname == null || that.data.asummary==null){
-    wx.showToast({
-      title: '请输入必填项',
-      icon:''
-    })
+  if (!that.data.address || !that.data.wxNickname || !that.data.asummary){
+    $Toast({
+      content: '请输入必填项',
+      icon: 'close',
+      duration: 1
+    });
     return;
   }
   app.api._fetch({

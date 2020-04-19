@@ -12,10 +12,10 @@
 <view  class="card__title">{{item.title}}</view>
 
 </view>
-<view class="card__bottom" bindtap='likeAction' data-id="{{fromCollectvc==1?item.collectionId:(item.articleId !=null?item.articleId:item.questionId)}}" >
+<view class="card__bottom">
 <view class="card__price__name" wx:if='{{fromfindvcMe !=1}}'>{{item.wxNickname}}</view>
 <view class="card__price" wx:else>{{fromfindvcMe !=1?item.wxNickname:item.content}}</view>
-<view class="card__num nucl" >{{showTags==true?"":item.likeCount}}\t
+<view class="card__num nucl" bindtap='likeAction' data-idx="{{idx}}" data-id="{{fromCollectvc==1?item.collectionId:(item.articleId !=null?item.articleId:item.questionId)}}" data-count="{{item.likeCount}}" data-like="{{item.like}}">{{showTags==true?"":item.likeCount}}\t
 <image class='xihuan' src='{{showTags==true?"":(item.like ==false?"/static/images/xh_ico.png":"/static/images/liked.png")}}'></image>
 </view>
 </view>

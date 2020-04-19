@@ -72,7 +72,22 @@ swiper-item image {
 .tab-icon {
   font-size: 24px;
   padding: 0px;
+  display: inline-block;
   color: rgba(69, 90, 100, .8);
+}
+.icon-wrap:nth-child(4) .tab-icon{
+  position: relative;
+}
+.icon-wrap:nth-child(4) .tab-icon::after{
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #f00;
+  border-radius: 100%;
+  position: absolute;
+  right: -2px;
+  top: -2px;
 }
 .tabseprator{
   /**index.wxss**/
