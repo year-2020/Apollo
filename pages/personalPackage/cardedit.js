@@ -24,13 +24,14 @@ Page({
     wxNickname:'',
     phonenumber:'',
     wx:''
-
-
   },
  
 saveinfo:function(){
   const that = this;
-
+  // console.error(this.data)
+  // console.error(that.data.address)
+  // console.error(that.data.wxNickname)
+  // console.error(that.data.asummary)
   if (!that.data.address || !that.data.wxNickname || !that.data.asummary){
     $Toast({
       content: '请输入必填项',
@@ -49,10 +50,21 @@ saveinfo:function(){
     if (res.data.code == 0) {
       wx.showToast({
         title: '修改成功!!!',
-      })
-      wx.navigateBack({
+      });
+      /**个人user数据 */
+      app.api._fetch({
+        url: '/user/me',
 
-      })
+      }).then(function (res) {
+        console.info('user/me 返回' + JSON.stringify(res))
+        getApp().globalData.userMe = res.data;
+        wx.navigateBack({
+
+        })
+      }).catch(function (error) {
+        console.log(error);
+      });
+
     }if(res.data.code == 500){//有敏感词
 
         wx.showToast({
@@ -108,16 +120,41 @@ saveinfo:function(){
    */
   onLoad: function (options) {
     const that = this;
-   
     that.setData({
-      myInfoData: getApp().globalData.userMe,
-      address: getApp().globalData.userMe.wxCity,
-      asummary: getApp().globalData.userMe.asummary,
-      atitle: getApp().globalData.userMe.atitle,
-      email: getApp().globalData.userMe.email,
-      wxNickname: getApp().globalData.userMe.wxNickname,
-      phonenumber: getApp().globalData.userMe.phonenumber
-    })
+      myInfoData: app.globalData.userMe,
+      address: app.globalData.userMe.address,
+      asummary: app.globalData.userMe.asummary,
+      atitle: app.globalData.userMe.atitle,
+      email: app.globalData.userMe.email,
+      wxNickname: app.globalData.userMe.wxNickname,
+      phonenumber: app.globalData.userMe.phonenumber
+    });
+    // console.error(that.data.myInfoData.address)
+    // console.error(that.data.myInfoData.wxNickname)
+    // console.error(that.data.myInfoData.asummary)
+    // console.error(that.data.address)
+    // console.error(that.data.wxNickname)
+    // console.error(that.data.asummary)
+    /**个人user数据 */
+    // app.api._fetch({
+    //   url: '/user/me',
+
+    // }).then(function (res) {
+    //   console.info('user/me 返回')
+    //   console.info(res.data)
+    //   that.setData({
+    //     myInfoData: res.data,
+    //     address: res.data.wxCity,
+    //     asummary: res.data.asummary,
+    //     atitle: res.data.atitle,
+    //     email: res.data.email,
+    //     wxNickname: res.data.wxNickname,
+    //     phonenumber: res.data.phonenumber
+    //   });
+    //   // getApp().globalData.userMe = res.data;
+    // }).catch(function (error) {
+    //   console.log(error);
+    // });
   },
 
   /**

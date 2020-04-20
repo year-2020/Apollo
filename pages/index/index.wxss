@@ -87,8 +87,8 @@ swiper-item image {
   border-radius: 100%;
   position: absolute;
   left: 50%;
-  top: -4px;
-  margin-left: 25px;
+  top: 4px;
+  margin-left: 35px;
 }
 .tabseprator{
   /**index.wxss**/
