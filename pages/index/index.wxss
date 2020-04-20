@@ -75,10 +75,10 @@ swiper-item image {
   display: inline-block;
   color: rgba(69, 90, 100, .8);
 }
-.icon-wrap:nth-child(4) .tab-icon{
+.icon-wrap:nth-child(4) .icon-classname{
   position: relative;
 }
-.icon-wrap:nth-child(4) .tab-icon::after{
+.icon-wrap:nth-child(4) .icon-classname::after{
   content: "";
   display: block;
   width: 8px;
@@ -86,8 +86,9 @@ swiper-item image {
   background: #f00;
   border-radius: 100%;
   position: absolute;
-  right: -2px;
-  top: -2px;
+  left: 50%;
+  top: -4px;
+  margin-left: 25px;
 }
 .tabseprator{
   /**index.wxss**/

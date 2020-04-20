@@ -4,6 +4,7 @@ const app = getApp()
 // const { $Toast } = require('../../dist/base/index');
 Page({
   data: {
+    personalData: {},
     searchPageNum: 1, // 设置加载的第几次，默认是第一次  
     callbackcount: 15, //返回数据的个数  
     searchLoading: false, //"上拉加载"的变量，默认false，隐藏  
@@ -140,8 +141,9 @@ Page({
       })
     }
     if (e.currentTarget.id == 3) { //积分商城
+      var userInfo = JSON.stringify(this.data.personalData);
       wx.navigateTo({
-        url: '/pages/index/creditstore',
+        url: '/pages/personalPackage/mybusinesscard?userData=' + userInfo,
       })
     }
     if (e.currentTarget.id == 1) { //进阶开发
@@ -325,7 +327,18 @@ Page({
     }).catch(function(error) {
       console.log(error);
     });
+    /**个人user数据 */
+    app.api._fetch({
+      url: '/user/me',
 
+    }).then(function (res) {
+      console.info('user/me 返回' + JSON.stringify(res))
+      that.setData({
+        personalData: res.data
+      });
+    }).catch(function (error) {
+      console.log(error);
+    });
   },
   onShow: function() {
 
