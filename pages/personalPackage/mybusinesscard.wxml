@@ -58,7 +58,7 @@
              <view class='info-row'>
               <image class='ico-info' src='/static/images/wechat-info.jpg'></image>
               <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
-                                                          <input class='phone-num' type="text" disabled='true' placeholder="无" value='{{mycardData.wx}}'/>
+                                                          <input class='phone-num' type="text" disabled='true' placeholder="未填写微信号" value='{{mycardData.wx}}'/>
 
                             <image class='ico-edit' bindtap='editCard' src='/static/images/bj_ico.jpg'></image>
 
