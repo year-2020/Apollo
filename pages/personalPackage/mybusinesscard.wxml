@@ -29,7 +29,7 @@
     <view class='myinfo'>
           <view class='hline'></view>
           <view class='right-container'>
-             <view class='name-label'>{{mycardData.wxNickname}}·<em>{{mycardData.atitle}}</em></view>
+             <view class='name-label'>{{mycardData.userName}}·<em>{{mycardData.atitle}}</em></view>
               <view class='company-label'>{{mycardData.asummary}}</view>
           </view>
          

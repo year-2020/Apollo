@@ -126,10 +126,10 @@ saveinfo:function(){
       asummary: app.globalData.userMe.asummary,
       atitle: app.globalData.userMe.atitle,
       email: app.globalData.userMe.email,
-      wxNickname: app.globalData.userMe.wxNickname,
+      wxNickname: app.globalData.userMe.userName,
       phonenumber: app.globalData.userMe.phonenumber
     });
-    // console.error(that.data.myInfoData.address)
+    console.error(app.globalData.userMe)
     // console.error(that.data.myInfoData.wxNickname)
     // console.error(that.data.myInfoData.asummary)
     // console.error(that.data.address)

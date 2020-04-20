@@ -6,7 +6,7 @@
 
 <view class='info-row'>
               <view class='ico-info'>姓名*</view>
-                <input class='name-num' type="text" placeholder="请输入姓名" value='{{myInfoData.wxNickname}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
+                <input class='name-num' type="text" placeholder="请输入姓名" value='{{myInfoData.userName}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
 
     </view>
 

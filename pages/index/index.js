@@ -336,6 +336,7 @@ Page({
       that.setData({
         personalData: res.data
       });
+      getApp().globalData.userMe = res.data;
     }).catch(function (error) {
       console.log(error);
     });
