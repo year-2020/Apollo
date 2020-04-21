@@ -1,18 +1,35 @@
 @import "/pages/personalPackage/template/card.wxss";
 
 .content{
-  height: 550px;
+  /* height: 550px; */
   display: flex;
   flex-direction: column;
+  border-bottom: 16rpx solid #e5e5e5;
+  padding-bottom: 10px;
 }
-
-.jb-tab{
+.content::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 120px;
   position: absolute;
+  z-index: -1;
+  left: 0px;
+  top: 0px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3686df+0,1f5fde+100 */
+background: -moz-linear-gradient(left,  rgba(54,134,223,1) 0%, rgba(31,95,222,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(54,134,223,1) 0%,rgba(31,95,222,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(54,134,223,1) 0%,rgba(31,95,222,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3686df', endColorstr='#1f5fde',GradientType=1 ); /* IE6-9 */
+
+}
+.jb-tab{
+  /* position: absolute; */
   /* background-color: #EDEFFD; */
   height: 64px;
-  left:10px;
+  /* left:10px;
 right:10px;
-top:15px;
+top:15px; */
 display:flex;
 
 }
@@ -62,9 +79,9 @@ background-color:white;
 
 }
 .post-ico{
-  width: 20px;
-  height: 20px;
-line-height: 20px;
+  width: 30px;
+  height: 25px;
+line-height: 25px;
 }
 
 .post-title{
@@ -81,7 +98,6 @@ line-height: 20px;
   width: 35%;
   background-color: gray;
   position: relative;
-  margin-top: 74px;
   margin-left: 20px;
   line-height: 44px;
   color: white;
@@ -92,26 +108,37 @@ line-height: 20px;
 .myinfo{
   background-color: white;
   margin: 20px;
-  height: 200px;
+  height: auto!important;
   border-radius: 7px;
-  box-shadow:0px 2px 5px 5px lightgray;
-
+  box-shadow:0px 2px 5px 5px rgba(0,0,0,0.1);
+  padding: 25px 25px 10px 25px;
 }
-.hline{
-  width: 50%;
-  height: 1px;
-  background-color: #4051B5;
-  margin-top: 40px;
-  position: absolute;
+.info-title{
+  overflow: hidden;
+  padding: 1px;
+  margin-bottom: 20rpx;
+}
+.avator{
+  float: left;
+  width: 161rpx;
+  height: 161rpx;
+  border-radius: 100%;
+  border: 7px solid #fff;
+  background-color: #b8cdf0;
+  overflow: hidden;
+  box-shadow:0px 0px 1px 1px #ea7d42;
+  margin-right: 20rpx;
+}
+.avator image{
+  width: 100%;
+  height: 100%;
 }
 .right-container{
-   width: 45%;
-  height: 40px;
-  /* background-color: yellow; */
-  float: right;
-  margin-top: 15px;
-  margin-right: 10px;
-  text-align: right;
+  height: auto;
+  margin: 0px;
+  overflow: hidden;
+  float: none;
+  text-align: left;
 }
 
 .left-container{
@@ -146,58 +173,65 @@ font-size: 12px;
 }
 .name-label{
   width: 100%;
-  height: 20px;
-  /* background-color: purple; */
-  margin-top: 0px;
-  margin-right: 10px;
-  text-align: right;
-  color: #3F51B5;
+  font-size: 20px;
+  text-align: left;
+  color: #333;
+  margin-bottom: 20px;
 }
 em{
   font-size: 12px;
 }
-.company-label{
-   width: 100%;
+.atitle-label{
+  width: 100%;
   height: 20px;
-  /* background-color: red; */
-  margin-top: 0px;
-  margin-right: 10px;
-  text-align: right;
-font-size: 12px;
-
+  text-align: left;
+  font-size: 15px;
+  color: #787878;
+}
+.company-label{
+  width: 100%;
+  height: 20px;
+  text-align: left;
+  font-size: 12px;
+  color: #787878;
+}
+.info-container{
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
 }
 .info-row{
+  float: left;
+  width: 50%;
   height: 20px;
   /* background-color: yellow; */
-  top:55px;
+  /* top:55px;
   position: relative;
-  margin: 5px;
+  margin: 5px;*/
 display: flex;
 flex-direction: row;
 left: 20px;
-margin-top:20rpx;
-
 }
 .ico-info{
-  width: 20px;
-  height: 20px;
-  background-size:100% 100%;
-/* background-color: red; */
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
 }
 
 .ico-edit{
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-size:100% 100%;
   position: absolute;
-  right: 30px;
+  right: 40px;
+  top: 50px;
 }
 .phone-num{
   margin-left: 8px;
   font-size: 12px;
-  color: #4051B5;
-  margin-top: -5px;
-padding-top:6rpx;
+  color: #999;
+  margin-top: 0px;
 }
  
 .table {
@@ -319,3 +353,17 @@ Text-indent:20px;
 text-align:right;
 
   }
+.content-get{
+  padding: 38rpx 0;
+}
+.content-get .title{
+  padding: 0 50rpx;
+  font-size: 34rpx;
+}
+.content-get .title .icon-tit{
+  width: 55rpx;
+  height: 47rpx;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}

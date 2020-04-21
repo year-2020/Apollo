@@ -1,42 +1,48 @@
  <template name='card-item'>
 
-  <view class='myinfo'>
-          <view class='hline'></view>
-          <view class='right-container'>
-             <view class='name-label'>{{item.userName}}·<em>{{item.atitle}}</em></view>
-              <view class='company-label'>{{item.asummary}}</view>
-          </view>
-         
-            <view class='info-rowx'>
-              <image class='ico-info' src='/static/images/shouji-2.png'></image>
-              <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
-                <input  disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="idcard" placeholder="无" value='{{item.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
-
-            </view>
-             <view class='info-rowx'>
-              <image class='ico-info' src='/static/images/info-local.png'></image>
-              <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
-                              <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}'/>
-
-            </view>
-             <!-- <view class='info-row'>
-              <image class='ico-info' src='/static/images/info-telephone.png'></image>
-              <view class='phone-num'>0771-12345678</view>
-            </view> -->
-             <view class='info-rowx'>
-              <image class='ico-info' src='/static/images/youxiang-4.png'></image>
-              <!-- <view class='phone-num'>{{mycardData.email}}</view> -->
-                                            <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.email}}'/>
-
-            </view>
-             <view class='info-rowx'>
-              <image class='ico-info' src='/static/images/wechat-info.jpg'></image>
-              <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
-                                                          <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.wx}}'/>
-
-                            <!-- <image wx:if='{{fromeditcard !=1}}' class='ico-edit' bindtap='editCard' src='/static/images/bj_ico.jpg'></image> -->
-
-            </view>
+  <view class='myinfo myinfo2'>
+    <view class="info-title">
+      <view class='avator'>
+        <image src="{{item.wxAvatar}}"></image>
       </view>
+      <view class='right-container'>
+        <view class='name-label'>{{item.userName}}</view>
+        <view class='atitle-label'>{{item.atitle}}</view>
+        <view class='company-label'>{{item.asummary}}</view>
+      </view>
+    </view>
+    <view class="info-container">
+      <view class='info-rowx'>
+        <image class='ico-info' src='/static/images/card_tel.png'></image>
+        <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
+          <input  disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="idcard" placeholder="无" value='{{item.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
+
+      </view>
+        <view class='info-rowx'>
+        <image class='ico-info' src='/static/images/card_map.png'></image>
+        <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
+                        <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}'/>
+
+      </view>
+        <!-- <view class='info-row'>
+        <image class='ico-info' src='/static/images/info-telephone.png'></image>
+        <view class='phone-num'>0771-12345678</view>
+      </view> -->
+        <view class='info-rowx'>
+        <image class='ico-info' src='/static/images/card_youxiang.png'></image>
+        <!-- <view class='phone-num'>{{mycardData.email}}</view> -->
+                                      <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.email}}'/>
+
+      </view>
+        <view class='info-rowx'>
+        <image class='ico-info' src='/static/images/card_wx.png'></image>
+        <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
+                                                    <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.wx}}'/>
+
+                      <!-- <image wx:if='{{fromeditcard !=1}}' class='ico-edit' bindtap='editCard' src='/static/images/bj_ico.jpg'></image> -->
+
+      </view>
+    </view>
+  </view>
 
 </template>
