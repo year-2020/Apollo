@@ -15,13 +15,13 @@
       <view class='info-rowx'>
         <image class='ico-info' src='/static/images/card_tel.png'></image>
         <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
-          <input  disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="idcard" placeholder="无" value='{{item.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0'/>
+          <input  disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="idcard" placeholder="无" value='{{item.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0' style="color:#2d588e" />
 
       </view>
         <view class='info-rowx'>
         <image class='ico-info' src='/static/images/card_map.png'></image>
         <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
-                        <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}'/>
+                        <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}' style="color:#2d588e" />
 
       </view>
         <!-- <view class='info-row'>

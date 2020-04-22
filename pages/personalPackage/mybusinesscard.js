@@ -15,50 +15,50 @@ Page({
     nickName: '',
     tags: [],
     cards: [
-      {
-        address: "Daxing22",
-        asummary: "Apollo小哥哥32",
-        atitle: "运营",
-        banner: null,
-        credits: 24,
-        email: "",
-        follow: false,
-        followCount: 0,
-        followerCount: 99,
-        phonenumber: "",
-        quesCount: 1,
-        sex: "1",
-        tags: "规划大神,社区之星",
-        todayCredits: 0,
-        userBtype: "0",
-        userName: "邓教授23",
-        wx: "",
-        wxAvatar: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIqZjyvm2y2AMFdZDUj9QX73WlDLC2bCQ6RywJictB2UNthUNpLZvfRYZQubvicwib0lxvyXpd5RJ4hA/132",
-        wxCity: "Daxing",
-        wxNickname: "邓教授"
-      },
-      {
-        address: "Daxing22",
-        asummary: "Apollo小哥哥32",
-        atitle: "运营",
-        banner: null,
-        credits: 24,
-        email: "",
-        follow: false,
-        followCount: 0,
-        followerCount: 99,
-        phonenumber: "",
-        quesCount: 1,
-        sex: "1",
-        tags: "规划大神,社区之星",
-        todayCredits: 0,
-        userBtype: "0",
-        userName: "邓教授23",
-        wx: "",
-        wxAvatar: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIqZjyvm2y2AMFdZDUj9QX73WlDLC2bCQ6RywJictB2UNthUNpLZvfRYZQubvicwib0lxvyXpd5RJ4hA/132",
-        wxCity: "Daxing",
-        wxNickname: "邓教授"
-      }
+      // {
+      //   address: "Daxing22",
+      //   asummary: "Apollo小哥哥32",
+      //   atitle: "运营",
+      //   banner: null,
+      //   credits: 24,
+      //   email: "",
+      //   follow: false,
+      //   followCount: 0,
+      //   followerCount: 99,
+      //   phonenumber: "",
+      //   quesCount: 1,
+      //   sex: "1",
+      //   tags: "规划大神,社区之星",
+      //   todayCredits: 0,
+      //   userBtype: "0",
+      //   userName: "邓教授23",
+      //   wx: "",
+      //   wxAvatar: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIqZjyvm2y2AMFdZDUj9QX73WlDLC2bCQ6RywJictB2UNthUNpLZvfRYZQubvicwib0lxvyXpd5RJ4hA/132",
+      //   wxCity: "Daxing",
+      //   wxNickname: "邓教授"
+      // },
+      // {
+      //   address: "Daxing22",
+      //   asummary: "Apollo小哥哥32",
+      //   atitle: "运营",
+      //   banner: null,
+      //   credits: 24,
+      //   email: "",
+      //   follow: false,
+      //   followCount: 0,
+      //   followerCount: 99,
+      //   phonenumber: "",
+      //   quesCount: 1,
+      //   sex: "1",
+      //   tags: "规划大神,社区之星",
+      //   todayCredits: 0,
+      //   userBtype: "0",
+      //   userName: "邓教授23",
+      //   wx: "",
+      //   wxAvatar: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIqZjyvm2y2AMFdZDUj9QX73WlDLC2bCQ6RywJictB2UNthUNpLZvfRYZQubvicwib0lxvyXpd5RJ4hA/132",
+      //   wxCity: "Daxing",
+      //   wxNickname: "邓教授"
+      // }
     ]
   },
 /**跳去生成名片 */
@@ -232,9 +232,9 @@ wx.navigateTo({
         url: '/community/card/list',
         method: 'get'
       }).then(function (res) {
-        // that.setData({
-        //   cards: res.data.rows
-        // })
+        that.setData({
+          cards: res.data.rows
+        })
         console.info(res)
       }).catch(function (error) {
         console.log(error);

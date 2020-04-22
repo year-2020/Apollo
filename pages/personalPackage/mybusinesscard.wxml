@@ -1,7 +1,7 @@
 <import src="/pages/personalPackage/template/card.wxml"></import>
 
 <view class="content">
-  <!-- <view class='titcard'>我的名片</view> -->
+  <view class='titcard'>我的资料</view>
   <view class='myinfo'>
     <view class="info-title">
       <view class='avator'>
