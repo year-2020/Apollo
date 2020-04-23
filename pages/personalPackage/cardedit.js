@@ -127,7 +127,8 @@ saveinfo:function(){
       atitle: app.globalData.userMe.atitle,
       email: app.globalData.userMe.email,
       wxNickname: app.globalData.userMe.userName,
-      phonenumber: app.globalData.userMe.phonenumber
+      phonenumber: app.globalData.userMe.phonenumber,
+      wx: app.globalData.userMe.wx
     });
     console.error(app.globalData.userMe)
     // console.error(that.data.myInfoData.wxNickname)

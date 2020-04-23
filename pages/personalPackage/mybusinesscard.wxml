@@ -16,34 +16,39 @@
     
 
     <view class="info-container">
-      <view class='info-row'>
+      <view class='info-row col1'>
         <image class='ico-info' src='/static/images/card_tel.png'></image>
         <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
-          <input class='phone-num' type="idcard" placeholder="未填写联系电话" value='{{mycardData.phonenumber}}'focus="{{focus}}" disabled='true' bindinput="bindKeyInput" data-id='0'/>
+        <text class='phone-num' selectable='true'>{{mycardData.phonenumber.length ? mycardData.phonenumber : '未填写联系电话'}}</text>
+          <!-- <input class='phone-num' type="idcard" placeholder="未填写联系电话" value='{{mycardData.phonenumber}}'focus="{{focus}}" disabled='true' bindinput="bindKeyInput" data-id='0'/> -->
 
       </view>
-      <view class='info-row'>
+      <view class='info-row col2'>
+        <image class='ico-info' src='/static/images/card_wx.png'></image>
+        <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
+        <text class='phone-num' selectable='true'>{{mycardData.wx.length ? mycardData.wx : '未填写微信号'}}</text>
+        <!-- <input class='phone-num' type="text" disabled='true' placeholder="未填写微信号" value='{{mycardData.wx}}'/> -->
+
+      </view>
+      <view class='info-row col1'>
         <image class='ico-info' src='/static/images/card_map.png'></image>
         <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
-                        <input class='phone-num' disabled='true' type="text" placeholder="未填写地址" value='{{mycardData.address}}'/>
+        <text class='phone-num' selectable='true'>{{mycardData.address.length ? mycardData.address : '未填写地址'}}</text>
+        <!-- <input class='phone-num' disabled='true' type="text" placeholder="未填写地址" value='{{mycardData.address}}'/> -->
 
       </view>
               <!-- <view class='info-row'>
               <image class='ico-info' src='/static/images/info-telephone.png'></image>
               <view class='phone-num'>0771-12345678</view>
             </view> -->
-      <view class='info-row'>
+      <view class='info-row col2'>
         <image class='ico-info' src='/static/images/card_youxiang.png'></image>
         <!-- <view class='phone-num'>{{mycardData.email}}</view> -->
-                                      <input class='phone-num' type="text" placeholder="未填写邮箱"disabled='true'  value='{{mycardData.email}}'/>
+        <text class='phone-num' selectable='true'>{{mycardData.email.length ? mycardData.email : '未填写邮箱'}}</text>
+        <!-- <input class='phone-num' type="text" placeholder="未填写邮箱"disabled='true'  value='{{mycardData.email}}'/> -->
 
       </view>
-      <view class='info-row'>
-        <image class='ico-info' src='/static/images/card_wx.png'></image>
-        <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
-                                                    <input class='phone-num' type="text" disabled='true' placeholder="未填写微信号" value='{{mycardData.wx}}'/>
 
-      </view>
     </view>
     <image class='ico-edit' bindtap='editCard' src='/static/images/card_bianji.png'></image>
   </view>
@@ -51,7 +56,7 @@
     <view class="tab">
     <button class="send-tab" open-type="share">
       <image class="post-ico" src="/static/images/card_person_add.png" ></image>
-      <text class="post-title">推荐好友</text>
+      <text class="post-title">推荐给好友</text>
     </button>
 
     </view>

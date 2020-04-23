@@ -124,7 +124,7 @@ line-height: 25px;
   background-color: #b8cdf0;
   overflow: hidden;
   box-shadow:0px 0px 1px 1px #ea7d42;
-  margin-right: 20rpx;
+  margin-right: 30rpx;
 }
 .avator image{
   width: 100%;
@@ -211,10 +211,16 @@ flex-direction: row;
 left: 20px;
 padding-bottom: 5px;
 }
+.info-row.col1{
+  width: 45%;
+}
+.info-row.col2{
+  width: 55%;
+}
 .ico-info{
   width: 13px;
   height: 13px;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .ico-edit{

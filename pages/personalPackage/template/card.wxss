@@ -20,7 +20,7 @@
   background-color: #b8cdf0;
   overflow: hidden;
   box-shadow:0px 0px 1px 1px #ea7d42;
-  margin-right: 20rpx;
+  margin-right: 30rpx;
 }
 .right-container{
   height: auto;
@@ -102,6 +102,12 @@ display: flex;
 flex-direction: row;
 left: 20px;
 padding-bottom: 5px;
+}
+.info-rowx.col1{
+  width: 45%;
+}
+.info-rowx.col2{
+  width: 55%;
 }
 .ico-info{
   width: 20px;

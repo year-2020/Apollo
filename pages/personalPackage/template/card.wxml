@@ -12,36 +12,41 @@
       </view>
     </view>
     <view class="info-container">
-      <view class='info-rowx'>
+      <view class='info-rowx col1'>
         <image class='ico-info' src='/static/images/card_tel.png'></image>
         <!-- <view class='phone-num'>{{mycardData.phone}}</view> -->
-          <input  disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="idcard" placeholder="无" value='{{item.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0' style="color:#2d588e" />
+        <text class='phone-num' selectable='true'>{{item.phonenumber.length ? item.phonenumber : '未填写联系电话'}}</text>
+        <!-- <input  disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="idcard" placeholder="无" value='{{item.phonenumber}}'focus="{{focus}}" bindinput="bindKeyInput" data-id='0' style="color:#2d588e" /> -->
 
       </view>
-        <view class='info-rowx'>
+        <view class='info-rowx col2'>
+        <image class='ico-info' src='/static/images/card_wx.png'></image>
+        <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
+        <text class='phone-num' selectable='true'>{{item.wx.length ? item.wx : '未填写微信号'}}</text>
+        <!-- <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.wx}}' style="color:#2d588e" /> -->
+
+                      <!-- <image wx:if='{{fromeditcard !=1}}' class='ico-edit' bindtap='editCard' src='/static/images/bj_ico.jpg'></image> -->
+
+      </view>
+        <view class='info-rowx col1'>
         <image class='ico-info' src='/static/images/card_map.png'></image>
         <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
-                        <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}' style="color:#2d588e" />
+        <text class='phone-num' selectable='true'>{{item.address.length ? item.address : '未填写地址'}}</text>
+        <!-- <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}' /> -->
 
       </view>
         <!-- <view class='info-row'>
         <image class='ico-info' src='/static/images/info-telephone.png'></image>
         <view class='phone-num'>0771-12345678</view>
       </view> -->
-        <view class='info-rowx'>
+        <view class='info-rowx col2'>
         <image class='ico-info' src='/static/images/card_youxiang.png'></image>
         <!-- <view class='phone-num'>{{mycardData.email}}</view> -->
-                                      <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.email}}'/>
+        <text class='phone-num' selectable='true'>{{item.email.length ? item.email : '未填写邮箱'}}</text>
+        <!-- <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.email}}'/> -->
 
       </view>
-        <view class='info-rowx'>
-        <image class='ico-info' src='/static/images/card_wx.png'></image>
-        <!-- <view class='phone-num'>{{mycardData.name}}</view> -->
-                                                    <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.wx}}'/>
 
-                      <!-- <image wx:if='{{fromeditcard !=1}}' class='ico-edit' bindtap='editCard' src='/static/images/bj_ico.jpg'></image> -->
-
-      </view>
     </view>
   </view>
 
