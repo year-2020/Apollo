@@ -5,7 +5,7 @@
       <view class='myinfo'>
           <view class='hline'></view>
           <view class='right-container'>
-             <view class='name-label'>{{mycardData.name}}·<em>{{mycardData.title}}</em></view>
+             <view class='name-label'>{{mycardData.name?mycardData.name:'无'}}·<em>{{mycardData.title}}</em></view>
               <view class='company-label'>{{mycardData.dept}}</view>
           </view>
          
@@ -15,7 +15,7 @@
             </view>
              <view class='info-row'>
               <image class='ico-info' src='/static/images/info-local.png'></image>
-              <view class='phone-num'>{{mycardData.address}}</view>
+              <view class='phone-num'>{{mycardData.address?mycardData.address:'无'}}</view>
             </view>
              <!-- <view class='info-row'>
               <image class='ico-info' src='/static/images/info-telephone.png'></image>
@@ -38,7 +38,7 @@
           <image class='edit-info' src='/static/images/wechat-info.jpg'></image>  
         </view>
           <view class='left-container'>
-             <view class='leftname-label'>{{mycardData.name}}·<em>{{mycardData.title}}</em></view>
+             <view class='leftname-label'>{{mycardData.name?mycardData.name:'无'}}·<em>{{mycardData.title}}</em></view>
               <view class='leftcompany-label'>{{mycardData.dept}}</view>
           </view>
               <view class='info-row'>
@@ -47,7 +47,7 @@
             </view>
              <view class='info-row'>
               <image class='ico-info' src='/static/images/info-local.png'></image>
-              <view class='phone-num'>{{mycardData.address}}</view>
+              <view class='phone-num'>{{mycardData.address?mycardData.address:'无'}}</view>
             </view>
              <!-- <view class='info-row'>
               <image class='ico-info' src='/static/images/info-telephone.png'></image>

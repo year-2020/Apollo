@@ -99,7 +99,7 @@ swiper-item image {
 }
 .icon-classname {
   color: #515151 100%;
-  font-size: 16px;
+  font-size: 14px;
 }
 /* 横着的分割View样式 */
 /*分割线样式*/

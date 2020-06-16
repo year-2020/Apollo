@@ -103,11 +103,11 @@ display:flex;
   line-height: 1;
 }
 .footer-item image{
-  width: 81rpx;
-  height: 81rpx;
-  margin-top: 15rpx;
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 25rpx;
 } 
 .footer-item .text{
-  font-size: 16px;
+  font-size: 14px;
   color: #335ee1;
 } 

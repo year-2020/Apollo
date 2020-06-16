@@ -69,7 +69,7 @@
     <view class='jf-cell'>
       <view class='click-view'>
         <view class="cell__title" style="">
-          •{{item.description}}
+          {{item.description}}
           <view class="cell__label">+{{item.credit}}积分</view>
         </view>
         <button class="{{item.finish==true?'cell__value__go':'cell__value'}}" bindtap='{{item.finish==true?"":"todoTask"}}' open-type='{{(item.taskId==6&&item.finish==false)?"share":""}}' data-id='{{item.taskId}}'>{{item.finish==true?'已完成':'去完成'}}</button>

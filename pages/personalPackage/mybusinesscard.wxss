@@ -196,31 +196,35 @@ em{
   width: 100%;
   overflow: hidden;
   border-top: 1px solid #e5e5e5;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 .info-row{
   float: left;
-  width: 50%;
+  width: 49%;
+  padding-right: 1%;
   height: 20px;
   /* background-color: yellow; */
   /* top:55px;
   position: relative;
   margin: 5px;*/
-display: flex;
+/* display: flex;
 flex-direction: row;
-left: 20px;
+left: 20px; */
 padding-bottom: 5px;
+position: relative;
 }
-.info-row.col1{
+/* .info-row.col1{
   width: 45%;
 }
 .info-row.col2{
   width: 55%;
-}
+} */
 .ico-info{
   width: 13px;
   height: 13px;
-  margin-top: 3px;
+  position: absolute;
+  top: 0px;
+  left: 1px;
 }
 
 .ico-edit{
@@ -232,10 +236,11 @@ padding-bottom: 5px;
   top: 30px;
 }
 .phone-num{
-  margin-left: 8px;
   font-size: 12px;
   color: #999;
   margin-top: 0px;
+  padding-left: 18px;
+  line-height: 14px;
 }
  
 .table {

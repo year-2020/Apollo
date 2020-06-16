@@ -50,7 +50,7 @@ Page({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: 'http://www.shengdh123.com/apollo/community/upload/questionFile',
+            url: 'https://www.apollodev.club/apollo/community/upload/questionFile',
             filePath: tempFilePaths[i],
             name: 'questionFile',
             header: {

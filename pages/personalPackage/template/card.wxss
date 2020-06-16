@@ -92,23 +92,24 @@ em{
 }
 .info-rowx{
   float: left;
-  width: 50%;
-  height: 20px;
+  width: 49%;
+  padding-right: 1%;
   /* background-color: yellow; */
   /* top:55px;
   position: relative;
   margin: 5px;*/
-display: flex;
-flex-direction: row;
-left: 20px;
+/* display: flex;
+flex-direction: row; */
+/* left: 20px; */
 padding-bottom: 5px;
+position: relative;
 }
-.info-rowx.col1{
+/* .info-rowx.col1{
   width: 45%;
 }
 .info-rowx.col2{
   width: 55%;
-}
+} */
 .ico-info{
   width: 20px;
   height: 20px;
@@ -125,8 +126,11 @@ padding-bottom: 5px;
   top: 50px;
 }
 .phone-num{
-  margin-left: 8px;
+  display: block;
+  /* float: left; */
+  /* margin-left: 8px; */
   font-size: 12px;
   color: #999;
   margin-top: 0px;
+  overflow: hidden;
 }

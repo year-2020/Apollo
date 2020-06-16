@@ -8,7 +8,7 @@
         <image src="{{mycardData.wxAvatar}}"></image>
       </view>
       <view class='right-container'>
-        <view class='name-label'>{{mycardData.userName}}</view>
+        <view class='name-label'>{{mycardData.userName?mycardData.userName:'无'}}</view>
         <view class='atitle-label'>{{mycardData.atitle}}</view>
         <view class='company-label'>{{mycardData.asummary}}</view>
       </view>
