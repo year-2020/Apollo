@@ -6,13 +6,13 @@
 </view>
 <view class="card__content" bindtap='itemClick'data-id="{{item.userId}}" data-type='{{item.userBtype}}'>
   <view class=''></view>
-  <view class="card__bottom">
-  <text class="card__price"decode="{{true}}">{{item.atitle}}</text>
+  <!-- <view class="card__bottom">
+    <text class="card__price"decode="{{true}}">{{item.atitle}}</text>
 
-  <view class="card__num nucl">{{item.likeCount}}\t
-  <image class='xihuan' src=''></image>
-  </view>
-  </view>
+    <view class="card__num nucl">{{item.likeCount}}\t
+      <image class='xihuan' src=''></image>
+    </view>
+  </view> -->
 <view class="card__title">{{item.wxNickname}}</view>
 <view class="sc__title">{{item.asummary}}</view>
 

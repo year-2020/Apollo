@@ -180,8 +180,12 @@ Page({
       result = '请填写 职位'
     } else if (!this.data.contactNumber.length) {
       result = '请填写 联系电话'
+    } else if (this.data.contactNumber.length && !(/^1\d{10}$/.test(this.data.contactNumber))) {
+      result = '联系电话格式错误'
     } else if (!this.data.contactEmail.length) {
       result = '请填写 联系邮箱'
+    } else if (this.data.contactEmail.length && !(/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(this.data.contactEmail)) ) {
+      result = '联系邮箱格式错误'
     }
     if (!result) {
       let param = {
