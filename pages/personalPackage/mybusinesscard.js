@@ -371,7 +371,7 @@ loadCardList:function(){
 
     return {
       title: that.data.mycardData.wxNickname+'的名片',
-      path: '/pages/personalPackage/mybusinesscard' + '?wxNickname=' + that.data.mycardData.wxNickname + '&asummary=' + that.data.mycardData.asummary + '&atitle=' + that.data.mycardData.atitle + '&address=' + that.data.mycardData.wxCity + '&phonenumber=' + that.data.mycardData.phonenumber + '&wx=' + that.data.mycardData.wx + '&email=' + that.data.mycardData.email + '&userId=' + preLogin.userId  +'&sharecome=Y',
+      path: '/pages/personalPackage/mybusinesscard' + '?wxNickname=' + that.data.mycardData.wxNickname + '&asummary=' + that.data.mycardData.asummary + '&atitle=' + that.data.mycardData.atitle + '&address=' + that.data.mycardData.address + '&phonenumber=' + that.data.mycardData.phonenumber + '&wx=' + that.data.mycardData.wx + '&email=' + that.data.mycardData.email + '&userId=' + preLogin.userId  +'&sharecome=Y',
           success: function (res) {
         // 转发成功
         // 如果这里有 shareTickets，则说明是分享到群的

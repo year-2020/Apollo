@@ -31,7 +31,7 @@
         <view class='info-rowx col1'>
         <image class='ico-info' src='/static/images/card_map.png'></image>
         <!-- <view class='phone-num'>{{mycardData.address}}</view> -->
-        <text class='phone-num' selectable='true'>{{item.address.length ? item.address : '未填写地址'}}</text>
+        <text class='phone-num' selectable='true'>{{item.address!=='null' ? item.address : '未填写地址'}}</text>
         <!-- <input disabled='{{fromeditcard !=1?true:false}}' class='phone-num' type="text" placeholder="无" value='{{item.address}}' /> -->
 
       </view>
